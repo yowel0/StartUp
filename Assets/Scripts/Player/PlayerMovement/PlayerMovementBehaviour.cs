@@ -16,6 +16,7 @@ public abstract class MoveBehaviour : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float sprintMult;
     [SerializeField] protected float stopDrag;
+    [SerializeField] float normDrag;
 
     protected float drag;
     protected float speedMult;
@@ -71,7 +72,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         }
         else
         {
-            drag = 1;
+            drag = normDrag;
         }
     }
     private void PlayerMovement()

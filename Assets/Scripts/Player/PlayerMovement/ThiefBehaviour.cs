@@ -5,7 +5,7 @@ using UnityEngine;
 public class ThiefBehaviour : MoveBehaviour
 {
     [SerializeField] float crouchMult;
-    [SerializeField] float quickStopDrag;
+    [SerializeField] float crouchDrag;
     bool crouching = false;
     float oldStopDrag;
 
@@ -51,11 +51,10 @@ public class ThiefBehaviour : MoveBehaviour
                 transform.localScale = new Vector3(1, 0.7f, 1);
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             }
-            drag = stopDrag;
+            drag = crouchDrag;
         }
         else if(crouching)
         {
-            stopDrag = oldStopDrag;
             transform.position = new Vector3(transform.position.x, transform.position.y+0.3f, transform.position.z);
             transform.localScale = new Vector3(1, 1, 1);
             crouching=false;

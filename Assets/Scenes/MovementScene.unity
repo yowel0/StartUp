@@ -487,6 +487,7 @@ MonoBehaviour:
   speed: 1
   sprintMult: 1.5
   stopDrag: 0
+  normDrag: 2
   state: 0
   mAnimator: {fileID: 0}
 --- !u!114 &316077088
@@ -504,10 +505,11 @@ MonoBehaviour:
   speed: 1.25
   sprintMult: 1.5
   stopDrag: 10
+  normDrag: 2
   state: 0
   mAnimator: {fileID: 0}
   crouchMult: 1
-  quickStopDrag: 500
+  crouchDrag: 5
 --- !u!114 &316077089
 MonoBehaviour:
   m_ObjectHideFlags: 0
