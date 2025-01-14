@@ -15,7 +15,9 @@ public abstract class MoveBehaviour : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float sprintMult;
+    [SerializeField] protected float stopDrag;
 
+    protected float drag;
     protected float speedMult;
     Transform playerOr;
     Vector3 directionMoving;
@@ -43,6 +45,7 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     public void Update()
     {
+        rb.drag = drag;
         Inputs();
         StateHandler();
     }
@@ -60,13 +63,16 @@ public abstract class MoveBehaviour : MonoBehaviour
         horInput = Input.GetAxisRaw("Horizontal");
         verInput = Input.GetAxisRaw("Vertical");
     }
-    private void Stopping()
+    public virtual void Stopping()
     {
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
-            rb.drag = 5;
+            drag = stopDrag;
         }
-        else rb.drag = 1;
+        else
+        {
+            drag = 1;
+        }
     }
     private void PlayerMovement()
     {
