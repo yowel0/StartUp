@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,10 @@ public class ThiefBehaviour : MoveBehaviour
 {
     [SerializeField] float crouchMult;
     [SerializeField] float crouchDrag;
+    public bool grabbed = false;
     bool crouching = false;
+    bool shakeLeft = true;
+    public int shakes = 1;
     float oldStopDrag;
 
     public void Start()
@@ -16,6 +20,7 @@ public class ThiefBehaviour : MoveBehaviour
     }
     public override void StateHandler()
     {
+
         if (Input.GetKey(KeyCode.LeftControl))
         {
             state = States.crouching;
@@ -27,6 +32,11 @@ public class ThiefBehaviour : MoveBehaviour
     {
         Crouching();
         base.FixedUpdate();
+    }
+    public void Update()
+    {
+        EscapeGrab();
+        base.Update();
     }
 
     public override void Stopping()
@@ -43,7 +53,7 @@ public class ThiefBehaviour : MoveBehaviour
 
     private void Crouching()
     {
-        if(state == States.crouching)
+        if (state == States.crouching)
         {
             if (!crouching)
             {
@@ -58,6 +68,23 @@ public class ThiefBehaviour : MoveBehaviour
             transform.position = new Vector3(transform.position.x, transform.position.y+0.3f, transform.position.z);
             transform.localScale = new Vector3(1, 1, 1);
             crouching=false;
+        }
+    }
+    private void EscapeGrab()
+    {
+        if (grabbed)
+        {
+            
+            if(Input.GetKeyDown(KeyCode.J) && shakeLeft)
+            {
+                shakes -= 1;
+                shakeLeft = false;
+            }
+            else if(Input.GetKeyDown(KeyCode.L) && !shakeLeft)
+            {
+                shakes -= 1;
+                shakeLeft = true;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,12 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(Animator))]
 public abstract class MoveBehaviour : MonoBehaviour
 {
-    [SerializeField] float speed;
+    public float speed;
     [SerializeField] float sprintMult;
     [SerializeField] protected float stopDrag;
     [SerializeField] float normDrag;
 
+    GameObject body;
     protected float drag;
     protected float speedMult;
     Transform playerOr;
