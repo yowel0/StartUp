@@ -47,6 +47,7 @@ public abstract class MoveBehaviour : MonoBehaviour
     public void Update()
     {
         rb.drag = drag;
+        transform.rotation = transform.GetChild(0).rotation;
         Inputs();
         StateHandler();
     }
