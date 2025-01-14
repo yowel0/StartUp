@@ -5,11 +5,8 @@ using System;
 using UnityEngine.AI;
 using System.Reflection.Emit;
 
-/// <summary>
-/// The only mandatorily required behaviour is MoveBehaviour because other actions are optional.
-/// </summary>
 [RequireComponent(typeof(MoveBehaviour))]
-public class AnimalController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private MoveBehaviour moveBehaviour;
