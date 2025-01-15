@@ -8,9 +8,9 @@ public class ThiefBehaviour : MoveBehaviour
     [SerializeField] float crouchMult;
     [SerializeField] float crouchDrag;
     public bool grabbed = false;
+    public int shakes = 1;
     bool crouching = false;
     bool shakeLeft = true;
-    public int shakes = 1;
     float oldStopDrag;
 
     public void Start()

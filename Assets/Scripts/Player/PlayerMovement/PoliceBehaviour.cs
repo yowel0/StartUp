@@ -9,12 +9,14 @@ public class PoliceBehaviour : MoveBehaviour
     [SerializeField] Transform holdPos;
     [SerializeField] CapsuleCollider caps1;
     [SerializeField] CapsuleCollider caps2;
+    [SerializeField] SphereCollider sphere;
     [SerializeField] int minShakes;
     [SerializeField] int maxShakes;
+    public bool grabbed = false;
     ThiefBehaviour script;
     GameObject obj = null;
-    bool grabbed = false;
     bool canGrab = true;
+    [SerializeField] int copsInProx = 0;
     float thiefSpeed;
 
     public void Start()
@@ -40,18 +42,53 @@ public class PoliceBehaviour : MoveBehaviour
         }
         if (grabbed)
         {
-            obj.transform.position = holdPos.position;
-            obj.transform.rotation = holdPos.rotation;
-            if(script.shakes <= 0)
-            {
-                LetGo();
-            }
+            Hold();
+            EscapeCheck();
         }
         canGrab = true;
         base.Update();
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<PoliceBehaviour>() != null)
+        {
+            copsInProx++;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.GetComponent<PoliceBehaviour>() != null)
+        {
+            copsInProx--;
+        }
+    }
+
+    private void EscapeCheck()
+    {
+        if (script.shakes <= 0)
+        {
+            int esc = UnityEngine.Random.Range(1, 11);
+            if (copsInProx == 0 && esc >= 1 && esc <= 7)
+            {
+                LetGo();
+            }
+            else if (copsInProx == 1 && esc >= 1 && esc <= 3)
+            {
+                LetGo();
+            }
+            else
+            {
+                script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+            }
+        }
+    }
+    private void Hold()
+    {
+        obj.transform.position = holdPos.position;
+        obj.transform.rotation = holdPos.rotation;
+    }
     private void Grabbing()
     {
         if (obj.tag == "Murderer")
@@ -65,6 +102,8 @@ public class PoliceBehaviour : MoveBehaviour
                 script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
                 caps1.enabled = false;
                 caps2.enabled = true;
+                sphere.enabled = true;
+                
                 obj.transform.position = holdPos.position;
 
                 Rigidbody rig = obj.GetComponent<Rigidbody>();
@@ -73,7 +112,8 @@ public class PoliceBehaviour : MoveBehaviour
                 CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
                 caps.enabled = false;
 
-                
+
+
 
                 grabbed = true;
             }
@@ -83,10 +123,12 @@ public class PoliceBehaviour : MoveBehaviour
     {
         caps1.enabled = true;
         caps2.enabled = false;
+        sphere.enabled = false;
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
         caps.enabled = true;
+        script = null;
         obj = null;
         canGrab = false;
         grabbed = false;
