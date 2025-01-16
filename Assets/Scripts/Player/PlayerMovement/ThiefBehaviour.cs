@@ -13,10 +13,10 @@ public class ThiefBehaviour : MoveBehaviour
     public bool grabbed = false;
     public int shakes = 1;
 
-    [SerializeField] List<Transform> copsInRadius;
+    List<Transform> copsInRadius;
     Transform closestCop;
     bool policeClose = false;
-    [SerializeField] float distClosestCop = 100;
+    float distClosestCop = 100;
 
     bool crouching = false;
     bool shakeLeft = true;
