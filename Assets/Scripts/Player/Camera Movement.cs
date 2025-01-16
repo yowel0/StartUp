@@ -15,6 +15,9 @@ public class CameraMovement : MonoBehaviour
     float xRotation;
     float yRotation;
 
+    [SerializeField]
+    private Transform playerTrans;
+    
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -34,5 +37,6 @@ public class CameraMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        playerTrans.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }
