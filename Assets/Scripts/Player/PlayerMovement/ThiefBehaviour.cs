@@ -7,8 +7,15 @@ public class ThiefBehaviour : MoveBehaviour
 {
     [SerializeField] float crouchMult;
     [SerializeField] float crouchDrag;
+
     public bool grabbed = false;
     public int shakes = 1;
+
+    [SerializeField] List<Transform> copsInRadius;
+    Transform closestCop;
+    bool policeClose = false;
+    [SerializeField] float distClosestCop = 100;
+
     bool crouching = false;
     bool shakeLeft = true;
     float oldStopDrag;
@@ -35,10 +42,55 @@ public class ThiefBehaviour : MoveBehaviour
     }
     public void Update()
     {
+        HeartBeat();
         EscapeGrab();
         base.Update();
     }
 
+    void HeartBeat()
+    {
+        if (policeClose)
+        {
+            for (int i = 0; i < copsInRadius.Count; i++)
+            {
+                float dist = (copsInRadius[i].position - transform.position).magnitude;
+                if (dist < distClosestCop || closestCop == null)
+                {
+                    closestCop = copsInRadius[i];
+                }
+            }
+            distClosestCop = (closestCop.position - transform.position).magnitude;
+            //Add a script to change the speed/volume of the heartbeat audio based on the distClosestCop.
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<PoliceBehaviour>() != null)
+            {
+                policeClose = true;
+                copsInRadius.Add(other.transform);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<PoliceBehaviour>() != null)
+            {
+                if (other.transform == closestCop)
+                    closestCop = null;
+                
+                copsInRadius.Remove(other.transform);
+                if(copsInRadius.Count == 0)
+                policeClose = false;
+            }
+        }
+    }
     public override void Stopping()
     {
         if (state == States.crouching)
