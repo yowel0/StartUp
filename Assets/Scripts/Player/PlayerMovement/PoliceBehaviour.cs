@@ -39,13 +39,13 @@ public class PoliceBehaviour : MoveBehaviour
                 obj = hit.transform.gameObject;
                 Grabbing();
             }
+            canGrab = true;
         }
         if (grabbed)
         {
             Hold();
             EscapeCheck();
         }
-        canGrab = true;
         base.Update();
 
     }
