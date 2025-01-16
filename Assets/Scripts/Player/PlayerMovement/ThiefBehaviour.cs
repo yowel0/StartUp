@@ -8,6 +8,8 @@ public class ThiefBehaviour : MoveBehaviour
     [SerializeField] float crouchMult;
     [SerializeField] float crouchDrag;
 
+    AudioSource audio;
+
     public bool grabbed = false;
     public int shakes = 1;
 
@@ -18,11 +20,13 @@ public class ThiefBehaviour : MoveBehaviour
 
     bool crouching = false;
     bool shakeLeft = true;
+    bool isPLaying = false;
     float oldStopDrag;
 
     public void Start()
     {
         base.Start();
+        audio = GetComponent<AudioSource>();
         oldStopDrag = stopDrag;
     }
     public override void StateHandler()
@@ -60,6 +64,8 @@ public class ThiefBehaviour : MoveBehaviour
                 }
             }
             distClosestCop = (closestCop.position - transform.position).magnitude;
+            audio.pitch = 2 - (distClosestCop/10);
+            
             //Add a script to change the speed/volume of the heartbeat audio based on the distClosestCop.
         }
     }
@@ -72,6 +78,11 @@ public class ThiefBehaviour : MoveBehaviour
             {
                 policeClose = true;
                 copsInRadius.Add(other.transform);
+                if (!isPLaying)
+                {
+                    audio.Play();
+                    isPLaying = true;
+                }
             }
         }
     }
@@ -86,8 +97,12 @@ public class ThiefBehaviour : MoveBehaviour
                     closestCop = null;
                 
                 copsInRadius.Remove(other.transform);
-                if(copsInRadius.Count == 0)
-                policeClose = false;
+                if (copsInRadius.Count == 0)
+                {
+                    audio.Stop();
+                    isPLaying = false;
+                    policeClose = false;
+                }
             }
         }
     }
