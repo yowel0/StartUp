@@ -1,14 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class ThiefBehaviour : MoveBehaviour
 {
+
     [SerializeField] float crouchMult;
     [SerializeField] float crouchDrag;
 
     AudioSource audio;
+    [SerializeField] Camera cam;
 
     public bool grabbed = false;
     public int shakes = 1;
@@ -24,6 +28,10 @@ public class ThiefBehaviour : MoveBehaviour
     float oldStopDrag;
 
     bool hiding = false;
+    bool canExit =false;
+    float elapsedTime;
+    [SerializeField] float check;
+    [SerializeField] float desiredDur = 2;
     Transform obj;
 
     public void Start()
@@ -57,18 +65,55 @@ public class ThiefBehaviour : MoveBehaviour
 
     void Hiding()
     {
-        RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50) && !hiding  && !grabbed)
+            if (!hiding && !canExit)
             {
-                if (hit.transform.CompareTag("Closet"))
+                RaycastHit hit;
+                if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && !hiding && !grabbed)
                 {
-                    obj = hit.transform.parent;
-                    transform.position = obj.GetChild(1).transform.position;
+                    if (hit.transform.parent.CompareTag("Closet"))
+                    {
+                        this.GetComponent<CapsuleCollider>().enabled = false;
+                        base.rb.useGravity = false;
+                        obj = hit.transform.parent;
+                        transform.position = obj.GetChild(0).transform.position;
+                        transform.LookAt(obj.GetChild(1).transform.position);
+                        hiding = true;
+                        canExit = false;
+                    }
                 }
+            }
+            if (hiding && canExit == true)
+            {
+                hiding = false;
+                elapsedTime = 0;
+            }
+        }
+        if (hiding)
+        {
+            elapsedTime += Time.deltaTime;
+            float perc = elapsedTime / desiredDur;
+            check = perc;
+            transform.position = Vector3.Lerp(transform.position, obj.GetChild(1).transform.position, Mathf.SmoothStep(0,1,perc));
+            if (perc >= 0.5f)
+            canExit=true;
+        }
+        if(!hiding && canExit)
+        {
+            elapsedTime += Time.deltaTime;
+            float perc = elapsedTime / desiredDur;
+            check = perc;
+            transform.position = Vector3.Lerp(transform.position, obj.GetChild(0).transform.position, Mathf.SmoothStep(0, 1, perc));
+            if (perc >= 0.5f)
+            {
+                this.GetComponent<CapsuleCollider>().enabled = true;
+                rb.useGravity = true;
+                canExit = false;
+                obj = null;
+                elapsedTime = 0;
             }
         }
         base.Update();

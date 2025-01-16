@@ -26,7 +26,7 @@ public abstract class MoveBehaviour : MonoBehaviour
     Vector3 directionMoving;
     float horInput;
     float verInput;
-    Rigidbody rb;
+    protected Rigidbody rb;
     //Sub-classes can use this to check if target is reached.
 
     public States state;
@@ -49,7 +49,6 @@ public abstract class MoveBehaviour : MonoBehaviour
     public void Update()
     {
         rb.drag = drag;
-        transform.rotation = transform.GetChild(0).rotation;
         Inputs();
         StateHandler();
     }
