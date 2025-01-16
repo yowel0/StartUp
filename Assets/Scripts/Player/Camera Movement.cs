@@ -13,7 +13,7 @@ public class CameraMovement : MonoBehaviour
     private Transform orientation;
 
     float xRotation;
-    float yRotation;
+    [SerializeField] float yRotation;
 
     private void Start()
     {
@@ -27,6 +27,8 @@ public class CameraMovement : MonoBehaviour
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
         yRotation += mouseX;
+        
+        yRotation = yRotation % 360;
 
         xRotation -= mouseY;
 

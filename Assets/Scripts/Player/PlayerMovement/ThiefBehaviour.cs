@@ -13,15 +13,18 @@ public class ThiefBehaviour : MoveBehaviour
     public bool grabbed = false;
     public int shakes = 1;
 
-    List<Transform> copsInRadius;
+    [SerializeField] List<Transform> copsInRadius;
     Transform closestCop;
     bool policeClose = false;
-    float distClosestCop = 100;
+    [SerializeField] float distClosestCop = 100;
 
     bool crouching = false;
     bool shakeLeft = true;
     bool isPLaying = false;
     float oldStopDrag;
+
+    bool hiding = false;
+    Transform obj;
 
     public void Start()
     {
@@ -46,8 +49,28 @@ public class ThiefBehaviour : MoveBehaviour
     }
     public void Update()
     {
+        Hiding();
         HeartBeat();
         EscapeGrab();
+        base.Update();
+    }
+
+    void Hiding()
+    {
+        RaycastHit hit;
+        // Does the ray intersect any objects excluding the player layer
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 50) && !hiding  && !grabbed)
+            {
+                if (hit.transform.CompareTag("Closet"))
+                {
+                    obj = hit.transform.parent;
+                    transform.position = obj.GetChild(1).transform.position;
+                }
+            }
+        }
         base.Update();
     }
 
