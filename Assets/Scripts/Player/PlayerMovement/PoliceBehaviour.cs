@@ -30,12 +30,14 @@ public class PoliceBehaviour : MoveBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log("check1");
             if (grabbed && obj != null)
             {
                 LetGo();
             }
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && canGrab && !grabbed)
             {
+                Debug.Log("check2");
                 obj = hit.transform.gameObject;
                 Grabbing();
             }
@@ -124,6 +126,7 @@ public class PoliceBehaviour : MoveBehaviour
         caps1.enabled = true;
         caps2.enabled = false;
         sphere.enabled = false;
+        script.speed = thiefSpeed;
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
