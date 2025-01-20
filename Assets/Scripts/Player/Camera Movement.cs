@@ -19,6 +19,11 @@ public class CameraMovement : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        if(orientation.GetComponent<PoliceBehaviour>() != null)
+        {
+            int layerNumb = LayerMask.GetMask("MurdererLight");
+            GetComponent<Camera>().cullingMask &= ~(1 << layerNumb);
+        }
     }
 
     private void Update()
