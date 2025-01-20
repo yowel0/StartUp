@@ -47,7 +47,11 @@ MonoBehaviour:
   - Name: Desktop
     Value: 34496
   Exists: 1
+<<<<<<< Updated upstream
 --- !u!114 &-6558812187046541678
+=======
+--- !u!114 &-7454254942956119504
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +165,11 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: -8744805143335118249}
   - {fileID: -6209975405295061738}
+<<<<<<< Updated upstream
   - {fileID: -6558812187046541678}
+=======
+  - {fileID: -7454254942956119504}
+>>>>>>> Stashed changes
   EditorParameters: []
   MasterBanks:
   - {fileID: -392854584754411153}

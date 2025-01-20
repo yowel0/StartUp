@@ -6,6 +6,9 @@ using Mono.Cecil;
 public class FMODEvents : MonoBehaviour
 {
 
+    [field: Header("Player Footsteps")]
+    [field: SerializeField] public FMODUnity.EventReference doFootsteps { get; private set; }
+
     [field: Header("Photograph")]
     [field: SerializeField] public FMODUnity.EventReference takePhotograph { get; private set; }
 
