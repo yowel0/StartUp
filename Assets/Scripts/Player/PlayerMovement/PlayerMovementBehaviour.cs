@@ -84,6 +84,11 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         rb.AddForce(directionMoving * speed * speedMult * 10f, ForceMode.Force);
+        if(directionMoving.magnitude == 0)
+        {
+            rb.isKinematic = true;
+        }
+        else rb.isKinematic = false;
 
         if (OnSlope())
         {

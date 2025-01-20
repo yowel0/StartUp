@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class upDownRot : MonoBehaviour
 {
-    Camera cam;
+    [SerializeField] Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-        cam = transform.parent.GetComponentInChildren<Camera>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -16,8 +16,8 @@ public class upDownRot : MonoBehaviour
     {
         if (cam != null)
         {
-            Debug.Log("got a cam");
-            this.transform.rotation = Quaternion.Euler(cam.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z);
+            
+            
         }
     }
 }

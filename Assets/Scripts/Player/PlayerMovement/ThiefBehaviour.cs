@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
@@ -33,6 +34,11 @@ public class ThiefBehaviour : MoveBehaviour
     [SerializeField] float desiredDur = 2;
     Transform obj;
 
+    [SerializeField] float minCleanTime = 60;
+    float cleanTimer = 0;
+    bool cleaning = false;
+
+
     public void Start()
     {
         base.Start();
@@ -60,22 +66,52 @@ public class ThiefBehaviour : MoveBehaviour
         {
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && !hiding && !grabbed)
             {
-                obj = hit.transform.parent;
-                if (hit.transform.parent.CompareTag("Closet"))
+                obj = hit.transform;
+                if (obj.CompareTag("Closet"))
                 {
                     Hiding();
                 }
-
+                if (obj.CompareTag("Evidence"))
+                {
+                    cleaning = true;
+                }
             }
             else
             {
                 Hiding();
             }
         }
+        StopCleaning();
         HideAnim();
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+
+    void StopCleaning()
+    {
+        if (cleaning)
+        {
+            RaycastHit looking;
+            cleanTimer += Time.deltaTime;
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !hiding && !grabbed)
+            {
+                if (!looking.transform.CompareTag("Evidence"))
+                {
+                    cleaning = false;
+                    cleanTimer = 0;
+                    obj = null;
+                }
+                if (cleanTimer > minCleanTime)
+                {
+                    Destroy(looking.transform.parent);
+                    //Evidence Destroyed + 1;
+                    obj = null;
+                    cleaning = false;
+                    cleanTimer = 0;
+                }
+            }
+        }
     }
 
     void Hiding()

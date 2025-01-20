@@ -21,8 +21,14 @@ public class CameraMovement : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if (!IsOwner){
+        if (!IsOwner)
+        {
+
             this.enabled = false;
+        }
+        if(this.GetComponent<ThiefBehaviour>() == null)
+        {
+            this.GetComponent<AudioSource>().enabled = false;
         }
     }
 
@@ -31,17 +37,18 @@ public class CameraMovement : NetworkBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         camera = Camera.main;
+            
     }
 
     private void Update()
     {
-        camera.transform.position = transform.position + new Vector3(0,cameraHeight,0);
+        camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
         yRotation += mouseX;
-        
+
         yRotation = yRotation % 360;
 
         xRotation -= mouseY;
