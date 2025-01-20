@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 /// <summary>
 /// This class still doesn't follow single responsibility principle because
@@ -16,10 +17,12 @@ public abstract class MoveBehaviour : MonoBehaviour
 {
     public float speed;
     [SerializeField] float sprintMult;
-    [SerializeField] protected float stopDrag;
-    [SerializeField] float normDrag;
+    [SerializeField] LayerMask whatIsGround;
 
-    GameObject body;
+    [SerializeField] float maxSlopeAngle;
+    private RaycastHit slopeHit;
+
+    [SerializeField] bool grounded;
     protected float drag;
     protected float speedMult;
     Transform playerOr;
@@ -48,9 +51,14 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     public void Update()
     {
-        rb.drag = drag;
+        grounded = Physics.Raycast(transform.position, Vector3.down, transform.localScale.y + 0.2f, whatIsGround);
+        SpeedControl();
         Inputs();
         StateHandler();
+        if (!grounded && !OnSlope())
+        {
+            rb.AddForce(Vector3.down, ForceMode.Impulse);
+        }
     }
     public void FixedUpdate()
     {
@@ -66,22 +74,41 @@ public abstract class MoveBehaviour : MonoBehaviour
         horInput = Input.GetAxisRaw("Horizontal");
         verInput = Input.GetAxisRaw("Vertical");
     }
-    public virtual void Stopping()
-    {
-        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
-        {
-            drag = stopDrag;
-        }
-        else
-        {
-            drag = normDrag;
-        }
-    }
     private void PlayerMovement()
     {
-        Stopping();
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         rb.AddForce(directionMoving * speed * speedMult * 10f, ForceMode.Force);
+
+        if (OnSlope())
+        {
+            rb.AddForce(GetSlopeDir() * speed * speedMult * 20f, ForceMode.Force);
+        }
+        rb.useGravity = !OnSlope();
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+        if (flatVel.magnitude > speed)
+        {
+            Vector3 limitedVel = flatVel.normalized * speed;
+            rb.velocity = new Vector3(limitedVel.x,rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    private bool OnSlope()
+    {
+        if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, transform.localScale.y + 0.3f))
+        {
+            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            return angle < maxSlopeAngle && angle != 0;
+        }
+        return false;
+    }
+
+    private Vector3 GetSlopeDir()
+    {
+        return Vector3.ProjectOnPlane(directionMoving, slopeHit.normal).normalized;
     }
 
     public virtual void StateHandler()

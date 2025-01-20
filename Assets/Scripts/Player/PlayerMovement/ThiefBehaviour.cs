@@ -8,8 +8,7 @@ using UnityEngine.Android;
 public class ThiefBehaviour : MoveBehaviour
 {
 
-    [SerializeField] float crouchMult;
-    [SerializeField] float crouchDrag;
+    [SerializeField] float crouchSpeed;
 
     AudioSource audio;
     [SerializeField] Camera cam;
@@ -25,7 +24,7 @@ public class ThiefBehaviour : MoveBehaviour
     bool crouching = false;
     bool shakeLeft = true;
     bool isPLaying = false;
-    float oldStopDrag;
+    float oldSpeed;
 
     bool hiding = false;
     bool canExit =false;
@@ -38,7 +37,7 @@ public class ThiefBehaviour : MoveBehaviour
     {
         base.Start();
         audio = GetComponent<AudioSource>();
-        oldStopDrag = stopDrag;
+        oldSpeed = speed;
     }
     public override void StateHandler()
     {
@@ -46,7 +45,6 @@ public class ThiefBehaviour : MoveBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             state = States.crouching;
-            speedMult = crouchMult;
         }
         else base.StateHandler();
     }
@@ -174,17 +172,6 @@ public class ThiefBehaviour : MoveBehaviour
             }
         }
     }
-    public override void Stopping()
-    {
-        if (state == States.crouching)
-        {
-
-        }
-        else
-        {
-            base.Stopping();
-        }
-    }
 
     private void Crouching()
     {
@@ -195,14 +182,15 @@ public class ThiefBehaviour : MoveBehaviour
                 crouching = true;
                 transform.localScale = new Vector3(1, 0.7f, 1);
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
+                speed = crouchSpeed;
             }
-            drag = crouchDrag;
         }
         else if(crouching)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y+0.3f, transform.position.z);
             transform.localScale = new Vector3(1, 1, 1);
             crouching=false;
+            speed = oldSpeed;
         }
     }
     private void EscapeGrab()
