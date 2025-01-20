@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ff3b86a7fd43840bdb1a2219b32c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraPosition: {fileID: 484679081}
+  cameraPosition: {fileID: 721228295}
 --- !u!4 &88873978
 Transform:
   m_ObjectHideFlags: 0
@@ -608,11 +608,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273053621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &484679081 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1786453850444718365, guid: d521ea2ce515ebc47beee06b3c92e946, type: 3}
-  m_PrefabInstance: {fileID: 9154665419213421600}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494517194
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +723,7 @@ GameObject:
   m_Component:
   - component: {fileID: 578526597}
   - component: {fileID: 578526598}
+  - component: {fileID: 578526599}
   m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
@@ -812,10 +808,27 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &578526599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578526596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f893b04cd9afd7c41a3ed6b87044c016, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &701350799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1845306842332793056, guid: d521ea2ce515ebc47beee06b3c92e946, type: 3}
   m_PrefabInstance: {fileID: 9154665419213421600}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &721228295 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2782513499399641470, guid: 9fb88056d683bf8478839fcb63370ef8, type: 3}
+  m_PrefabInstance: {fileID: 2061153700}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &766176401
 GameObject:
@@ -2067,7 +2080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  orientation: {fileID: 701350799}
+  orientation: {fileID: 2124063051}
   yRotation: 0
 --- !u!81 &1961789561
 AudioListener:
