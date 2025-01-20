@@ -23,7 +23,7 @@ public class Player : NetworkBehaviour
             return;
         }
         base.OnNetworkSpawn();
-        setRole();
+        //setRole();
         switch (role){
             case Role.Police:
             // playerPrefab = Instantiate(policePrefab,transform);
