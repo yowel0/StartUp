@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+<<<<<<< Updated upstream
 using FMOD.Studio;
+=======
+>>>>>>> Stashed changes
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,9 +23,12 @@ public class AudioManager : MonoBehaviour
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
+<<<<<<< Updated upstream
     public EventInstance CreateEventInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
         return eventInstance;
     }
+=======
+>>>>>>> Stashed changes
 }

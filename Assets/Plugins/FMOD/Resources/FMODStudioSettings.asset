@@ -342,7 +342,10 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+<<<<<<< Updated upstream
   - Ambience 1
+=======
+>>>>>>> Stashed changes
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
