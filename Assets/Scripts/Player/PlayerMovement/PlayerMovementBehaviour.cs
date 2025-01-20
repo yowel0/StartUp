@@ -22,7 +22,9 @@ public abstract class MoveBehaviour : MonoBehaviour
     [SerializeField] float maxSlopeAngle;
     private RaycastHit slopeHit;
 
-    [SerializeField] bool grounded;
+    public bool grounded;
+    [SerializeField] bool onSlope;
+    protected bool checkForGround = true;
     protected float drag;
     protected float speedMult;
     Transform playerOr;
@@ -51,7 +53,10 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     public void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, transform.localScale.y + 0.2f, whatIsGround);
+        if (checkForGround)
+        {
+            grounded = Physics.Raycast(transform.position, Vector3.down, transform.localScale.y + 0.2f, whatIsGround);
+        }
         SpeedControl();
         Inputs();
         StateHandler();
@@ -101,6 +106,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         if(Physics.Raycast(transform.position, Vector3.down, out slopeHit, transform.localScale.y + 0.3f))
         {
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
+            onSlope = angle < maxSlopeAngle && angle != 0;
             return angle < maxSlopeAngle && angle != 0;
         }
         return false;

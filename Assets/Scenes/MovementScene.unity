@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 146781347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Inside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +421,7 @@ GameObject:
   - component: {fileID: 273053625}
   - component: {fileID: 273053624}
   - component: {fileID: 273053623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClosetDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 914459901}
   - component: {fileID: 914459900}
   - component: {fileID: 914459899}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ClosetDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -955,7 +955,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1034119245}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Closet
   m_TagString: Closet
   m_Icon: {fileID: 0}
@@ -998,7 +998,7 @@ GameObject:
   - component: {fileID: 1139680307}
   - component: {fileID: 1139680306}
   - component: {fileID: 1139680305}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 1157548602}
   - component: {fileID: 1157548601}
   - component: {fileID: 1157548600}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1528,7 +1528,7 @@ GameObject:
   - component: {fileID: 1576687758}
   - component: {fileID: 1576687757}
   - component: {fileID: 1576687756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   - component: {fileID: 1738991303}
   - component: {fileID: 1738991302}
   - component: {fileID: 1738991301}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,7 +1843,7 @@ GameObject:
   - component: {fileID: 1871167562}
   - component: {fileID: 1871167561}
   - component: {fileID: 1871167560}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2152,7 +2152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2111785222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Infront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2168,7 +2168,7 @@ Transform:
   m_GameObject: {fileID: 2111785221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.743, y: -0.5, z: 8.5}
+  m_LocalPosition: {x: 1.743, y: -0.089, z: 8.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
