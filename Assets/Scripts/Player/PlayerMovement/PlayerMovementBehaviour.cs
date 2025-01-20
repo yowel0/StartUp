@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
@@ -78,6 +79,7 @@ public abstract class MoveBehaviour : MonoBehaviour
             drag = normDrag;
         }
     }
+    
     private void PlayerMovement()
     {
         Stopping();

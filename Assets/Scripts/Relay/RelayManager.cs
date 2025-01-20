@@ -10,6 +10,7 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
 using UnityEngine;
+using System;
 
 public class RelayManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class RelayManager : MonoBehaviour
     [SerializeField]
     private TMP_InputField joinCodeInputField;
 
+    bool joined = false;
+
     private async void Start(){
         await UnityServices.InitializeAsync();
 
@@ -25,19 +28,30 @@ public class RelayManager : MonoBehaviour
     }
 
     public async void StartRelay(){
-        string joinCode = await StartHostWithRelay();
-        joinCodeText.text = joinCode;
+        if (joined == false){
+            try{
+                string joinCode = await StartHostWithRelay();
+                joinCodeText.text = joinCode;
+            }
+            catch{
+                print("failed to start relay");
+            }
+            joined = true;
+        }
     }
 
     public async void JoinRelay(){
-        try{
-            await StartClientWithRelay(joinCodeInputField.text);
+        if (joined == false){
+            try{
+                await StartClientWithRelay(joinCodeInputField.text);
+            }
+            catch{
+                joinCodeText.text = "invalid Code";
+                return;
+            }
+            joinCodeText.text = joinCodeInputField.text;
+            joined = true;
         }
-        catch{
-            joinCodeText.text = "invalid Code";
-            return;
-        }
-        joinCodeText.text = joinCodeInputField.text;
     }
 
     private async Task<string> StartHostWithRelay(int maxConnections = 3){

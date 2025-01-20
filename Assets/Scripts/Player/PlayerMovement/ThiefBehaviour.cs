@@ -13,7 +13,7 @@ public class ThiefBehaviour : MoveBehaviour
     public bool grabbed = false;
     public int shakes = 1;
 
-    List<Transform> copsInRadius;
+    List<Transform> copsInRadius = new List<Transform>();
     Transform closestCop;
     bool policeClose = false;
     float distClosestCop = 100;
@@ -74,7 +74,7 @@ public class ThiefBehaviour : MoveBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (other.GetComponent<PoliceBehaviour>() != null)
+            if (other.GetComponent<PoliceBehaviour>())
             {
                 policeClose = true;
                 copsInRadius.Add(other.transform);
