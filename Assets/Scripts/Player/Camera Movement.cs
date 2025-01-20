@@ -15,13 +15,21 @@ public class CameraMovement : MonoBehaviour
     float xRotation;
     [SerializeField] float yRotation;
 
+    void OnPreRender()
+    {
+        if (orientation.GetComponent<PoliceBehaviour>() != null)
+        {
+            int layerNumb = LayerMask.NameToLayer("MurdererLight");
+            GetComponent<Camera>().cullingMask &= ~(1 << layerNumb);
+        }
+    }
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         if(orientation.GetComponent<PoliceBehaviour>() != null)
         {
-            int layerNumb = LayerMask.GetMask("MurdererLight");
+            int layerNumb = LayerMask.NameToLayer("MurdererLight");
             GetComponent<Camera>().cullingMask &= ~(1 << layerNumb);
         }
     }
