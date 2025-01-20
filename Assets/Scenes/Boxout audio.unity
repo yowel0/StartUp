@@ -254,6 +254,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 38437857}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &84909693 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1595582205895987152, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
+  m_PrefabInstance: {fileID: 281799943}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &281799943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329,7 +334,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1331424852204662881, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1208675187}
   m_SourcePrefab: {fileID: 100100000, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
 --- !u!1 &460764973
 GameObject:
@@ -340,6 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 460764975}
+  - component: {fileID: 460764976}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -363,6 +372,19 @@ Transform:
   - {fileID: 739027262}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &460764976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460764973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88b7a2815e209f64e98070351e49b053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whatThePlayer: {fileID: 84909693}
 --- !u!1 &543585812
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,11 +746,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <takePhotograph>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -669418948
+      Data2: 1130180738
+      Data3: -271717449
+      Data4: -729553062
+    Path: event:/PhotoTaken
+  <hallAmbinece>k__BackingField:
+    Guid:
+      Data1: 55349133
+      Data2: 1175127619
+      Data3: 1595248783
+      Data4: -1378623287
+    Path: event:/Hallambinece
 --- !u!1 &963329147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1033,6 +1062,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1020658932}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1208675185 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1331424852204662881, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
+  m_PrefabInstance: {fileID: 281799943}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1208675187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208675185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 1208675185}
 --- !u!1001 &1340544058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1193,7 +1241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2003885939}
   - component: {fileID: 2003885938}
-  - component: {fileID: 2003885937}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1201,14 +1248,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2003885937
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003885936}
-  m_Enabled: 1
 --- !u!20 &2003885938
 Camera:
   m_ObjectHideFlags: 0

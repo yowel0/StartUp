@@ -62,10 +62,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638729988215544122
+  lastModified: 638730029454637726
   FileSizes:
   - Name: Desktop
-    Value: 745632
+    Value: 745216
   Exists: 1
 --- !u!114 &-833819302435978050
 MonoBehaviour:
@@ -102,7 +102,7 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638729988204329658
+  lastModified: 638730029454291655
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -126,38 +126,14 @@ MonoBehaviour:
   - {fileID: -3236535980269313009}
   EditorEvents:
   - {fileID: -8744805143335118249}
-  - {fileID: 6544923779512156373}
+  - {fileID: 8736488970860449603}
   EditorParameters: []
   MasterBanks:
   - {fileID: -392854584754411153}
   StringsBanks:
   - {fileID: 4682683454949576893}
-  cacheTime: 638729988215544122
+  cacheTime: 638730029454637726
   cacheVersion: 131622
---- !u!114 &3781612176115187009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Hallambience/Hallsound
-  m_EditorClassIdentifier: 
-  Name: Hallsound
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 581265342
-    data2: 3444173421
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &4053181931461454489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,39 +169,11 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638729988204354932
+  lastModified: 638730029454312115
   FileSizes:
   - Name: Desktop
-    Value: 950
+    Value: 900
   Exists: 1
---- !u!114 &6544923779512156373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Hallambience
-  m_EditorClassIdentifier: 
-  Path: event:/Hallambience
-  Guid:
-    Data1: 459822039
-    Data2: 1195150253
-    Data3: 400925621
-    Data4: 1014614301
-  Banks:
-  - {fileID: -3236535980269313009}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 3781612176115187009}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 60000
 --- !u!114 &6926895302614514160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,3 +221,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8736488970860449603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hallambinece
+  m_EditorClassIdentifier: 
+  Path: event:/Hallambinece
+  Guid:
+    Data1: 55349133
+    Data2: 1175127619
+    Data3: 1595248783
+    Data4: -1378623287
+  Banks:
+  - {fileID: -3236535980269313009}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000

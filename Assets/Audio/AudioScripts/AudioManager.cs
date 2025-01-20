@@ -6,7 +6,9 @@ using FMOD.Studio;
 
 public class AudioManager : MonoBehaviour
 {
-  public static AudioManager instance { get; private set; }
+    public GameObject whatThePlayer;
+    private EventInstance ambienceEventInstance;
+    public static AudioManager instance { get; private set; }
     private void Awake()
     {
         if (instance != null)
@@ -16,13 +18,33 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        InitializeAmbience(FMODEvents.instance.hallAmbinece);
+    }
+    private void InitializeAmbience(EventReference ambienceEventReference)
+    {
+        ambienceEventInstance = RuntimeManager.CreateInstance(ambienceEventReference);
+
+        
+        ambienceEventInstance.start();
+    }
+    private void Update()
+    {
+        if (ambienceEventInstance.isValid())
+        {
+            // Continuously update the listener's position
+            var listenerPosition = Camera.main.transform.position; // Example: using the main camera's position
+            ambienceEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(listenerPosition));
+        }
+    }
+
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);
     }
 
-    public void SetAmbienceParameter(string parameterName, float parameterValue)
-    {
-        ambienceEventInstance.setParameterByName(parameterName, parameterValue);
-    }
+
+
 }
+
