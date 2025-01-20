@@ -34,13 +34,14 @@ public class ThiefBehaviour : MoveBehaviour
     [SerializeField] float desiredDur = 2;
     Transform obj;
 
-    [SerializeField] float minCleanTime = 60;
-    float cleanTimer = 0;
+    [SerializeField] float minCleanTime;
+    [SerializeField] float cleanTimer = 0;
     bool cleaning = false;
 
 
     public void Start()
     {
+        cam = Camera.main;
         base.Start();
         audio = GetComponent<AudioSource>();
         oldSpeed = speed;
@@ -73,6 +74,7 @@ public class ThiefBehaviour : MoveBehaviour
                 }
                 if (obj.CompareTag("Evidence"))
                 {
+                    Debug.Log("check");
                     cleaning = true;
                 }
             }
@@ -96,15 +98,16 @@ public class ThiefBehaviour : MoveBehaviour
             cleanTimer += Time.deltaTime;
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !hiding && !grabbed)
             {
-                if (!looking.transform.CompareTag("Evidence"))
+                if (!looking.transform.CompareTag("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
                 {
+                    Debug.Log("check2");
                     cleaning = false;
                     cleanTimer = 0;
                     obj = null;
                 }
                 if (cleanTimer > minCleanTime)
                 {
-                    Destroy(looking.transform.parent);
+                    Destroy(looking.transform.gameObject);
                     //Evidence Destroyed + 1;
                     obj = null;
                     cleaning = false;

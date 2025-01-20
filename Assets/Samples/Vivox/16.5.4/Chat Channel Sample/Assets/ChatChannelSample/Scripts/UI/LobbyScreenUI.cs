@@ -19,12 +19,6 @@ public class LobbyScreenUI : MonoBehaviour
     Image m_ConnectionIndicatorDotImage;
     Text m_ConnectionIndicatorDotText;
 
-    // 3D Positional Audio Properties
-    private Channel3DProperties channel3DProperties = new Channel3DProperties(
-        audibleDistance: 32,  // Maximum distance at which a player can hear others
-        conversationalDistance: 5,  // Ideal distance for normal volume
-        audioFadeIntensityByDistanceaudio: 1,  // Volume drop-off over distance
-        audioFadeModel: AudioFadeModel.LinearByDistance);
     void Start()
     {
         StartCoroutine(Setup());
@@ -77,7 +71,7 @@ public class LobbyScreenUI : MonoBehaviour
 
     Task JoinLobbyChannel()
     {
-        return VivoxService.Instance.JoinPositionalChannelAsync(VivoxVoiceManager.LobbyChannelName, ChatCapability.AudioOnly, channel3DProperties);
+        return VivoxService.Instance.JoinGroupChannelAsync(VivoxVoiceManager.LobbyChannelName, ChatCapability.TextAndAudio);
     }
 
     async void LogoutOfVivoxServiceAsync()
