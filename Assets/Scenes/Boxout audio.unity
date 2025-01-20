@@ -266,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Police Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1595582205895987152, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1628921247823722126, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 3292798563
@@ -336,7 +340,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 460764975}
-  - component: {fileID: 460764974}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -344,18 +347,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &460764974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 460764973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88b7a2815e209f64e98070351e49b053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &460764975
 Transform:
   m_ObjectHideFlags: 0

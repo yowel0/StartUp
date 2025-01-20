@@ -9,6 +9,9 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Photograph")]
     [field: SerializeField] public FMODUnity.EventReference takePhotograph { get; private set; }
 
+    [field: Header("hallAmbience")]
+    [field: SerializeField] public FMODUnity.EventReference hallAmbinece { get; private set; }
+
     public static FMODEvents instance {  get; private set; }
     private void Awake()
     {
