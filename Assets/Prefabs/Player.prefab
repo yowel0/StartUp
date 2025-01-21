@@ -68,8 +68,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   role: 0
-  policePrefab: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
-  killerPrefab: {fileID: 56253209113119664, guid: 8b27ae138536a4f4fa563a6897cdee20, type: 3}
+  networkPolicePrefab: {fileID: 8617626292854747577, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
+  networkKillerPrefab: {fileID: -2927653407613800956, guid: 8b27ae138536a4f4fa563a6897cdee20, type: 3}
+  networkSphere: {fileID: 5183454878447479909, guid: f979d5f8df649d141a1bf3d638ba24c9, type: 3}
 --- !u!114 &-5871315655068810138
 MonoBehaviour:
   m_ObjectHideFlags: 0

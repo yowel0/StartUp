@@ -321,6 +321,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
+  policePrefab: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
+  killerPrefab: {fileID: 56253209113119664, guid: 8b27ae138536a4f4fa563a6897cdee20, type: 3}
+  spherePrefab: {fileID: 5932528690125724272, guid: f979d5f8df649d141a1bf3d638ba24c9, type: 3}
 --- !u!4 &216899001
 Transform:
   m_ObjectHideFlags: 0
@@ -1219,7 +1222,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 1301680896}
-    PlayerPrefab: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
+    PlayerPrefab: {fileID: 3992530304058627267, guid: 5edbdca9848f24041b4658d1ee83dcdd, type: 3}
     Prefabs:
       NetworkPrefabsLists:
       - {fileID: 11400000, guid: 6c0dea2c42515f24b95b82bb8c866eaa, type: 2}
@@ -1231,7 +1234,7 @@ MonoBehaviour:
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
     EnableSceneManagement: 1
-    ForceSamePrefabs: 1
+    ForceSamePrefabs: 0
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
     RpcHashSize: 0

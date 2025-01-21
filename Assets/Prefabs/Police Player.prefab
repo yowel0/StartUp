@@ -220,7 +220,6 @@ GameObject:
   - component: {fileID: 2566951617250542024}
   - component: {fileID: 7938389529853700795}
   - component: {fileID: -1566192940356464275}
-  - component: {fileID: -8795445069398505262}
   m_Layer: 6
   m_Name: Police Player
   m_TagString: Player
@@ -382,7 +381,7 @@ MonoBehaviour:
   GlobalObjectIdHash: 3087887762
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
+  SynchronizeTransform: 0
   ActiveSceneSynchronization: 0
   SceneMigrationSynchronization: 1
   SpawnWithObservers: 1
@@ -518,15 +517,3 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-8795445069398505262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6664438864534977112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

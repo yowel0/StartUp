@@ -12,6 +12,8 @@ public class PlayerManager : NetworkBehaviour
     public List<Player> playerList = new List<Player>();
     bool eventsAdded = false;
 
+    [SerializeField]
+    GameObject spherePrefab;
     void Awake(){
         if (instance == null){
             instance = this;
@@ -40,6 +42,9 @@ public class PlayerManager : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        if (!NetworkManager.Singleton.IsServer){
+            return;
+        }
         base.OnNetworkDespawn();
         NetworkManager.Singleton.OnClientConnectedCallback -= AddPlayer;
         //NetworkManager.Singleton.OnClientDisconnectCallback -= RemovePlayer;
@@ -70,5 +75,14 @@ public class PlayerManager : NetworkBehaviour
         foreach (KeyValuePair<ulong,NetworkClient> client in NetworkManager.Singleton.ConnectedClients) {
             playerList.Add(client.Value.PlayerObject.GetComponent<Player>());
         }
+    }
+
+    public void spawnSphere(ulong _OwnerClientId,NetworkObject _networkObjectPrefab){
+        print("Im a playermanager request from: " + _OwnerClientId);
+        //var instance = Instantiate(spherePrefab);
+        //instance.transform.position = new Vector3(_OwnerClientId, 0, 0);
+        //var instanceNetworkObject = instance.GetComponent<NetworkObject>();
+        //instanceNetworkObject.SpawnWithOwnership(_OwnerClientId);
+        NetworkManager.SpawnManager.InstantiateAndSpawn(_networkObjectPrefab,_OwnerClientId,false,true,false,new Vector3(_OwnerClientId,0,0));
     }
 }
