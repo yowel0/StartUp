@@ -26,9 +26,12 @@ public class CameraMovement : NetworkBehaviour
 
             this.enabled = false;
         }
-        if(this.GetComponent<ThiefBehaviour>() == null)
+        if(!this.GetComponent<ThiefBehaviour>())
         {
-            this.GetComponent<AudioSource>().enabled = false;
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if(audioSource){
+                audioSource.enabled = false;
+            }
         }
     }
 

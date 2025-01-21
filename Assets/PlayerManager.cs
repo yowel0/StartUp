@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Netcode;
@@ -13,7 +11,10 @@ public class PlayerManager : NetworkBehaviour
     bool eventsAdded = false;
 
     [SerializeField]
-    GameObject spherePrefab;
+    Transform policeSpawnPos;
+    [SerializeField]
+    Transform KillerSpawnPos;
+    
     void Awake(){
         if (instance == null){
             instance = this;
@@ -37,7 +38,7 @@ public class PlayerManager : NetworkBehaviour
         base.OnNetworkSpawn();
         DontDestroyOnLoad(this);
         NetworkManager.Singleton.OnClientConnectedCallback += AddPlayer;
-        //NetworkManager.Singleton.OnClientDisconnectCallback += RemovePlayer;
+        NetworkManager.Singleton.OnClientDisconnectCallback += RemovePlayer;
     }
 
     public override void OnNetworkDespawn()
@@ -47,7 +48,7 @@ public class PlayerManager : NetworkBehaviour
         }
         base.OnNetworkDespawn();
         NetworkManager.Singleton.OnClientConnectedCallback -= AddPlayer;
-        //NetworkManager.Singleton.OnClientDisconnectCallback -= RemovePlayer;
+        NetworkManager.Singleton.OnClientDisconnectCallback -= RemovePlayer;
     }
 
     // private void OnEnable(){
@@ -77,12 +78,39 @@ public class PlayerManager : NetworkBehaviour
         }
     }
 
-    public void spawnSphere(ulong _OwnerClientId,NetworkObject _networkObjectPrefab){
-        print("Im a playermanager request from: " + _OwnerClientId);
-        //var instance = Instantiate(spherePrefab);
-        //instance.transform.position = new Vector3(_OwnerClientId, 0, 0);
-        //var instanceNetworkObject = instance.GetComponent<NetworkObject>();
-        //instanceNetworkObject.SpawnWithOwnership(_OwnerClientId);
-        NetworkManager.SpawnManager.InstantiateAndSpawn(_networkObjectPrefab,_OwnerClientId,false,true,false,new Vector3(_OwnerClientId,0,0));
+    public void StartRound(){
+        SetRandomRoles();
+        SpawnAllCharacters();
+    }
+
+    public void SetRandomRoles(){
+        int killerId = Random.Range(0,playerList.Count);
+        for (int i = 0; i < playerList.Count; i++) {
+            if (i == killerId){
+                playerList[i].role = Player.Role.Killer;
+            }
+            else{
+                playerList[i].role = Player.Role.Police;
+            }
+        }
+    }
+
+    public void spawnCharacter(Player _player){
+        print("Im a playermanager request from: " + _player.OwnerClientId);
+        switch (_player.role)
+        {
+            case Player.Role.Police:
+            NetworkManager.SpawnManager.InstantiateAndSpawn(_player.networkPolicePrefab,_player.OwnerClientId,false,true,false,policeSpawnPos.position);
+            return;
+            case Player.Role.Killer:
+            NetworkManager.SpawnManager.InstantiateAndSpawn(_player.networkKillerPrefab,_player.OwnerClientId,false,true,false,KillerSpawnPos.position);
+            return;
+        }
+    }
+
+    public void SpawnAllCharacters(){
+        foreach (Player player in playerList){
+            spawnCharacter(player);
+        }
     }
 }
