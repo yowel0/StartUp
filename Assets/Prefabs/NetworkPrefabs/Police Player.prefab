@@ -2101,7 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3087887762
+  GlobalObjectIdHash: 2794608006
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
-  cameraHeight: 1
+  cameraHeight: 1.25
   yRotation: 0
 --- !u!114 &-1566192940356464275
 MonoBehaviour:

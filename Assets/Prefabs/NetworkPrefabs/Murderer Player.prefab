@@ -395,7 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 100
   sensY: 100
-  cameraHeight: 1.5
+  cameraHeight: 1.25
   yRotation: 0
 --- !u!1 &399895927794698392
 GameObject:
