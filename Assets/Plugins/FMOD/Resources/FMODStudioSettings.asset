@@ -317,8 +317,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/StartUp_Fmod.fspro
-  sourceBankPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build
+  sourceProjectPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/GameAudio.fspro
+  sourceBankPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -343,7 +343,6 @@ MonoBehaviour:
   - Master
   Banks:
   - Ambience
-  - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
