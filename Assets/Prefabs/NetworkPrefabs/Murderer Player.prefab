@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 554220257
+  GlobalObjectIdHash: 1239952859
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -215,14 +215,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.25
   sprintMult: 1.5
-  stopDrag: 10
-  normDrag: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  maxSlopeAngle: 0
+  grounded: 0
+  onSlope: 0
   state: 0
   mAnimator: {fileID: 0}
-  crouchMult: 2
-  crouchDrag: 35
+  crouchSpeed: 0
+  cam: {fileID: 0}
   grabbed: 0
   shakes: 1
+  distClosestCop: 100
+  check: 0
+  desiredDur: 2
+  minCleanTime: 0
+  cleanTimer: 0
+  CrouchMultiplier: 0.5
 --- !u!135 &4574930888627051788
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -386,6 +396,7 @@ MonoBehaviour:
   sensX: 100
   sensY: 100
   cameraHeight: 1.5
+  yRotation: 0
 --- !u!1 &399895927794698392
 GameObject:
   m_ObjectHideFlags: 0

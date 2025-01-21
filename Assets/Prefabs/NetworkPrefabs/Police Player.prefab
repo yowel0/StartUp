@@ -525,7 +525,7 @@ MonoBehaviour:
   sprintMult: 1.5
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   maxSlopeAngle: 0
   grounded: 0
   onSlope: 0
