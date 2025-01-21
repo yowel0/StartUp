@@ -28,6 +28,7 @@ public class PoliceBehaviour : MoveBehaviour
     {
         
         base.Start();
+        cam = Camera.main;
     }
     public void Update()
     {
