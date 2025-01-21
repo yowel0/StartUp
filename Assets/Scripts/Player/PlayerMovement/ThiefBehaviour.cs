@@ -9,6 +9,8 @@ public class ThiefBehaviour : MoveBehaviour
     bool crouching = false;
     float oldStopDrag;
 
+    [SerializeField]
+    float CrouchMultiplier = 0.5f;
     public void Start()
     {
         base.Start();
@@ -48,7 +50,7 @@ public class ThiefBehaviour : MoveBehaviour
             if (!crouching)
             {
                 crouching = true;
-                transform.localScale = new Vector3(1, 0.7f, 1);
+                transform.localScale = new Vector3(1, CrouchMultiplier, 1);
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
             }
             drag = crouchDrag;
