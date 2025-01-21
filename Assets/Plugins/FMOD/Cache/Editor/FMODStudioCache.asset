@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8829620662205640893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/KitchenAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/KitchenAmbience
+  Guid:
+    Data1: -253249644
+    Data2: 1149547070
+    Data3: -108266100
+    Data4: -1234831565
+  Banks:
+  - {fileID: -1372950561313071005}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4432219378429615930}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,6 +56,105 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &-4292130308980983779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PhotoTaken
+  m_EditorClassIdentifier: 
+  Path: event:/PhotoTaken
+  Guid:
+    Data1: -1331298357
+    Data2: 1107736200
+    Data3: 2131125646
+    Data4: 1322146407
+  Banks:
+  - {fileID: 37583643687264913}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2841624568700317004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Static Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Static
+    Ambience.bank
+  Name: Static Ambience
+  StudioPath: bank:/Static Ambience
+  lastModified: 638730568616880311
+  FileSizes:
+  - Name: Desktop
+    Value: 540832
+  Exists: 1
+--- !u!114 &-2402787918985736467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/NormalRoomAmbience/NormalRoomParameter
+  m_EditorClassIdentifier: 
+  Name: NormalRoomParameter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3539473971
+    data2: 1415742646
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1561845751942627816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Water
+  m_EditorClassIdentifier: 
+  Path: event:/Water
+  Guid:
+    Data1: -1078099993
+    Data2: 1333405088
+    Data3: 1023673002
+    Data4: 1479761769
+  Banks:
+  - {fileID: -2841624568700317004}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
 --- !u!114 &-1372950561313071005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,10 +170,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638730481073235285
+  lastModified: 638730584401669151
   FileSizes:
   - Name: Desktop
-    Value: 745920
+    Value: 2734784
   Exists: 1
 --- !u!114 &-833819302435978050
 MonoBehaviour:
@@ -84,15 +211,100 @@ MonoBehaviour:
   - {fileID: 6902685518900524973}
   - {fileID: -1372950561313071005}
   - {fileID: 7767513364234760496}
+  - {fileID: 37583643687264913}
+  - {fileID: -2841624568700317004}
   EditorEvents:
   - {fileID: -6305534569749143111}
+  - {fileID: 8432915372097369641}
+  - {fileID: 8928615327471393684}
+  - {fileID: -8829620662205640893}
+  - {fileID: -4292130308980983779}
+  - {fileID: 2604061895962204679}
+  - {fileID: 6145739893708173312}
+  - {fileID: 151721286593865004}
+  - {fileID: -1561845751942627816}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7767513364234760496}
   StringsBanks:
   - {fileID: 6902685518900524973}
-  cacheTime: 638730481073235285
+  cacheTime: 638730584401669151
   cacheVersion: 131622
+--- !u!114 &37583643687264913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638730568604940631
+  FileSizes:
+  - Name: Desktop
+    Value: 36768
+  Exists: 1
+--- !u!114 &151721286593865004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Hearthbeat
+  m_EditorClassIdentifier: 
+  Path: event:/Hearthbeat
+  Guid:
+    Data1: -1501810996
+    Data2: 1095316888
+    Data3: 1788821676
+    Data4: 1172674743
+  Banks:
+  - {fileID: -2841624568700317004}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7072849644387370193}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60081
+--- !u!114 &2604061895962204679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Footsteps
+  Guid:
+    Data1: -532567414
+    Data2: 1210653788
+    Data3: -113941321
+    Data4: 1782845265
+  Banks:
+  - {fileID: 37583643687264913}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
 --- !u!114 &4053181931461454489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +325,57 @@ MonoBehaviour:
   - Name: Desktop
     Value: 13088
   Exists: 1
+--- !u!114 &4432219378429615930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/KitchenAmbience/KitchenParameter
+  m_EditorClassIdentifier: 
+  Name: KitchenParameter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1083799101
+    data2: 3491540090
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6145739893708173312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/RunFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/RunFootsteps
+  Guid:
+    Data1: 454610921
+    Data2: 1201652971
+    Data3: 1531576237
+    Data4: -288351312
+  Banks:
+  - {fileID: 37583643687264913}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 250
 --- !u!114 &6902685518900524973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,10 +391,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638730481073015260
+  lastModified: 638730568604246888
   FileSizes:
   - Name: Desktop
-    Value: 874
+    Value: 1544
   Exists: 1
 --- !u!114 &6926895302614514160
 MonoBehaviour:
@@ -152,6 +415,30 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1036
+  Exists: 1
+--- !u!114 &7072849644387370193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Hearthbeat/HearthParameter
+  m_EditorClassIdentifier: 
+  Name: HearthParameter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1012939859
+    data2: 771273795
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1
 --- !u!114 &7748625829630345537
 MonoBehaviour:
@@ -192,7 +479,7 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638730481073010176
+  lastModified: 638730568604228490
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -224,3 +511,83 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8432915372097369641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BathroomAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/BathroomAmbience
+  Guid:
+    Data1: -1960835291
+    Data2: 1177004520
+    Data3: -422030150
+    Data4: -1401007104
+  Banks:
+  - {fileID: -1372950561313071005}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8751727661249269240}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000
+--- !u!114 &8751727661249269240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/BathroomAmbience/BathroomParameter
+  m_EditorClassIdentifier: 
+  Name: BathroomParameter
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1777338353
+    data2: 103688668
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8928615327471393684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/NormalRoomAmbience
+  m_EditorClassIdentifier: 
+  Path: event:/NormalRoomAmbience
+  Guid:
+    Data1: -993174921
+    Data2: 1253304232
+    Data3: 62108090
+    Data4: 1383940014
+  Banks:
+  - {fileID: -1372950561313071005}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2402787918985736467}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000

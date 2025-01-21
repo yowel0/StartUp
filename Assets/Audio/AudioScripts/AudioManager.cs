@@ -21,6 +21,9 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         InitializeAmbience(FMODEvents.instance.hallAmbinece);
+        InitializeAmbience(FMODEvents.instance.roomAmbience);
+        InitializeAmbience(FMODEvents.instance.kitchenAmbience);
+        InitializeAmbience(FMODEvents.instance.bathAmbience);
        
    
     }
@@ -49,6 +52,12 @@ public class AudioManager : MonoBehaviour
     public void setAmbienceParameter(string parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
+    public EventInstance CreateEventInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        return eventInstance;
     }
 
 

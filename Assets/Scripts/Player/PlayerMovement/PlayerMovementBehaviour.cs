@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
+using FMOD.Studio;
 /// <summary>
 /// This class still doesn't follow single responsibility principle because
 /// it also handles animations, we'll fix this in bootcamp 2 using Observer pattern.
@@ -22,6 +23,8 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     [SerializeField] float maxSlopeAngle;
     private RaycastHit slopeHit;
+    //for footsteps
+    private EventInstance playerFootsteps;
 
     public bool grounded;
     [SerializeField] bool onSlope;
@@ -50,6 +53,8 @@ public abstract class MoveBehaviour : MonoBehaviour
         playerOr = transform;
         mAnimator = GetComponent<Animator>();
         PlayIdleAnimation();
+        //for footsteps
+        playerFootsteps = AudioManager.instance.CreateEventInstance(FMODEvents.instance.doFootsteps);
     }
 
     public void Update()
@@ -84,12 +89,27 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         rb.AddForce(directionMoving * speed * speedMult * 10f, ForceMode.Force);
-        if(directionMoving.magnitude == 0)
+        if (directionMoving.magnitude == 0)
         {
             rb.isKinematic = true;
-        }
-        else rb.isKinematic = false;
 
+            //footsteps
+            playerFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+        else
+        {
+            rb.isKinematic = false;
+
+            //footsteps
+            PLAYBACK_STATE playbackState;
+            playerFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerFootsteps.start();
+            }
+
+
+        }
         if (OnSlope())
         {
             rb.AddForce(GetSlopeDir() * speed * speedMult * 20f, ForceMode.Force);
