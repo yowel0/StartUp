@@ -15,6 +15,14 @@ public class PlayerManager : NetworkBehaviour
     [SerializeField]
     Transform KillerSpawnPos;
     
+    public enum SpawnType{
+        OneRandomKiller,
+        OnlyPolice
+    }
+
+    [SerializeField]
+    SpawnType spawnType;
+
     void Awake(){
         if (instance == null){
             instance = this;
@@ -79,11 +87,19 @@ public class PlayerManager : NetworkBehaviour
     }
 
     public void StartRound(){
-        SetRandomRoles();
-        SpawnAllCharacters();
+        switch (spawnType){
+            case SpawnType.OneRandomKiller:
+                SetRandomRoles();
+                SpawnAllCharacters();
+            return;
+            case SpawnType.OnlyPolice:
+                SetAllRoles(Player.Role.Police);
+                SpawnAllCharacters();
+            return;
+        }
     }
 
-    public void SetRandomRoles(){
+    void SetRandomRoles(){
         int killerId = Random.Range(0,playerList.Count);
         for (int i = 0; i < playerList.Count; i++) {
             if (i == killerId){
@@ -92,6 +108,12 @@ public class PlayerManager : NetworkBehaviour
             else{
                 playerList[i].role = Player.Role.Police;
             }
+        }
+    }
+
+    void SetAllRoles(Player.Role _role){
+        for (int i = 0; i < playerList.Count; i++) {
+            playerList[i].role = _role;
         }
     }
 
