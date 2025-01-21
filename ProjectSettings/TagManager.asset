@@ -7,17 +7,20 @@ TagManager:
   - BloodPrint
   - BrokenPainting
   - DeadBody
+  - Murderer
+  - Closet
+  - Evidence
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - A
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Holding
+  - MurdererLight
+  - whatIsGround
   - 
   - 
   - 
