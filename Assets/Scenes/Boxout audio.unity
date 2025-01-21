@@ -353,11 +353,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1595582205895987152, guid: 19710b3001e5b1c488ec5b7136b692d3, type: 3}
   m_PrefabInstance: {fileID: 281799943}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &106125325 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-  m_PrefabInstance: {fileID: 2071248712}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &117028241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -473,7 +468,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 182997637}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1001 &126109894
 PrefabInstance:
@@ -590,7 +588,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 934677132}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1001 &161344549
 PrefabInstance:
@@ -667,13 +668,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1487830683}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &182741953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
   m_PrefabInstance: {fileID: 1518923528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &182997633 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 117028241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &182997637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182997633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &188515768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -789,7 +829,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 707184737}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1001 &281799943
 PrefabInstance:
@@ -924,6 +967,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
   m_PrefabInstance: {fileID: 1872814413}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &319606606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 2083889014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &319606610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 319606606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!1 &394868036 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 1518923528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &394868040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394868036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &441108006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1039,7 +1154,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1246636194}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &441499791 stripped
 Transform:
@@ -1202,6 +1320,42 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543585812}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &553481872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 793340974}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &553481876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553481872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &581866516
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1634,114 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 626422069}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &634855358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 2119235310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &634855362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 634855358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -932482386
+      Data2: 1077901805
+      Data3: -741491567
+      Data4: 1985213337
+    Path: snapshot:/Bathroom
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!1 &649000640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 897936806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &649000644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649000640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!1 &707184733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 188515768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &707184737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707184733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 8
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &739027261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,6 +1828,42 @@ MonoBehaviour:
       Data3: -422030150
       Data4: -1401007104
     Path: event:/BathroomAmbience
+--- !u!1 &761748231 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 2020645866}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &761748235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761748231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &793340974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1690,6 +1988,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7605577568279756485, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1956577053}
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 553481876}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &851070470 stripped
 Transform:
@@ -1883,7 +2184,46 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7605577568279756485, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1605407615}
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 649000644}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+--- !u!1 &934677128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 126109894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &934677132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934677128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &963329147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,7 +2651,6 @@ Transform:
   m_Children:
   - {fileID: 612619075}
   - {fileID: 1531206343}
-  - {fileID: 106125325}
   - {fileID: 2124892931}
   - {fileID: 182741953}
   - {fileID: 851070470}
@@ -2327,6 +2666,42 @@ Transform:
   - {fileID: 1113774783}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1246636190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 441108006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1246636194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246636190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!4 &1273325664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
@@ -2517,7 +2892,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1553233115}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1001 &1406882243
 PrefabInstance:
@@ -2634,13 +3012,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1663270091}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &1477621124 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
   m_PrefabInstance: {fileID: 2083889014}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1487830679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 161344549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1487830683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487830679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1518923528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2756,13 +3173,52 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 394868040}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &1531206343 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
   m_PrefabInstance: {fileID: 161344549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1553233111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 1396583192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1553233115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553233111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -932482386
+      Data2: 1077901805
+      Data3: -741491567
+      Data4: 1985213337
+    Path: snapshot:/Bathroom
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 8
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &1560848024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2107955346279942791, guid: 94b50a52b12a5dd4395afb05aae0634e, type: 3}
@@ -2821,6 +3277,78 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1663270087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 1406882243}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1663270091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663270087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -826648743
+      Data2: 1176912300
+      Data3: 1305229952
+      Data4: -449434379
+    Path: snapshot:/rooms
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
+--- !u!1 &1798836504 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 2008098229472499309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1798836508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798836504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &1872814413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2936,7 +3464,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2048106222}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1 &1956577051 stripped
 GameObject:
@@ -3175,125 +3706,47 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 761748235}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
---- !u!1001 &2071248712
-PrefabInstance:
+--- !u!1 &2048106218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_PrefabInstance: {fileID: 1872814413}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2048106222
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1238980099}
-    m_Modifications:
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: Params.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: EventReference.Path
-      value: event:/BathroomAmbience
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: OverrideAttenuation
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: OverrideMaxDistance
-      value: 8.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: OverrideMinDistance
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: EventReference.Guid.Data1
-      value: -1960835291
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: EventReference.Guid.Data2
-      value: 1177004520
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: EventReference.Guid.Data3
-      value: -422030150
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: EventReference.Guid.Data4
-      value: -1401007104
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: Params.Array.data[0].Name
-      value: BathroomParameter
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: Params.Array.data[0].Value
-      value: 0.574
-      objectReference: {fileID: 0}
-    - target: {fileID: 3598446284604756144, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 84909693}
-    - target: {fileID: 7605577568279756485, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_Name
-      value: AmbienceZone
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 13.887308
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 4.9748254
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 7.1195297
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 16.468985
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 23.429113
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 15.83606
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2048106218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -487822531
+      Data2: 1304573670
+      Data3: 1727992480
+      Data4: 1643850881
+    Path: snapshot:/Halls
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1001 &2083889014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3409,7 +3862,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 319606610}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1001 &2113108361
 PrefabInstance:
@@ -4282,7 +4738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       propertyPath: OverrideMaxDistance
-      value: 8.3
+      value: 10.62
       objectReference: {fileID: 0}
     - target: {fileID: 2228322759334666241, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       propertyPath: OverrideMinDistance
@@ -4338,7 +4794,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.429113
+      value: 23.11
       objectReference: {fileID: 0}
     - target: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4375,7 +4831,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 634855362}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!4 &2124892931 stripped
 Transform:
@@ -4450,7 +4909,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4383976209105115896, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1798836508}
   m_SourcePrefab: {fileID: 100100000, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

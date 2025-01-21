@@ -28,6 +28,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &-7527339498584786605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Halls
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Halls
+  Guid:
+    Data1: -487822531
+    Data2: 1304573670
+    Data3: 1727992480
+    Data4: 1643850881
+  Banks:
+  - {fileID: 7767513364234760496}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +109,33 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 0
+--- !u!114 &-4201298957469019921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Bathroom
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Bathroom
+  Guid:
+    Data1: -932482386
+    Data2: 1077901805
+    Data3: -741491567
+    Data4: 1985213337
+  Banks:
+  - {fileID: 7767513364234760496}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
   Length: 0
 --- !u!114 &-3845264763048282254
 MonoBehaviour:
@@ -251,12 +305,15 @@ MonoBehaviour:
   - {fileID: 151721286593865004}
   - {fileID: -1561845751942627816}
   - {fileID: -3845264763048282254}
+  - {fileID: -7527339498584786605}
+  - {fileID: -4201298957469019921}
+  - {fileID: 937508190619640907}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7767513364234760496}
   StringsBanks:
   - {fileID: 6902685518900524973}
-  cacheTime: 638730715554439152
+  cacheTime: 638730737169071084
   cacheVersion: 131622
 --- !u!114 &37583643687264913
 MonoBehaviour:
@@ -306,6 +363,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60081
+--- !u!114 &937508190619640907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/rooms
+  m_EditorClassIdentifier: 
+  Path: snapshot:/rooms
+  Guid:
+    Data1: -826648743
+    Data2: 1176912300
+    Data3: 1305229952
+    Data4: -449434379
+  Banks:
+  - {fileID: 7767513364234760496}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &2604061895962204679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,10 +503,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638730657292516447
+  lastModified: 638730737169071084
   FileSizes:
   - Name: Desktop
-    Value: 1590
+    Value: 1796
   Exists: 1
 --- !u!114 &6926895302614514160
 MonoBehaviour:
@@ -507,10 +591,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638730657292500679
+  lastModified: 638730737169055999
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 5700
   Exists: 1
 --- !u!114 &8090524441160053840
 MonoBehaviour:
