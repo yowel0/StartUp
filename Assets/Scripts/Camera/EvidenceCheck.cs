@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class EvidenceCheck : MonoBehaviour
 {
     [SerializeField]
-    List<GameObject> evidence;
+    public List<GameObject> evidence;
     [SerializeField]
     public List<GameObject> foundEvidence;
     [SerializeField]
@@ -27,6 +29,7 @@ public class EvidenceCheck : MonoBehaviour
 
     private bool phoneIsOut;
     private bool JournalActive;
+    bool once = true;
 
 
 
@@ -44,7 +47,17 @@ public class EvidenceCheck : MonoBehaviour
     }
     private void Update()
     {
-        
+        if (once)
+        {
+            int layer = LayerMask.NameToLayer("Evidence");
+            GameObject[] task = FindObjectsOfType<GameObject>();
+            for(int i = 0; i < task.Length; i++)
+            {
+                if (task[i].layer == layer) { evidence.Add(task[i]); }
+            }
+            once = false;
+        }
+        CheckClientTaskServerRpc();
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (phoneIsOut)
@@ -115,12 +128,23 @@ public class EvidenceCheck : MonoBehaviour
                     StartCoroutine(CapturePhoto());
                     foundEvidence.Add(target);
                     evidence.Remove(target);
+                    CheckClientTaskServerRpc();
                 }
             }
         }
         
     }
 
+    [Rpc(SendTo.Server)]
+    void CheckClientTaskServerRpc()
+    {
+        if (GameManager.Instance != null)
+        {
+            print("checkie");
+            gameObject.name = gameObject.GetInstanceID().ToString();
+            GameManager.Instance.CheckClientsTaskRpc(this.gameObject.GetInstanceID());
+        }
+    }
     public bool IsVisible(Camera c, GameObject target)
     {
         var planes = GeometryUtility.CalculateFrustumPlanes(c);

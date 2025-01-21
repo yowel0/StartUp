@@ -4,13 +4,19 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance { get; private set; }
     bool endGame = false;
-    private void Awake()
+    
+    public override void OnNetworkSpawn()
     {
-
+        base.OnNetworkSpawn();
+        if(!IsServer)
+        {
+            Destroy(gameObject);
+            return;
+        }
         if (Instance == null)
         {
             Instance = this;
@@ -19,23 +25,28 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this);
-        
         }
-    }
-
-    private void Update()
-    {
-        CheckClientsTaskRpc();
     }
     public void EndGame(bool PoliceWon)
     {
         endGame = true;
         Debug.Log("game end");
     }
+    struct ForceNetworkSerializeByMemcpy<GameObject>
+    {
+
+    }
 
     [Rpc(SendTo.ClientsAndHost)]
-    public void CheckClientsTaskRpc()
+    public void CheckClientsTaskRpc(int id)
     {
-        print("testsakibhiidi");
+        GameObject ob = GameObject.Find(id.ToString());
+        EvidenceCheck ev = ob.GetComponent<EvidenceCheck>();
+        EvidenceCheck[] evidence = FindObjectsOfType<EvidenceCheck>();
+        for (int i = 0; i < evidence.Length; i++)
+        {
+            evidence[i].evidence = ev.evidence;
+            evidence[i].foundEvidence = ev.foundEvidence;
+        }
     }
 }

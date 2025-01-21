@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.Networking.Transport;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -62,7 +64,7 @@ public class PoliceBehaviour : MoveBehaviour
                 {
                     Grabbing();
                 }
-                if (hit.transform.CompareTag("Evidence"))
+                else if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
                 {
                     pickingUp = true;
                 }
@@ -79,7 +81,7 @@ public class PoliceBehaviour : MoveBehaviour
             pickUpTime += Time.deltaTime;
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
             {
-                if (!looking.transform.CompareTag("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
                 {
                     Debug.Log("check2");
                     pickingUp = false;

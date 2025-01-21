@@ -74,7 +74,7 @@ public class ThiefBehaviour : MoveBehaviour
                 {
                     Hiding();
                 }
-                if (obj.CompareTag("Evidence"))
+                else if (obj.gameObject.layer != LayerMask.NameToLayer("Evidence"))
                 {
                     Debug.Log("check");
                     cleaning = true;
@@ -100,7 +100,7 @@ public class ThiefBehaviour : MoveBehaviour
             cleanTimer += Time.deltaTime;
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !hiding && !grabbed)
             {
-                if (!looking.transform.CompareTag("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
                 {
                     Debug.Log("check2");
                     cleaning = false;
