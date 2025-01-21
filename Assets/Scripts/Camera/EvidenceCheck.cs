@@ -20,7 +20,7 @@ public class EvidenceCheck : MonoBehaviour
     [SerializeField]
     private float distanceToEvidence;
 
-    
+
 
     [SerializeField]
     private GameObject Phone;
@@ -38,26 +38,21 @@ public class EvidenceCheck : MonoBehaviour
 
     [SerializeField]
     private Image photoDisplay;
-    
+
     public List<Texture2D> texture2Ds = new List<Texture2D>();
     public List<Sprite> takenPhotos = new List<Sprite>();
     private void Start()
     {
+        int layer = LayerMask.NameToLayer("Evidence");
+        GameObject[] task = FindObjectsOfType<GameObject>();
+        for (int i = 0; i < task.Length; i++)
+        {
+            if (task[i].layer == layer) { evidence.Add(task[i]); }
+        }
 
     }
     private void Update()
     {
-        if (once)
-        {
-            int layer = LayerMask.NameToLayer("Evidence");
-            GameObject[] task = FindObjectsOfType<GameObject>();
-            for(int i = 0; i < task.Length; i++)
-            {
-                if (task[i].layer == layer) { evidence.Add(task[i]); }
-            }
-            once = false;
-        }
-        CheckClientTaskServerRpc();
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (phoneIsOut)
@@ -69,11 +64,11 @@ public class EvidenceCheck : MonoBehaviour
                 phoneIsOut = true;
             }
 
-            if(!phoneIsOut && JournalActive)
+            if (!phoneIsOut && JournalActive)
             {
                 JournalActive = false;
                 phoneIsOut = true;
-                
+
             }
         }
 
@@ -92,12 +87,12 @@ public class EvidenceCheck : MonoBehaviour
             {
                 JournalActive = false;
             }
-            else if(!JournalActive && !phoneIsOut)
+            else if (!JournalActive && !phoneIsOut)
             {
                 JournalActive = true;
             }
 
-            if(phoneIsOut && !JournalActive)
+            if (phoneIsOut && !JournalActive)
             {
                 phoneIsOut = false;
                 JournalActive = true;
@@ -132,7 +127,7 @@ public class EvidenceCheck : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     [Rpc(SendTo.Server)]
@@ -157,7 +152,7 @@ public class EvidenceCheck : MonoBehaviour
                 return false;
             }
         }
-     return true;
+        return true;
     }
 
     public IEnumerator CapturePhoto()
