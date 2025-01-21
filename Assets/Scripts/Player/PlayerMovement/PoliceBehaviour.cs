@@ -14,8 +14,9 @@ public class PoliceBehaviour : MoveBehaviour
     [SerializeField] int minShakes;
     [SerializeField] int maxShakes;
     [SerializeField] float minPickUpTime;
-    float pickUpTime = 0;
     public bool grabbed = false;
+    EvidenceCheck evidence;
+    float pickUpTime = 0;
     ThiefBehaviour script;
     GameObject obj = null;
     bool pickingUp = false;
@@ -25,6 +26,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     public void Start()
     {
+        
         base.Start();
     }
     public void Update()
@@ -70,7 +72,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     void PickUp()
     {
-        if (pickingUp && obj)  
+        if (pickingUp && evidence.foundEvidence.Contains(obj)) //&& evidenceList.Contains(obj) )  
         {
             RaycastHit looking;
             pickUpTime += Time.deltaTime;

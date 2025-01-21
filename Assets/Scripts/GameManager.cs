@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class GameEndSingletons : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    public static GameEndSingletons Instance { get; private set; }
+    public static GameManager Instance { get; private set; }
     bool endGame = false;
     private void Awake()
     {
@@ -18,11 +19,23 @@ public class GameEndSingletons : MonoBehaviour
         else
         {
             Destroy(this);
+        
         }
+    }
+
+    private void Update()
+    {
+        CheckClientsTaskRpc();
     }
     public void EndGame(bool PoliceWon)
     {
         endGame = true;
         Debug.Log("game end");
+    }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    public void CheckClientsTaskRpc()
+    {
+        print("testsakibhiidi");
     }
 }
