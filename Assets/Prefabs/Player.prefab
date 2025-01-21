@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3441603297
+  GlobalObjectIdHash: 4076951718
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
   role: 0
   networkPolicePrefab: {fileID: 8617626292854747577, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
   networkKillerPrefab: {fileID: -2927653407613800956, guid: 8b27ae138536a4f4fa563a6897cdee20, type: 3}
-  networkSphere: {fileID: 5183454878447479909, guid: f979d5f8df649d141a1bf3d638ba24c9, type: 3}
+  networkSphere: {fileID: 5183454878447479909, guid: bc7fe08fef7e583488c8569165992924, type: 3}
 --- !u!114 &-5871315655068810138
 MonoBehaviour:
   m_ObjectHideFlags: 0
