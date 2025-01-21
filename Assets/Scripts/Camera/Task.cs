@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 
@@ -12,42 +13,35 @@ public class Task : MonoBehaviour
     EvidenceCheck evidenceCheck;
 
     [SerializeField]
-    GameObject taskEvidence;
-
-    [SerializeField]
-    TextMeshProUGUI text;
-
-    [SerializeField]
-    GameObject checkMark;
-
-    bool displayed = false;
-
-    private int index = 0;
+    Material checkMark;
 
     [SerializeField]
     private Image photoDisplayArea;
 
+    UnityEvent checkIfPhotoTaken;
+
+    private List<GameObject> oldFoundEvidence;
+
     private void Start()
     {
+        oldFoundEvidence = evidenceCheck.foundEvidence;
+        evidenceCheck = FindObjectOfType<EvidenceCheck>();
+        checkIfPhotoTaken.AddListener(check);
     }
+
     void Update()
     {
-            check();
-        
+        if(oldFoundEvidence != evidenceCheck.foundEvidence)
+        {
+            checkIfPhotoTaken.Invoke();
+            oldFoundEvidence = evidenceCheck.foundEvidence;
+        }
     }
 
     void check()
     {
-        if (taskEvidence != null)
-        {
-            if (evidenceCheck.foundEvidence.Contains(taskEvidence) && !displayed)
-            {
-                evidenceCheck.ShowPhoto();
-                photoDisplayArea.sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count - 1];
-                checkMark.SetActive(true);
-                text.text = taskEvidence.tag;
-                displayed = true;
-            }
-        }
+            if(evidenceCheck != null) { evidenceCheck.ShowPhoto(); }
+            photoDisplayArea.sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
+            checkMark.color = Color.green;
     }
 }

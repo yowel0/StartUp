@@ -57,60 +57,36 @@ public class EvidenceCheck : MonoBehaviour
         {
             if (phoneIsOut)
             {
-                phoneIsOut = false;
+                Phone.SetActive(false);
             }
-            else if (!phoneIsOut && !JournalActive)
+            else  if(!phoneIsOut && JournalActive)
             {
-                phoneIsOut = true;
-            }
+                Journal.SetActive(false);
+                Phone.SetActive(true);
 
-            if (!phoneIsOut && JournalActive)
+            }
+            else
             {
-                JournalActive = false;
-                phoneIsOut = true;
-
+                Phone.SetActive(true);
             }
-        }
-
-        if (phoneIsOut)
-        {
-            Phone.SetActive(true);
-        }
-        else
-        {
-            Phone.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
             if (JournalActive)
             {
-                JournalActive = false;
+                Journal.SetActive(false);
             }
-            else if (!JournalActive && !phoneIsOut)
+            else if (phoneIsOut && !JournalActive)
             {
-                JournalActive = true;
+                Phone.SetActive(false);
+                Journal.SetActive(true);
             }
-
-            if (phoneIsOut && !JournalActive)
+            else
             {
-                phoneIsOut = false;
-                JournalActive = true;
+                Journal.SetActive(true);
             }
         }
-
-        if (JournalActive)
-        {
-            Journal.SetActive(true);
-        }
-        else
-        {
-            Journal.SetActive(false);
-        }
-
-
-
-
 
         foreach (var target in evidence)
         {
