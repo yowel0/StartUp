@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PoliceBehaviour : MoveBehaviour
@@ -12,9 +13,12 @@ public class PoliceBehaviour : MoveBehaviour
     [SerializeField] SphereCollider sphere;
     [SerializeField] int minShakes;
     [SerializeField] int maxShakes;
+    [SerializeField] float minPickUpTime;
+    float pickUpTime = 0;
     public bool grabbed = false;
     ThiefBehaviour script;
     GameObject obj = null;
+    bool pickingUp = false;
     bool canGrab = true;
     [SerializeField] int copsInProx = 0;
     float thiefSpeed;
@@ -24,6 +28,18 @@ public class PoliceBehaviour : MoveBehaviour
         base.Start();
     }
     public void Update()
+    {
+        RayCastChecks();
+        if (grabbed)
+        {
+            Hold();
+            EscapeCheck();
+        }
+        PickUp();
+        base.Update();
+
+    }
+    void RayCastChecks()
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
@@ -39,17 +55,44 @@ public class PoliceBehaviour : MoveBehaviour
             {
                 Debug.Log("check2");
                 obj = hit.transform.gameObject;
-                Grabbing();
+                if (hit.transform.CompareTag("Murderer"))
+                {
+                    Grabbing();
+                }
+                if (hit.transform.CompareTag("Evidence"))
+                {
+                    pickingUp = true;
+                }
             }
             canGrab = true;
         }
-        if (grabbed)
-        {
-            Hold();
-            EscapeCheck();
-        }
-        base.Update();
+    }
 
+    void PickUp()
+    {
+        if (pickingUp && obj)  
+        {
+            RaycastHit looking;
+            pickUpTime += Time.deltaTime;
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
+            {
+                if (!looking.transform.CompareTag("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                {
+                    Debug.Log("check2");
+                    pickingUp = false;
+                    pickUpTime = 0;
+                    obj = null;
+                }
+                if (pickUpTime > minPickUpTime)
+                {
+                    Destroy(looking.transform.gameObject);
+                    //Evidence Destroyed + 1;
+                    obj = null;
+                    pickingUp = false;
+                    pickUpTime = 0;
+                }
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -93,8 +136,6 @@ public class PoliceBehaviour : MoveBehaviour
     }
     private void Grabbing()
     {
-        if (obj.tag == "Murderer")
-        {
             if (!grabbed)
             {
                 script = obj.GetComponent<ThiefBehaviour>();
@@ -119,7 +160,6 @@ public class PoliceBehaviour : MoveBehaviour
 
                 grabbed = true;
             }
-        }
     }
     private void LetGo()
     {
