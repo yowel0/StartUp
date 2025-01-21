@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Networking Scene.unity
     guid: e2dd8e6565bd1aa43b7e645deb57d94c
+  - enabled: 1
+    path: Assets/Scenes/GameManager Test Scene.unity
+    guid: 157b27d129529064395f7f736828f775
   m_configObjects: {}

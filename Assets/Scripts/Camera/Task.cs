@@ -26,22 +26,28 @@ public class Task : MonoBehaviour
 
     [SerializeField]
     private Image photoDisplayArea;
+
+    private void Start()
+    {
+    }
     void Update()
     {
-        
             check();
         
     }
 
     void check()
     {
-        if (evidenceCheck.foundEvidence.Contains(taskEvidence) && !displayed)
+        if (taskEvidence != null)
         {
-            evidenceCheck.ShowPhoto();
-            photoDisplayArea.sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
-            text.text = taskEvidence.tag;
-            checkMark.SetActive(true);
-            displayed = true;
+            if (evidenceCheck.foundEvidence.Contains(taskEvidence) && !displayed)
+            {
+                evidenceCheck.ShowPhoto();
+                photoDisplayArea.sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count - 1];
+                checkMark.SetActive(true);
+                text.text = taskEvidence.tag;
+                displayed = true;
+            }
         }
     }
 }

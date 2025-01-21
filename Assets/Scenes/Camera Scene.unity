@@ -617,6 +617,72 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 307985436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &398684751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398684753}
+  - component: {fileID: 398684754}
+  - component: {fileID: 398684752}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &398684752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398684751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec87943086846254187bdfa504add9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &398684753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398684751}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.954721, y: -1.9703652, z: -89.509346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &398684754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398684751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 402505073
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &400526819
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +875,7 @@ GameObject:
   - component: {fileID: 501896767}
   - component: {fileID: 501896766}
   - component: {fileID: 501896765}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder
   m_TagString: BloodPrint
   m_Icon: {fileID: 0}
@@ -1670,7 +1736,7 @@ GameObject:
   - component: {fileID: 936230459}
   - component: {fileID: 936230458}
   - component: {fileID: 936230457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (1)
   m_TagString: BrokenPainting
   m_Icon: {fileID: 0}
@@ -2036,6 +2102,7 @@ GameObject:
   - component: {fileID: 1086668523}
   - component: {fileID: 1086668526}
   - component: {fileID: 1086668525}
+  - component: {fileID: 1086668527}
   - component: {fileID: 1086668524}
   m_Layer: 0
   m_Name: Player
@@ -2102,10 +2169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5984e6cbbcbafc43835c9444ddb9cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidence:
-  - {fileID: 501896764}
-  - {fileID: 936230456}
-  - {fileID: 1568612720}
+  evidence: []
   foundEvidence: []
   Cam: {fileID: 1173340128}
   distanceToEvidence: 2
@@ -2142,10 +2206,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   sprintMult: 2
-  stopDrag: 10
-  normDrag: 2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  maxSlopeAngle: 0
+  grounded: 0
+  onSlope: 0
   state: 0
   mAnimator: {fileID: 0}
+  cam: {fileID: 0}
+  holdPos: {fileID: 0}
+  caps1: {fileID: 0}
+  caps2: {fileID: 0}
+  sphere: {fileID: 0}
+  minShakes: 0
+  maxShakes: 0
+  minPickUpTime: 0
+  grabbed: 0
+  copsInProx: 0
 --- !u!95 &1086668526
 Animator:
   serializedVersion: 5
@@ -2167,6 +2245,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1086668527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086668519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2309047606
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1 &1097778632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,8 +2549,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensX: 400
   sensY: 400
-  orientation: {fileID: 1097778633}
-  playerTrans: {fileID: 1086668521}
+  cameraHeight: 1.5
+  yRotation: 0
 --- !u!1 &1258421519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,7 +2941,7 @@ GameObject:
   - component: {fileID: 1568612723}
   - component: {fileID: 1568612722}
   - component: {fileID: 1568612721}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder (2)
   m_TagString: DeadBody
   m_Icon: {fileID: 0}
@@ -3290,3 +3389,4 @@ SceneRoots:
   - {fileID: 936230460}
   - {fileID: 1568612724}
   - {fileID: 2042387192}
+  - {fileID: 398684753}
