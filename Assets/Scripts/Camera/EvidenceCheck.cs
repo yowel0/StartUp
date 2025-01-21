@@ -20,7 +20,7 @@ public class EvidenceCheck : MonoBehaviour
     [SerializeField]
     private float distanceToEvidence;
 
-    
+
 
     [SerializeField]
     private GameObject Phone;
@@ -38,84 +38,55 @@ public class EvidenceCheck : MonoBehaviour
 
     [SerializeField]
     private Image photoDisplay;
-    
+
     public List<Texture2D> texture2Ds = new List<Texture2D>();
     public List<Sprite> takenPhotos = new List<Sprite>();
     private void Start()
     {
+        int layer = LayerMask.NameToLayer("Evidence");
+        GameObject[] task = FindObjectsOfType<GameObject>();
+        for (int i = 0; i < task.Length; i++)
+        {
+            if (task[i].layer == layer) { evidence.Add(task[i]); }
+        }
 
     }
     private void Update()
     {
-        if (once)
-        {
-            int layer = LayerMask.NameToLayer("Evidence");
-            GameObject[] task = FindObjectsOfType<GameObject>();
-            for(int i = 0; i < task.Length; i++)
-            {
-                if (task[i].layer == layer) { evidence.Add(task[i]); }
-            }
-            once = false;
-        }
-        CheckClientTaskServerRpc();
         if (Input.GetKeyDown(KeyCode.F))
         {
             if (phoneIsOut)
             {
-                phoneIsOut = false;
+                Phone.SetActive(false);
             }
-            else if (!phoneIsOut && !JournalActive)
+            else  if(!phoneIsOut && JournalActive)
             {
-                phoneIsOut = true;
-            }
+                Journal.SetActive(false);
+                Phone.SetActive(true);
 
-            if(!phoneIsOut && JournalActive)
+            }
+            else
             {
-                JournalActive = false;
-                phoneIsOut = true;
-                
+                Phone.SetActive(true);
             }
-        }
-
-        if (phoneIsOut)
-        {
-            Phone.SetActive(true);
-        }
-        else
-        {
-            Phone.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.J))
         {
             if (JournalActive)
             {
-                JournalActive = false;
+                Journal.SetActive(false);
             }
-            else if(!JournalActive && !phoneIsOut)
+            else if (phoneIsOut && !JournalActive)
             {
-                JournalActive = true;
+                Phone.SetActive(false);
+                Journal.SetActive(true);
             }
-
-            if(phoneIsOut && !JournalActive)
+            else
             {
-                phoneIsOut = false;
-                JournalActive = true;
+                Journal.SetActive(true);
             }
         }
-
-        if (JournalActive)
-        {
-            Journal.SetActive(true);
-        }
-        else
-        {
-            Journal.SetActive(false);
-        }
-
-
-
-
 
         foreach (var target in evidence)
         {
@@ -132,7 +103,7 @@ public class EvidenceCheck : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     [Rpc(SendTo.Server)]
@@ -157,7 +128,7 @@ public class EvidenceCheck : MonoBehaviour
                 return false;
             }
         }
-     return true;
+        return true;
     }
 
     public IEnumerator CapturePhoto()
