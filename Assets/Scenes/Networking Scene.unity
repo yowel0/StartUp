@@ -24,9 +24,9 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 3
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 0}
+  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -122,6 +122,91 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &84093887
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3127653730790643492, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127653730790643492, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3127653730790643492, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Center.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.8053918
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.296081
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3247461297484681097, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334515782537623220, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Name
+      value: Police Player 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383969214721527786, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2740396265
+      objectReference: {fileID: 0}
+    - target: {fileID: 5383969214721527786, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 3920350040
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820814129936104349, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5820814129936104349, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
+      propertyPath: m_Center.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c8a5ce9224b181d4bbe5830537487f83, type: 3}
 --- !u!1 &84761803
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,8 +406,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerList: []
-  policePrefab: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
-  killerPrefab: {fileID: 56253209113119664, guid: 8b27ae138536a4f4fa563a6897cdee20, type: 3}
   spherePrefab: {fileID: 5932528690125724272, guid: f979d5f8df649d141a1bf3d638ba24c9, type: 3}
 --- !u!4 &216899001
 Transform:
@@ -334,6 +417,50 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 185.16313, y: 488.95407, z: -0.8546889}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &288743153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 288743155}
+  - component: {fileID: 288743154}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &288743154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288743153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec87943086846254187bdfa504add9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &288743155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288743153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.938503, y: -28.696114, z: 80.61249}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1036,7 +1163,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 0
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -2024,3 +2151,5 @@ SceneRoots:
   - {fileID: 526392416}
   - {fileID: 1271060369}
   - {fileID: 216899001}
+  - {fileID: 288743155}
+  - {fileID: 84093887}
