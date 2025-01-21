@@ -83,6 +83,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3845264763048282254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/wind
+  m_EditorClassIdentifier: 
+  Path: event:/wind
+  Guid:
+    Data1: -1134782863
+    Data2: 1202589036
+    Data3: 1082512773
+    Data4: 1077925325
+  Banks:
+  - {fileID: -2841624568700317004}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 60000
 --- !u!114 &-2841624568700317004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,10 +126,10 @@ MonoBehaviour:
     Ambience.bank
   Name: Static Ambience
   StudioPath: bank:/Static Ambience
-  lastModified: 638730568616880311
+  lastModified: 638730657309024366
   FileSizes:
   - Name: Desktop
-    Value: 540832
+    Value: 1273728
   Exists: 1
 --- !u!114 &-2402787918985736467
 MonoBehaviour:
@@ -138,9 +165,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Water
+  m_Name: event:/water
   m_EditorClassIdentifier: 
-  Path: event:/Water
+  Path: event:/water
   Guid:
     Data1: -1078099993
     Data2: 1333405088
@@ -223,12 +250,13 @@ MonoBehaviour:
   - {fileID: 6145739893708173312}
   - {fileID: 151721286593865004}
   - {fileID: -1561845751942627816}
+  - {fileID: -3845264763048282254}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7767513364234760496}
   StringsBanks:
   - {fileID: 6902685518900524973}
-  cacheTime: 638730584401669151
+  cacheTime: 638730715554439152
   cacheVersion: 131622
 --- !u!114 &37583643687264913
 MonoBehaviour:
@@ -245,10 +273,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638730568604940631
+  lastModified: 638730715554439152
   FileSizes:
   - Name: Desktop
-    Value: 36768
+    Value: 36640
   Exists: 1
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -300,7 +328,7 @@ MonoBehaviour:
   - {fileID: 37583643687264913}
   IsStream: 0
   Is3D: 1
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -391,10 +419,10 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638730568604246888
+  lastModified: 638730657292516447
   FileSizes:
   - Name: Desktop
-    Value: 1544
+    Value: 1590
   Exists: 1
 --- !u!114 &6926895302614514160
 MonoBehaviour:
@@ -479,7 +507,7 @@ MonoBehaviour:
   Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638730568604228490
+  lastModified: 638730657292500679
   FileSizes:
   - Name: Desktop
     Value: 1036
