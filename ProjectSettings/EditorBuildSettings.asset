@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Voice Chat Test.unity
+    guid: 2e871650d1d05274c8cde402f07d2cd7
   m_configObjects: {}
