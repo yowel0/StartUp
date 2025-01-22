@@ -13,35 +13,53 @@ public class Task : MonoBehaviour
     EvidenceCheck evidenceCheck;
 
     [SerializeField]
-    Material checkMark;
+    List<GameObject> checkMarks = new List<GameObject>();
 
     [SerializeField]
-    private Image photoDisplayArea;
+    private Image[] photoDisplayArea = new Image[10];
 
-    UnityEvent checkIfPhotoTaken;
+    int index = 0;
 
+    [SerializeField]
     private List<GameObject> oldFoundEvidence;
 
     private void Start()
     {
+        evidenceCheck = GetComponentInParent<EvidenceCheck>();
+        photoDisplayArea = GetComponentsInChildren<Image>();
         oldFoundEvidence = evidenceCheck.foundEvidence;
-        evidenceCheck = FindObjectOfType<EvidenceCheck>();
-        checkIfPhotoTaken.AddListener(check);
+        foreach (GameObject child in children)
+        {
+            if (child.CompareTag("Checkmark"))
+            {
+                checkMarks.Add(child);
+            }
+        }
     }
 
     void Update()
     {
-        if(oldFoundEvidence != evidenceCheck.foundEvidence)
+        if (evidenceCheck == null)
         {
-            checkIfPhotoTaken.Invoke();
-            oldFoundEvidence = evidenceCheck.foundEvidence;
+            evidenceCheck = FindObjectOfType<EvidenceCheck>();
+        }
+        else
+        {
+            if (oldFoundEvidence != evidenceCheck.foundEvidence)
+            {
+                check();
+                oldFoundEvidence = evidenceCheck.foundEvidence;
+            }
         }
     }
 
     void check()
     {
-            if(evidenceCheck != null) { evidenceCheck.ShowPhoto(); }
-            photoDisplayArea.sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
-            checkMark.color = Color.green;
+        
+        if(evidenceCheck != null) { evidenceCheck.ShowPhoto(); }
+        photoDisplayArea[index].sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
+        checkMarks[index].SetActive(true);
+        index++;
+            
     }
 }

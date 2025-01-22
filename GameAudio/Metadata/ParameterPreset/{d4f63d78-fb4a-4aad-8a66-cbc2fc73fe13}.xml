@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{d4f63d78-fb4a-4aad-8a66-cbc2fc73fe13}">
+		<property name="name">
+			<value>HallwayParameter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{58a64050-7590-4707-967d-b40ccaf7717f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{786a2827-2038-4f6c-8ecd-614b38053e17}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{786a2827-2038-4f6c-8ecd-614b38053e17}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>0.93000000715255737</value>
+		</property>
+	</object>
+</objects>
