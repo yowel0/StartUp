@@ -10,6 +10,7 @@ TagManager:
   - Murderer
   - Closet
   - Evidence
+  - Checkmark
   layers:
   - Default
   - TransparentFX

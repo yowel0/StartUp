@@ -36,8 +36,6 @@ public class EvidenceCheck : MonoBehaviour
     [SerializeField, HideInInspector]
     public Sprite photoSprite;
 
-    [SerializeField]
-    private Image photoDisplay;
 
     public List<Texture2D> texture2Ds = new List<Texture2D>();
     public List<Sprite> takenPhotos = new List<Sprite>();
@@ -58,16 +56,20 @@ public class EvidenceCheck : MonoBehaviour
             if (phoneIsOut)
             {
                 Phone.SetActive(false);
+                phoneIsOut = false;
             }
-            else  if(!phoneIsOut && JournalActive)
+            else if(!phoneIsOut && JournalActive)
             {
                 Journal.SetActive(false);
                 Phone.SetActive(true);
+                phoneIsOut = true;
+                JournalActive = false;
 
             }
             else
             {
                 Phone.SetActive(true);
+                phoneIsOut = true;
             }
         }
 
@@ -76,15 +78,19 @@ public class EvidenceCheck : MonoBehaviour
             if (JournalActive)
             {
                 Journal.SetActive(false);
+                JournalActive = false;
             }
             else if (phoneIsOut && !JournalActive)
             {
                 Phone.SetActive(false);
                 Journal.SetActive(true);
+                phoneIsOut= false;
+                JournalActive = true;
             }
             else
             {
                 Journal.SetActive(true);
+                JournalActive= true;
             }
         }
 
