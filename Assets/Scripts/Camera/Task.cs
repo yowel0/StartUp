@@ -24,8 +24,8 @@ public class Task : MonoBehaviour
 
     private void Start()
     {
+        evidenceCheck = GetComponentInParent<EvidenceCheck>();
         oldFoundEvidence = evidenceCheck.foundEvidence;
-        evidenceCheck = FindObjectOfType<EvidenceCheck>();
         checkIfPhotoTaken.AddListener(check);
     }
 

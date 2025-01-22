@@ -19,7 +19,7 @@ MonoBehaviour:
     Data3: -108266100
     Data4: -1234831565
   Banks:
-  - {fileID: -1372950561313071005}
+  - {fileID: 3755343169971210806}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Data3: 1727992480
     Data4: 1643850881
   Banks:
-  - {fileID: 7767513364234760496}
+  - {fileID: -4749639541179348689}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -55,6 +55,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-6686004736249880970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: GameAudio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638731372799377836
+  FileSizes:
+  - Name: Desktop
+    Value: 1796
+  Exists: 1
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +94,7 @@ MonoBehaviour:
     Data3: -932172097
     Data4: -754373678
   Banks:
-  - {fileID: -1372950561313071005}
+  - {fileID: 3755343169971210806}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -83,6 +103,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &-4749639541179348689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: GameAudio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638731372799367841
+  FileSizes:
+  - Name: Desktop
+    Value: 5700
+  Exists: 1
 --- !u!114 &-4292130308980983779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +142,7 @@ MonoBehaviour:
     Data3: 2131125646
     Data4: 1322146407
   Banks:
-  - {fileID: 37583643687264913}
+  - {fileID: -1311026327999303937}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -129,7 +169,7 @@ MonoBehaviour:
     Data3: -741491567
     Data4: 1985213337
   Banks:
-  - {fileID: 7767513364234760496}
+  - {fileID: -4749639541179348689}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -156,7 +196,7 @@ MonoBehaviour:
     Data3: 1082512773
     Data4: 1077925325
   Banks:
-  - {fileID: -2841624568700317004}
+  - {fileID: -2330712530386476867}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -164,27 +204,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
---- !u!114 &-2841624568700317004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Static Ambience.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Static
-    Ambience.bank
-  Name: Static Ambience
-  StudioPath: bank:/Static Ambience
-  lastModified: 638730657309024366
-  FileSizes:
-  - Name: Desktop
-    Value: 1273728
-  Exists: 1
 --- !u!114 &-2402787918985736467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +228,26 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2330712530386476867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Static Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: GameAudio/Build/Desktop/Static Ambience.bank
+  Name: Static Ambience
+  StudioPath: bank:/Static Ambience
+  lastModified: 638731372799417908
+  FileSizes:
+  - Name: Desktop
+    Value: 1273728
+  Exists: 1
 --- !u!114 &-1561845751942627816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +267,7 @@ MonoBehaviour:
     Data3: 1023673002
     Data4: 1479761769
   Banks:
-  - {fileID: -2841624568700317004}
+  - {fileID: -2330712530386476867}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -236,7 +275,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 20000
---- !u!114 &-1372950561313071005
+--- !u!114 &-1311026327999303937
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,15 +285,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambience.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Ambience.bank
-  Name: Ambience
-  StudioPath: bank:/Ambience
-  lastModified: 638730584401669151
+  Path: GameAudio/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638731372799377836
   FileSizes:
   - Name: Desktop
-    Value: 2734784
+    Value: 36640
   Exists: 1
 --- !u!114 &-833819302435978050
 MonoBehaviour:
@@ -289,11 +328,11 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6902685518900524973}
-  - {fileID: -1372950561313071005}
-  - {fileID: 7767513364234760496}
-  - {fileID: 37583643687264913}
-  - {fileID: -2841624568700317004}
+  - {fileID: -6686004736249880970}
+  - {fileID: 3755343169971210806}
+  - {fileID: -4749639541179348689}
+  - {fileID: -1311026327999303937}
+  - {fileID: -2330712530386476867}
   EditorEvents:
   - {fileID: -6305534569749143111}
   - {fileID: 8432915372097369641}
@@ -310,31 +349,11 @@ MonoBehaviour:
   - {fileID: 937508190619640907}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7767513364234760496}
+  - {fileID: -4749639541179348689}
   StringsBanks:
-  - {fileID: 6902685518900524973}
-  cacheTime: 638730737169071084
+  - {fileID: -6686004736249880970}
+  cacheTime: 638731372799417908
   cacheVersion: 131622
---- !u!114 &37583643687264913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638730715554439152
-  FileSizes:
-  - Name: Desktop
-    Value: 36640
-  Exists: 1
 --- !u!114 &151721286593865004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +373,7 @@ MonoBehaviour:
     Data3: 1788821676
     Data4: 1172674743
   Banks:
-  - {fileID: -2841624568700317004}
+  - {fileID: -2330712530386476867}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -382,7 +401,7 @@ MonoBehaviour:
     Data3: 1305229952
     Data4: -449434379
   Banks:
-  - {fileID: 7767513364234760496}
+  - {fileID: -4749639541179348689}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -409,7 +428,7 @@ MonoBehaviour:
     Data3: -113941321
     Data4: 1782845265
   Banks:
-  - {fileID: 37583643687264913}
+  - {fileID: -1311026327999303937}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -417,6 +436,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &3755343169971210806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambience.bank
+  m_EditorClassIdentifier: 
+  Path: GameAudio/Build/Desktop/Ambience.bank
+  Name: Ambience
+  StudioPath: bank:/Ambience
+  lastModified: 638731372799367841
+  FileSizes:
+  - Name: Desktop
+    Value: 2734784
+  Exists: 1
 --- !u!114 &4053181931461454489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +519,7 @@ MonoBehaviour:
     Data3: 1531576237
     Data4: -288351312
   Banks:
-  - {fileID: 37583643687264913}
+  - {fileID: -1311026327999303937}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -488,26 +527,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 250
---- !u!114 &6902685518900524973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638730737169071084
-  FileSizes:
-  - Name: Desktop
-    Value: 1796
-  Exists: 1
 --- !u!114 &6926895302614514160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,26 +595,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7767513364234760496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638730737169055999
-  FileSizes:
-  - Name: Desktop
-    Value: 5700
-  Exists: 1
 --- !u!114 &8090524441160053840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,7 +641,7 @@ MonoBehaviour:
     Data3: -422030150
     Data4: -1401007104
   Banks:
-  - {fileID: -1372950561313071005}
+  - {fileID: 3755343169971210806}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -694,7 +693,7 @@ MonoBehaviour:
     Data3: 62108090
     Data4: 1383940014
   Banks:
-  - {fileID: -1372950561313071005}
+  - {fileID: 3755343169971210806}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0

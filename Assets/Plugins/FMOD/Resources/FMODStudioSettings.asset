@@ -317,8 +317,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/GameAudio.fspro
-  sourceBankPath: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/GameAudio/Build
+  sourceProjectPath: GameAudio/GameAudio.fspro
+  sourceBankPath: GameAudio/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -353,7 +353,7 @@ MonoBehaviour:
   MeterChannelOrdering: 0
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
-  EnableErrorCallback: 0
+  EnableErrorCallback: 1
   SharedLibraryUpdateStage: 0
   SharedLibraryTimeSinceStart: 0
   CurrentVersion: 131622

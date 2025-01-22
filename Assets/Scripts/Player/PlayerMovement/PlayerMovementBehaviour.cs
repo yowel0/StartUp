@@ -74,6 +74,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         {
             grounded = Physics.Raycast(transform.position, Vector3.down, transform.localScale.y + 0.2f, whatIsGround);
         }
+        PlayFootstepSound();
         SpeedControl();
         Inputs();
         StateHandler();
@@ -109,7 +110,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         else
         {
             rb.isKinematic = false;
-            PlayFootstepSound();
+            
 
             
 
@@ -167,6 +168,7 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         if (Time.time >= lastFootstepTime + footstepDelay && directionMoving.magnitude > 0)
         {
+            print("sound");
             RuntimeManager.PlayOneShot(footstepEvent, transform.position);
             lastFootstepTime = Time.time;
         }

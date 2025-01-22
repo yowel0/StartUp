@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2727185471118924251}
   - component: {fileID: 2228322759334666241}
   - component: {fileID: 3598446284604756144}
+  - component: {fileID: 5590403154875634478}
   m_Layer: 0
   m_Name: HallWayAmbience Emitter
   m_TagString: Untagged
@@ -48,11 +49,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1672725770
-      Data2: 1104890616
-      Data3: -932172097
-      Data4: -754373678
-    Path: event:/HallWayAmbience
+      Data1: -1960835291
+      Data2: 1177004520
+      Data3: -422030150
+      Data4: -1401007104
+    Path: event:/BathroomAmbience
   Event: 
   EventPlayTrigger: 1
   EventStopTrigger: 0
@@ -61,11 +62,11 @@ MonoBehaviour:
   Preload: 0
   NonRigidbodyVelocity: 0
   Params:
-  - Name: HallwayParameter
-    Value: 0.375
+  - Name: BathroomParameter
+    Value: 0.574
   OverrideAttenuation: 1
-  OverrideMinDistance: 3.4
-  OverrideMaxDistance: 8.43
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10.62
 --- !u!114 &3598446284604756144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +81,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Area: {fileID: 6417472832592159800}
   Player: {fileID: 0}
+--- !u!114 &5590403154875634478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4383976209105115896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -932482386
+      Data2: 1077901805
+      Data3: -741491567
+      Data4: 1985213337
+    Path: snapshot:/Bathroom
+  Event: 
+  EventPlayTrigger: 3
+  EventStopTrigger: 4
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &7605577568279756485
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +139,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.3984978, y: 5.94, z: 10.304815}
-  m_LocalScale: {x: 10.122732, y: 12.411, z: 13.855}
+  m_LocalScale: {x: 13.887308, y: 4.9748254, z: 7.1195297}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2727185471118924251}
