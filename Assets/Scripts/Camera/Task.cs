@@ -13,10 +13,10 @@ public class Task : MonoBehaviour
     EvidenceCheck evidenceCheck;
 
     [SerializeField]
-    List<GameObject> checkMarks = new List<GameObject>();
+    GameObject[] checkMarks;
 
     [SerializeField]
-    private Image[] photoDisplayArea = new Image[10];
+    GameObject[] photoDisplayArea;
 
     int index = 0;
 
@@ -25,16 +25,10 @@ public class Task : MonoBehaviour
 
     private void Start()
     {
-        evidenceCheck = GetComponentInParent<EvidenceCheck>();
-        photoDisplayArea = GetComponentsInChildren<Image>();
+        evidenceCheck = FindObjectOfType<EvidenceCheck>();
+        checkMarks = GameObject.FindGameObjectsWithTag("Checkmark");
+        photoDisplayArea = GameObject.FindGameObjectsWithTag("PhotoDisplay");
         oldFoundEvidence = evidenceCheck.foundEvidence;
-        foreach (GameObject child in children)
-        {
-            if (child.CompareTag("Checkmark"))
-            {
-                checkMarks.Add(child);
-            }
-        }
     }
 
     void Update()
@@ -47,6 +41,7 @@ public class Task : MonoBehaviour
         {
             if (oldFoundEvidence != evidenceCheck.foundEvidence)
             {
+                print("isigma");
                 check();
                 oldFoundEvidence = evidenceCheck.foundEvidence;
             }
@@ -55,11 +50,9 @@ public class Task : MonoBehaviour
 
     void check()
     {
-        
         if(evidenceCheck != null) { evidenceCheck.ShowPhoto(); }
-        photoDisplayArea[index].sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
+        photoDisplayArea[index].GetComponent<Image>().sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count-1];
         checkMarks[index].SetActive(true);
-        index++;
-            
+        index++; 
     }
 }

@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 191294472}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Checkmark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 400526821}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Checkmark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1060,7 +1060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &646383856
 Transform:
   m_ObjectHideFlags: 0
@@ -1582,7 +1582,6 @@ GameObject:
   - component: {fileID: 931359302}
   - component: {fileID: 931359305}
   - component: {fileID: 931359304}
-  - component: {fileID: 931359303}
   m_Layer: 5
   m_Name: Text (TMP) (1)
   m_TagString: Untagged
@@ -1610,23 +1609,6 @@ RectTransform:
   m_AnchoredPosition: {x: 44.60003, y: -16.200008}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &931359303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931359301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2b9776683f8af4a8182f99450e3a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidenceCheck: {fileID: 1086668523}
-  taskEvidence: {fileID: 936230456}
-  text: {fileID: 931359304}
-  checkMark: {fileID: 191294470}
-  photoDisplayArea: {fileID: 1608193625}
 --- !u!114 &931359304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1845,7 +1827,7 @@ GameObject:
   - component: {fileID: 936565204}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Checkmark
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1947,7 +1929,6 @@ GameObject:
   - component: {fileID: 956406143}
   - component: {fileID: 956406145}
   - component: {fileID: 956406144}
-  - component: {fileID: 956406146}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -2072,23 +2053,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956406142}
   m_CullTransparentMesh: 1
---- !u!114 &956406146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956406142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2b9776683f8af4a8182f99450e3a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidenceCheck: {fileID: 1086668523}
-  taskEvidence: {fileID: 501896764}
-  text: {fileID: 956406144}
-  checkMark: {fileID: 400526819}
-  photoDisplayArea: {fileID: 31349435}
 --- !u!1 &1086668519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,6 +2068,7 @@ GameObject:
   - component: {fileID: 1086668525}
   - component: {fileID: 1086668527}
   - component: {fileID: 1086668524}
+  - component: {fileID: 1086668528}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2151,7 +2116,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1173340129}
   - {fileID: 697247732}
   - {fileID: 1097778633}
   - {fileID: 916161927}
@@ -2176,7 +2140,6 @@ MonoBehaviour:
   Phone: {fileID: 646383855}
   Journal: {fileID: 1154979787}
   photoSprite: {fileID: 0}
-  photoDisplay: {fileID: 586829950}
   texture2Ds: []
   takenPhotos: []
 --- !u!114 &1086668524
@@ -2210,6 +2173,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   maxSlopeAngle: 0
+  footstepEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   grounded: 0
   onSlope: 0
   state: 0
@@ -2266,6 +2236,22 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &1086668528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1086668519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a2b99342d3e614dacc59fccb3d9ee1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensX: 100
+  sensY: 100
+  cameraHeight: 1.5
+  yRotation: 0
 --- !u!1 &1097778632
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,13 +2295,14 @@ GameObject:
   - component: {fileID: 1154979790}
   - component: {fileID: 1154979789}
   - component: {fileID: 1154979788}
+  - component: {fileID: 1154979792}
   m_Layer: 0
   m_Name: Journal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1154979788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2403,6 +2390,22 @@ Transform:
   - {fileID: 58754303}
   m_Father: {fileID: 1173340129}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1154979792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154979787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa2b9776683f8af4a8182f99450e3a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evidenceCheck: {fileID: 0}
+  checkMarks: []
+  photoDisplayArea: []
+  oldFoundEvidence: []
 --- !u!1 &1167177909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2451,7 +2454,6 @@ GameObject:
   - component: {fileID: 1173340129}
   - component: {fileID: 1173340128}
   - component: {fileID: 1173340127}
-  - component: {fileID: 1173340130}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2533,24 +2535,8 @@ Transform:
   m_Children:
   - {fileID: 646383856}
   - {fileID: 1154979791}
-  m_Father: {fileID: 1086668521}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1173340130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173340126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81a2b99342d3e614dacc59fccb3d9ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
-  cameraHeight: 1.5
-  yRotation: 0
 --- !u!1 &1258421519
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,7 +2773,6 @@ GameObject:
   - component: {fileID: 1480149734}
   - component: {fileID: 1480149737}
   - component: {fileID: 1480149736}
-  - component: {fileID: 1480149735}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -2815,23 +2800,6 @@ RectTransform:
   m_AnchoredPosition: {x: 44.599995, y: -16.200027}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1480149735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480149733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2b9776683f8af4a8182f99450e3a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidenceCheck: {fileID: 1086668523}
-  taskEvidence: {fileID: 1568612720}
-  text: {fileID: 1480149736}
-  checkMark: {fileID: 936565202}
-  photoDisplayArea: {fileID: 495383650}
 --- !u!114 &1480149736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3382,6 +3350,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1173340129}
   - {fileID: 1086668521}
   - {fileID: 1629929095}
   - {fileID: 709615973}
