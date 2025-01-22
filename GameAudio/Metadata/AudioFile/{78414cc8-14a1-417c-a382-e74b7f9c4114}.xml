@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{78414cc8-14a1-417c-a382-e74b7f9c4114}">
+		<property name="assetPath">
+			<value>SFX/hearthbeat-1.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>60.081632653061227</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ee076bfe-a101-4b09-b7b2-14d5af450c91}</destination>
+		</relationship>
+	</object>
+</objects>

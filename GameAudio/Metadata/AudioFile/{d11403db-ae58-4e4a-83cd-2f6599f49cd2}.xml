@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d11403db-ae58-4e4a-83cd-2f6599f49cd2}">
+		<property name="assetPath">
+			<value>SFX/water.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>20</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ee076bfe-a101-4b09-b7b2-14d5af450c91}</destination>
+		</relationship>
+	</object>
+</objects>
