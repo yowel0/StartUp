@@ -105,7 +105,7 @@ public class EvidenceCheck : MonoBehaviour
                     StartCoroutine(CapturePhoto());
                     foundEvidence.Add(target);
                     evidence.Remove(target);
-                    CheckClientTaskServerRpc();
+                    /*CheckClientTaskServerRpc();*/
                 }
             }
         }

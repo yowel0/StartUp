@@ -49,4 +49,11 @@ public class GameManager : NetworkBehaviour
             evidence[i].foundEvidence = ev.foundEvidence;
         }
     }
+
+    [Rpc(SendTo.ClientsAndHost)]
+    public void DeleteEvidenceRpc(int id)
+    {
+        GameObject ob = GameObject.Find(id.ToString());
+        Destroy(ob);
+    }
 }

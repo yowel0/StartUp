@@ -10,6 +10,7 @@ public class ThiefBehaviour : MoveBehaviour
 {
 
     [SerializeField] float crouchSpeed;
+    [SerializeField] Transform holdPos;
 
     AudioSource audio;
     [SerializeField] Camera cam;
@@ -79,10 +80,21 @@ public class ThiefBehaviour : MoveBehaviour
                     Debug.Log("check");
                     cleaning = true;
                 }
+                else if (obj.gameObject.CompareTag("Knife"))
+                {
+                    KnifePickUp(true,false);
+                }
             }
             else
             {
-                Hiding();
+                if (obj.CompareTag("Closet") && !grabbed)
+                {
+                    Hiding();
+                }
+                else if (obj.gameObject.CompareTag("Knife") )
+                {
+                    KnifePickUp(false, false);
+                }
             }
         }
         StopCleaning();
@@ -90,6 +102,21 @@ public class ThiefBehaviour : MoveBehaviour
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+
+    void KnifePickUp(bool grabbing, bool holding)
+    {
+        if (grabbing && !holding)
+        {
+            obj.position = holdPos.position;
+            obj.rotation = holdPos.rotation;
+            obj.SetParent(holdPos);
+        }
+        else if(!grabbing && !holding)
+        {
+
+        }
+
     }
 
     void StopCleaning()
@@ -184,7 +211,7 @@ public class ThiefBehaviour : MoveBehaviour
                 }
             }
             distClosestCop = (closestCop.position - transform.position).magnitude;
-            audio.pitch = 2 - (distClosestCop / 10);
+            audio.volume = 2 - (distClosestCop / 10);
 
             //Add a script to change the speed/volume of the heartbeat audio based on the distClosestCop.
         }

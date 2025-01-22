@@ -91,12 +91,24 @@ public class PoliceBehaviour : MoveBehaviour
                 if (pickUpTime > minPickUpTime)
                 {
                     Destroy(looking.transform.gameObject);
+                    /*DeleteObject(looking.transform.gameObject);*/
                     //Evidence Destroyed + 1;
                     obj = null;
                     pickingUp = false;
                     pickUpTime = 0;
                 }
             }
+        }
+    }
+
+    [Rpc(SendTo.Server)]
+    void DeleteObject(GameObject evidence)
+    {
+        if (GameManager.Instance != null)
+        {
+            print("checkie");
+            evidence.name = evidence.GetInstanceID().ToString();
+            GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
         }
     }
 
