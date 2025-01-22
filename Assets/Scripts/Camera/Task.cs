@@ -25,7 +25,7 @@ public class Task : MonoBehaviour
 
     private void Start()
     {
-        GameObject[] children = GetComponentsInChildren<GameObject>(true);
+        evidenceCheck = GetComponentInParent<EvidenceCheck>();
         photoDisplayArea = GetComponentsInChildren<Image>();
         oldFoundEvidence = evidenceCheck.foundEvidence;
         foreach (GameObject child in children)
