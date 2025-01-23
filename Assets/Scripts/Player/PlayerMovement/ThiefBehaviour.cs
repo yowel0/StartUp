@@ -5,11 +5,13 @@ using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.UI;
 
 public class ThiefBehaviour : MoveBehaviour
 {
 
     [SerializeField] float crouchSpeed;
+    [SerializeField] Transform holdPos;
 
     AudioSource audio;
     [SerializeField] Camera cam;
@@ -37,6 +39,11 @@ public class ThiefBehaviour : MoveBehaviour
     [SerializeField] float minCleanTime;
     [SerializeField] float cleanTimer = 0;
     bool cleaning = false;
+    Slider slider;
+    Image[] sliderParts;
+
+    GameObject knife;
+    bool holdingKnife = false;
 
 
     [SerializeField]
@@ -44,6 +51,10 @@ public class ThiefBehaviour : MoveBehaviour
     public void Start()
     {
         cam = Camera.main;
+        slider = cam.GetComponentInChildren<Slider>(true);
+        sliderParts = slider.GetComponentsInChildren<Image>(true);
+        foreach (Image part in sliderParts)
+            part.enabled = false;
         base.Start();
         audio = GetComponent<AudioSource>();
         oldSpeed = speed;
@@ -67,29 +78,84 @@ public class ThiefBehaviour : MoveBehaviour
         RaycastHit hit;
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && !hiding && !grabbed)
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 3) && !hiding && !grabbed)
             {
                 obj = hit.transform;
                 if (obj.CompareTag("Closet"))
                 {
                     Hiding();
                 }
-                else if (obj.gameObject.layer != LayerMask.NameToLayer("Evidence"))
+                else if (obj.gameObject.layer == LayerMask.NameToLayer("Evidence") && !cleaning)
                 {
+                    foreach (Image part in sliderParts)
+                        part.enabled = true;
                     Debug.Log("check");
                     cleaning = true;
                 }
+                else if (obj.gameObject.CompareTag("Knife"))
+                {
+                    print("grab");
+                    knife = obj.gameObject;
+                    KnifePickUp(true, false);
+                }
+                else if (holdingKnife)
+                {
+                    print("holding");
+                    KnifePickUp(false, false);
+                }
+            }
+            else if (holdingKnife)
+            {
+                print("holding");
+                KnifePickUp(false, false);
             }
             else
             {
-                Hiding();
+                if (hiding)
+                {
+                    Hiding();
+                }
             }
+        }
+        if (holdingKnife)
+        {
+            KnifePickUp(false, true);
         }
         StopCleaning();
         HideAnim();
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+
+    void KnifePickUp(bool grabbing, bool holding)
+    {
+        if (grabbing && !holding)
+        {
+            knife.gameObject.GetComponent<Collider>().isTrigger = true;
+            knife.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            knife.transform.position = holdPos.position;
+            knife.transform.rotation = holdPos.rotation;
+            knife.transform.SetParent(holdPos);
+            
+            knife.GetComponent<KnifeScript>().enabled = true;
+            knife.GetComponent<KnifeScript>().grabbed = true;
+            holdingKnife = true;
+        }
+        else if (!grabbing && !holding)
+        {
+            knife.gameObject.GetComponent<Collider>().isTrigger = false;
+            knife.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            knife.GetComponent<KnifeScript>().enabled = false;
+            knife.GetComponent<KnifeScript>().grabbed = false;
+            knife.transform.SetParent(null);
+            holdingKnife = false;
+        }
+        else if (!grabbing && holding)
+        {
+            knife.transform.position = holdPos.position;
+            knife.transform.rotation = holdPos.rotation;
+        }
     }
 
     void StopCleaning()
@@ -106,16 +172,22 @@ public class ThiefBehaviour : MoveBehaviour
                     cleaning = false;
                     cleanTimer = 0;
                     obj = null;
+                    foreach (Image part in sliderParts)
+                        part.enabled = false;
                 }
                 if (cleanTimer > minCleanTime)
                 {
+                    slider.enabled = false;
                     Destroy(looking.transform.gameObject);
                     //Evidence Destroyed + 1;
                     obj = null;
                     cleaning = false;
                     cleanTimer = 0;
+                    foreach (Image part in sliderParts)
+                        part.enabled = false;
                 }
             }
+            slider.value = cleanTimer / minCleanTime;
         }
     }
 
@@ -184,7 +256,7 @@ public class ThiefBehaviour : MoveBehaviour
                 }
             }
             distClosestCop = (closestCop.position - transform.position).magnitude;
-            audio.pitch = 2 - (distClosestCop / 10);
+            audio.volume = 2 - (distClosestCop / 10);
 
             //Add a script to change the speed/volume of the heartbeat audio based on the distClosestCop.
         }

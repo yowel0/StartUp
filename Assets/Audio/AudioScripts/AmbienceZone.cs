@@ -13,11 +13,16 @@ public class soundincollider : MonoBehaviour
     [Tooltip("Area of the sound to be in")]
     public Collider Area;
     [Tooltip("Character to track")]
-    public GameObject Player;
+    public Camera cam;
+
+    private void Start()
+    {
+        cam = Camera.main;
+    }
     void Update()
     {
         // Locate closest point on the collider to the player
-        Vector3 closestPoint = Area.ClosestPoint(Player.transform.position);
+        Vector3 closestPoint = Area.ClosestPoint(cam.transform.position);
         // Set position to closest point to the player
         transform.position = closestPoint;
     }
