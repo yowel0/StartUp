@@ -6,6 +6,7 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 public class EvidenceCheck : MonoBehaviour
 {
@@ -105,6 +106,9 @@ public class EvidenceCheck : MonoBehaviour
                     foundEvidence.Add(target);
                     evidence.Remove(target);
                     /*CheckClientTaskServerRpc();*/
+
+                    //play click sound
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.takePhotograph, this.transform.position);
                 }
             }
         }
