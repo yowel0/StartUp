@@ -6,7 +6,6 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class EvidenceCheck : MonoBehaviour
 {

@@ -5,6 +5,7 @@ using Unity.Netcode;
 using Unity.Networking.Transport;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PoliceBehaviour : MoveBehaviour
 {
@@ -25,6 +26,7 @@ public class PoliceBehaviour : MoveBehaviour
     bool canGrab = true;
     [SerializeField] int copsInProx = 0;
     float thiefSpeed;
+
 
     public void Start()
     {
@@ -56,7 +58,7 @@ public class PoliceBehaviour : MoveBehaviour
             {
                 LetGo();
             }
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && canGrab && !grabbed)
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5) && canGrab && !grabbed)
             {
                 Debug.Log("check2");
                 obj = hit.transform.gameObject;
@@ -184,6 +186,7 @@ public class PoliceBehaviour : MoveBehaviour
         caps2.enabled = false;
         sphere.enabled = false;
         script.speed = thiefSpeed;
+        script.grabbed = false;
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();

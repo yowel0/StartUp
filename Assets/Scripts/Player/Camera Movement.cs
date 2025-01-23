@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class CameraMovement : NetworkBehaviour
 {
@@ -9,9 +11,12 @@ public class CameraMovement : NetworkBehaviour
     private float sensX = 100;
     [SerializeField]
     private float sensY = 100;
+    bool check = false;
 
     [SerializeField]
     float cameraHeight = 1.5f;
+
+    SpotLight light;
 
     float xRotation;
     [SerializeField] float yRotation;
@@ -45,6 +50,12 @@ public class CameraMovement : NetworkBehaviour
 
     private void Update()
     {
+        if (!check && this.GetComponent<PoliceBehaviour>() != null)
+        {
+            ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
+            thief.GetComponentInChildren<Light>(true).enabled = false;
+            check = true;
+        }
         camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;

@@ -371,8 +371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceCheck: {fileID: 0}
-  checkMark: {fileID: 5085063246300207181}
-  photoDisplayArea: {fileID: 9204108209631672745}
+  checkMarks: []
+  photoDisplayArea:
+  - {fileID: 0}
+  oldFoundEvidence: []
 --- !u!1 &965514921371125032
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,8 +629,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceCheck: {fileID: 0}
-  checkMark: {fileID: 8165316535330234836}
-  photoDisplayArea: {fileID: 4446123819216841235}
+  checkMarks: []
+  photoDisplayArea:
+  - {fileID: 0}
+  oldFoundEvidence: []
 --- !u!1 &1495543975628224563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1135,8 +1139,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evidenceCheck: {fileID: 0}
-  checkMark: {fileID: 7953090325143484737}
-  photoDisplayArea: {fileID: 3017919457269407611}
+  checkMarks: []
+  photoDisplayArea:
+  - {fileID: 0}
+  oldFoundEvidence: []
 --- !u!1 &3813985751488393283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2095,7 +2101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3087887762
+  GlobalObjectIdHash: 2794608006
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -2135,6 +2141,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxSlopeAngle: 0
+  footstepEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   grounded: 0
   onSlope: 0
   state: 0
@@ -2259,7 +2272,6 @@ MonoBehaviour:
   Phone: {fileID: 4224706243842017101}
   Journal: {fileID: 4004347291060619406}
   photoSprite: {fileID: 0}
-  photoDisplay: {fileID: 8290382589644905913}
   texture2Ds: []
   takenPhotos: []
 --- !u!1 &7927750194131040763

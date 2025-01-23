@@ -41,7 +41,7 @@ public class Task : MonoBehaviour
         {
             if (oldFoundEvidence != evidenceCheck.foundEvidence)
             {
-                print("isigma");
+                //print("isigma");
                 check();
                 oldFoundEvidence = evidenceCheck.foundEvidence;
             }
