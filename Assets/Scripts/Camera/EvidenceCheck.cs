@@ -10,10 +10,7 @@ using static UnityEditor.Progress;
 
 public class EvidenceCheck : MonoBehaviour
 {
-    [SerializeField]
-    public List<GameObject> evidence;
-    [SerializeField]
-    public List<GameObject> foundEvidence;
+    public static EvidenceCheck instance { get; private set; }
     [SerializeField]
     public Camera Cam;
 
@@ -23,9 +20,9 @@ public class EvidenceCheck : MonoBehaviour
 
 
     [SerializeField]
-    private GameObject Phone;
-    [SerializeField]
     private GameObject Journal;
+    [SerializeField]
+    private GameObject phone;
 
     private bool phoneIsOut;
     private bool JournalActive;
@@ -36,18 +33,16 @@ public class EvidenceCheck : MonoBehaviour
     [SerializeField, HideInInspector]
     public Sprite photoSprite;
 
-
-    public List<Texture2D> texture2Ds = new List<Texture2D>();
-    public List<Sprite> takenPhotos = new List<Sprite>();
     private void Start()
     {
-        int layer = LayerMask.NameToLayer("Evidence");
-        GameObject[] task = FindObjectsOfType<GameObject>();
-        for (int i = 0; i < task.Length; i++)
+        if (instance == null)
         {
-            if (task[i].layer == layer) { evidence.Add(task[i]); }
+            instance = this;
         }
-
+        else
+        {
+            Destroy(instance);
+        }
     }
     private void Update()
     {
@@ -55,20 +50,20 @@ public class EvidenceCheck : MonoBehaviour
         {
             if (phoneIsOut)
             {
-                Phone.SetActive(false);
+                phone.SetActive(false);
                 phoneIsOut = false;
             }
             else if(!phoneIsOut && JournalActive)
             {
                 Journal.SetActive(false);
-                Phone.SetActive(true);
+                phone.SetActive(true);
                 phoneIsOut = true;
                 JournalActive = false;
 
             }
             else
             {
-                Phone.SetActive(true);
+                phone.SetActive(true);
                 phoneIsOut = true;
             }
         }
@@ -82,7 +77,7 @@ public class EvidenceCheck : MonoBehaviour
             }
             else if (phoneIsOut && !JournalActive)
             {
-                Phone.SetActive(false);
+                phone.SetActive(false);
                 Journal.SetActive(true);
                 phoneIsOut= false;
                 JournalActive = true;
@@ -93,23 +88,32 @@ public class EvidenceCheck : MonoBehaviour
                 JournalActive= true;
             }
         }
-
-        foreach (var target in evidence)
+        if (phoneIsOut && Input.GetMouseButtonDown(0))
         {
-            float distance = Vector3.Distance(transform.position, target.transform.position);
-            if (IsVisible(Cam, target))
+            TakePicture();
+        }
+
+    }
+
+    void TakePicture()
+    {
+        foreach (TaskManager.Task task in TaskManager.instance.taskList) //fixxx dit na bumbo clatttt xDDDD
+        {
+            if (!task.found)
             {
-                if (phoneIsOut && Input.GetMouseButtonDown(0) && distance <= distanceToEvidence)
+                float distance = Vector3.Distance(transform.position, task.evidenceObject.transform.position);
+                if (IsVisible(Cam, task.evidenceObject))
                 {
-                    Cam.cullingMask = ~(1 << 1);
-                    StartCoroutine(CapturePhoto());
-                    foundEvidence.Add(target);
-                    evidence.Remove(target);
-                    CheckClientTaskServerRpc();
+                    if (distance <= distanceToEvidence)
+                    {
+                        Cam.cullingMask = ~(1 << 1);
+                        StartCoroutine(CapturePhoto(task));
+                        //task.Find();
+                        //CheckClientTaskServerRpc();
+                    }
                 }
             }
         }
-
     }
 
     [Rpc(SendTo.Server)]
@@ -119,7 +123,7 @@ public class EvidenceCheck : MonoBehaviour
         {
             print("checkie");
             gameObject.name = gameObject.GetInstanceID().ToString();
-            GameManager.Instance.CheckClientsTaskRpc(this.gameObject.GetInstanceID());
+            //GameManager.Instance.CheckClientsTaskRpc(this.gameObject.GetInstanceID());
         }
     }
     public bool IsVisible(Camera c, GameObject target)
@@ -137,7 +141,7 @@ public class EvidenceCheck : MonoBehaviour
         return true;
     }
 
-    public IEnumerator CapturePhoto()
+    public IEnumerator CapturePhoto(TaskManager.Task _task)
     {
         yield return new WaitForEndOfFrame();
 
@@ -147,15 +151,16 @@ public class EvidenceCheck : MonoBehaviour
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB32, false);
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
-        texture2Ds.Add(screenCapture);
         Cam.cullingMask |= (1 << 1);
+        Sprite newPhotoSprite = Sprite.Create(screenCapture, new Rect(0, 0, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        _task.Find(newPhotoSprite);
     }
 
-    public void ShowPhoto()
-    {
-        Texture2D screenCapture = texture2Ds[texture2Ds.Count - 1];
-        Sprite newPhotoSprite = Sprite.Create(screenCapture, new Rect(0, 0, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
-        //photoDisplay.sprite = photoSprite;
-        takenPhotos.Add(newPhotoSprite);
-    }
+    //public Sprite ShowRecentPhoto()
+    //{
+    //    //Texture2D screenCapture = texture2Ds[texture2Ds.Count - 1];
+    //    //Sprite newPhotoSprite = Sprite.Create(screenCapture, new Rect(0, 0, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
+    //    //takenPhotos.Add(newPhotoSprite);
+    //    return newPhotoSprite;
+    //}
 }

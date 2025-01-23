@@ -37,7 +37,7 @@ public class GameManager : NetworkBehaviour
 
     }
 
-    [Rpc(SendTo.ClientsAndHost)]
+    /*[Rpc(SendTo.ClientsAndHost)]
     public void CheckClientsTaskRpc(int id)
     {
         GameObject ob = GameObject.Find(id.ToString());
@@ -48,5 +48,5 @@ public class GameManager : NetworkBehaviour
             evidence[i].evidence = ev.evidence;
             evidence[i].foundEvidence = ev.foundEvidence;
         }
-    }
+    }*/
 }

@@ -75,7 +75,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     void PickUp()
     {
-        if (pickingUp && evidence.foundEvidence.Contains(obj)) //&& evidenceList.Contains(obj) )  
+        if (pickingUp && TaskManager.instance.CheckEvidence(obj)) //&& evidenceList.Contains(obj) )  
         {
             RaycastHit looking;
             pickUpTime += Time.deltaTime;
