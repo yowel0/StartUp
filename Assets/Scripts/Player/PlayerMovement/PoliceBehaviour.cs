@@ -110,7 +110,7 @@ public class PoliceBehaviour : MoveBehaviour
         {
             print("checkie");
             evidence.name = evidence.GetInstanceID().ToString();
-            GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
+            //GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
         }
     }
 

@@ -1509,7 +1509,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fc20ebb1f68813f4b848007db3c08423, type: 2}
+  - {fileID: 2100000, guid: a40af8c56a5b61e4d9755e8d29f8ec67, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2347,6 +2347,26 @@ PrefabInstance:
     - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: speed
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: footstepEvent.Path
+      value: event:/Footsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: footstepEvent.Guid.Data1
+      value: -532567414
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: footstepEvent.Guid.Data2
+      value: 1210653788
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: footstepEvent.Guid.Data3
+      value: -113941321
+      objectReference: {fileID: 0}
+    - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: footstepEvent.Guid.Data4
+      value: 1782845265
       objectReference: {fileID: 0}
     - target: {fileID: 4620971634818152988, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: m_IsActive
