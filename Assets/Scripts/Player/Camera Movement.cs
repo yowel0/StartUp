@@ -53,8 +53,10 @@ public class CameraMovement : NetworkBehaviour
         if (!check && this.GetComponent<PoliceBehaviour>() != null)
         {
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
-            thief.GetComponentInChildren<Light>(true).enabled = false;
-            check = true;
+            if (thief != null){
+                thief.GetComponentInChildren<Light>(true).enabled = false;
+                check = true;
+            }
         }
         camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
 
