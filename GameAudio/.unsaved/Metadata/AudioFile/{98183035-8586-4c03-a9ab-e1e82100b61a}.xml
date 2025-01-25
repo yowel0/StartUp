@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{98183035-8586-4c03-a9ab-e1e82100b61a}">
+		<property name="assetPath">
+			<value>Killer-leave2.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.8922448979591837</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ee076bfe-a101-4b09-b7b2-14d5af450c91}</destination>
+		</relationship>
+	</object>
+</objects>
