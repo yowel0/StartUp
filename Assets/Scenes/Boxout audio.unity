@@ -2227,6 +2227,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9142181091036959499, guid: 122d5cf7918ff654aac547b49a6eadee, type: 3}
   m_PrefabInstance: {fileID: 441108006}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &451423215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2927653407613800956, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3846655184
+      objectReference: {fileID: 0}
+    - target: {fileID: -2927653407613800956, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 2176538568
+      objectReference: {fileID: 0}
+    - target: {fileID: 56253209113119664, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_Name
+      value: OfflineMurderer Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.086
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3613844168951203906, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
 --- !u!1 &460764973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,6 +2561,8 @@ MonoBehaviour:
     Path: event:/Footsteps
   grounded: 0
   onSlope: 0
+  playerOr: {fileID: 0}
+  rb: {fileID: 0}
   state: 0
   mAnimator: {fileID: 0}
   cam: {fileID: 0}
@@ -2532,7 +2603,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509965438}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81a2b99342d3e614dacc59fccb3d9ee1, type: 3}
   m_Name: 
@@ -6823,6 +6894,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Murderer Player
       objectReference: {fileID: 0}
+    - target: {fileID: 56253209113119664, guid: 34fb0b94c12d5844a8a61c85ddc6fdea, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1299685896526259452, guid: 34fb0b94c12d5844a8a61c85ddc6fdea, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.79
@@ -7708,6 +7783,10 @@ PrefabInstance:
     - target: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
       propertyPath: m_Name
       value: Police Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6664438864534977112, guid: 4336c0936bdc66947ad6586655b868fb, type: 3}
       propertyPath: m_TagString
@@ -9299,3 +9378,4 @@ SceneRoots:
   - {fileID: 1875718804}
   - {fileID: 1045754518}
   - {fileID: 509965437}
+  - {fileID: 451423215}

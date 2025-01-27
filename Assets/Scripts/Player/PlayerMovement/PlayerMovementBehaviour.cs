@@ -42,11 +42,11 @@ public abstract class MoveBehaviour : MonoBehaviour
     protected bool checkForGround = true;
     protected float drag;
     protected float speedMult;
-    Transform playerOr;
+    [SerializeField] Transform playerOr;
     Vector3 directionMoving;
     float horInput;
     float verInput;
-    protected Rigidbody rb;
+    [SerializeField] protected Rigidbody rb;
     //Sub-classes can use this to check if target is reached.
 
     public States state;
@@ -60,8 +60,8 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     protected virtual void Start()
     {
-        rb = this.gameObject.GetComponent<Rigidbody>();
-        playerOr = this.transform;
+        rb = GetComponent<Rigidbody>();
+        playerOr = transform;
         mAnimator = GetComponentInChildren<Animator>();
         mAnimator.speed = speed;
     }
@@ -70,9 +70,10 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         if (checkForGround)
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down,  playerSize + 0.2f, whatIsGround);
+            grounded = Physics.Raycast(transform.position, Vector3.down,  playerSize, whatIsGround);
         }
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
+        //directionMoving = new Vector3(1, 0, 0).normalized;
         mAnimator.SetFloat("Speed", directionMoving.magnitude);
         PlayFootstepSound();
         SpeedControl();

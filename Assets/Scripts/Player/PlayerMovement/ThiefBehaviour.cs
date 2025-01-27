@@ -54,10 +54,12 @@ public class ThiefBehaviour : MoveBehaviour
         slider = cam.GetComponentInChildren<Slider>(true);
         sliderParts = slider.GetComponentsInChildren<Image>(true);
         foreach (Image part in sliderParts)
+        {
             part.enabled = false;
-        base.Start();
+        }
         audio = GetComponent<AudioSource>();
         oldSpeed = speed;
+        base.Start();
     }
     public override void StateHandler()
     {
