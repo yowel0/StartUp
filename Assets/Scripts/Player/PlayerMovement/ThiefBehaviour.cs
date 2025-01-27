@@ -6,6 +6,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Android;
 using UnityEngine.UI;
+using FMODUnity;
+using FMOD.Studio;
 
 public class ThiefBehaviour : MoveBehaviour
 {
@@ -48,6 +50,11 @@ public class ThiefBehaviour : MoveBehaviour
 
     [SerializeField]
     float CrouchMultiplier = 0.5f;
+
+    [SerializeField]
+    private EventReference hideEvidence;
+    [SerializeField]
+    private EventReference killerStruggle;
     public void Start()
     {
         cam = Camera.main;
@@ -91,6 +98,8 @@ public class ThiefBehaviour : MoveBehaviour
                         part.enabled = true;
                     Debug.Log("check");
                     cleaning = true;
+                    RuntimeManager.PlayOneShot(hideEvidence, transform.position);
+
                 }
                 else if (obj.gameObject.CompareTag("Knife"))
                 {
@@ -328,6 +337,7 @@ public class ThiefBehaviour : MoveBehaviour
             {
                 shakes -= 1;
                 shakeLeft = false;
+                RuntimeManager.PlayOneShot(killerStruggle, transform.position);
             }
             else if (Input.GetKeyDown(KeyCode.L) && !shakeLeft)
             {

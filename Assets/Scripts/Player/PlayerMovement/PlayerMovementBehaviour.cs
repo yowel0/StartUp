@@ -28,6 +28,7 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     [SerializeField]
     private EventReference footstepEvent;
+
     
     private float footstepDelay = 0.5f; // Delay between footstep sounds
     private float lastFootstepTime = 0f;

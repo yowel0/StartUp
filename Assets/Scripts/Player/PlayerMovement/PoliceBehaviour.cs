@@ -6,6 +6,7 @@ using Unity.Networking.Transport;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using FMODUnity;
 
 public class PoliceBehaviour : MoveBehaviour
 {
@@ -26,6 +27,11 @@ public class PoliceBehaviour : MoveBehaviour
     bool canGrab = true;
     [SerializeField] int copsInProx = 0;
     float thiefSpeed;
+
+    [SerializeField]
+    private EventReference clearEvidence;
+    [SerializeField]
+    private EventReference copStruggle;
 
 
     public void Start()
@@ -69,6 +75,7 @@ public class PoliceBehaviour : MoveBehaviour
                 else if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
                 {
                     pickingUp = true;
+                    RuntimeManager.PlayOneShot(clearEvidence, transform.position);
                 }
             }
             canGrab = true;
@@ -173,6 +180,7 @@ public class PoliceBehaviour : MoveBehaviour
 
                 CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
                 caps.enabled = false;
+                RuntimeManager.PlayOneShot(copStruggle, transform.position);
 
 
 
