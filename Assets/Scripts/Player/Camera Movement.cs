@@ -52,8 +52,10 @@ public class CameraMovement : NetworkBehaviour
     {
         if (!check && this.GetComponent<PoliceBehaviour>() != null)
         {
+            print("check1");
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
-            if (thief != null){
+            if (thief != null && !thief.GetComponent<NetworkObject>().IsOwner){
+                print("check2");
                 thief.GetComponentInChildren<Light>(true).enabled = false;
                 check = true;
             }

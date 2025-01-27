@@ -8,7 +8,7 @@ public class MurderLight : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if (this.GetComponent<ThiefBehaviour>() == null)
+        if (!IsOwner)
         {
 
             this.GetComponent<Light>().enabled = false;
