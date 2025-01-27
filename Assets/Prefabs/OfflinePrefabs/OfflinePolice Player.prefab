@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f893b04cd9afd7c41a3ed6b87044c016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &337991011221359834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1205,6 @@ GameObject:
   - component: {fileID: 618747469189067055}
   - component: {fileID: 6891306028965677945}
   - component: {fileID: 7994707860853037641}
-  - component: {fileID: 8542662196819429974}
   m_Layer: 0
   m_Name: Journal
   m_TagString: Untagged
@@ -1301,22 +1299,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8542662196819429974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4004347291060619406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa2b9776683f8af4a8182f99450e3a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  evidenceCheck: {fileID: 3079340277191381256}
-  checkMarks: []
-  photoDisplayArea: []
-  oldFoundEvidence: []
 --- !u!1 &4224706243842017101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2794608006
+  GlobalObjectIdHash: 242697633
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -2028,6 +2010,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   maxSlopeAngle: 0
+  footstepEvent:
+    Guid:
+      Data1: -532567414
+      Data2: 1210653788
+      Data3: -113941321
+      Data4: 1782845265
+    Path: event:/Footsteps
   grounded: 0
   onSlope: 0
   state: 0
@@ -2042,6 +2031,20 @@ MonoBehaviour:
   minPickUpTime: 0
   grabbed: 0
   copsInProx: 0
+  clearEvidence:
+    Guid:
+      Data1: -301764205
+      Data2: 1196279679
+      Data3: 1433150878
+      Data4: 1953865654
+    Path: event:/player actions/clear_evidence_1
+  copStruggle:
+    Guid:
+      Data1: -821860181
+      Data2: 1193863684
+      Data3: -2088685928
+      Data4: 1691141430
+    Path: event:/player actions/Struggle_joe
 --- !u!136 &8886012975399451813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2145,15 +2148,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5984e6cbbcbafc43835c9444ddb9cb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evidence: []
-  foundEvidence: []
   Cam: {fileID: 860983288637208325}
   distanceToEvidence: 3
-  Phone: {fileID: 4224706243842017101}
   Journal: {fileID: 4004347291060619406}
+  phone: {fileID: 0}
+  grabJournal:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  takePicture:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   photoSprite: {fileID: 0}
-  texture2Ds: []
-  takenPhotos: []
 --- !u!1 &7927750194131040763
 GameObject:
   m_ObjectHideFlags: 0
