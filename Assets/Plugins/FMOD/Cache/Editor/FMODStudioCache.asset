@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8891920857693618447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/joe-intro
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/joe-intro
+  Guid:
+    Data1: 66961200
+    Data2: 1204925625
+    Data3: 150508697
+    Data4: -1506822294
+  Banks:
+  - {fileID: -554120311192532059}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8829620662205640893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,7 +55,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
---- !u!114 &-7571382830848795659
+--- !u!114 &-8804253687034028116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,14 +65,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/open-journal
+  m_Name: event:/UI/Pause_game
   m_EditorClassIdentifier: 
-  Path: event:/open-journal
+  Path: event:/UI/Pause_game
   Guid:
-    Data1: -1121647283
-    Data2: 1139843467
-    Data3: 820726664
-    Data4: 1519295839
+    Data1: -1879968661
+    Data2: 1252405893
+    Data3: 1100813749
+    Data4: 14255557
+  Banks:
+  - {fileID: -554120311192532059}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8161396045799340645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/open_jounal
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/open_jounal
+  Guid:
+    Data1: -1315060378
+    Data2: 1301062353
+    Data3: -635505509
+    Data4: -1317094186
   Banks:
   - {fileID: -1311026327999303937}
   IsStream: 0
@@ -97,10 +151,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638735678252649839
+  lastModified: 638735733534562085
   FileSizes:
   - Name: Desktop
-    Value: 2300
+    Value: 2552
   Exists: 1
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
@@ -172,7 +226,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638731399705213872
+  lastModified: 638735733534551694
   FileSizes:
   - Name: Desktop
     Value: 5700
@@ -258,33 +312,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
---- !u!114 &-3273987778407717886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/clean-evidence-wipe
-  m_EditorClassIdentifier: 
-  Path: event:/clean-evidence-wipe
-  Guid:
-    Data1: 931574058
-    Data2: 1116805555
-    Data3: 1548135590
-    Data4: -1991581237
-  Banks:
-  - {fileID: -1311026327999303937}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-2402787918985736467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,11 +351,38 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Static Ambience.bank
   Name: Static Ambience
   StudioPath: bank:/Static Ambience
-  lastModified: 638735678252740217
+  lastModified: 638735733535770098
   FileSizes:
   - Name: Desktop
-    Value: 1273728
+    Value: 1354976
   Exists: 1
+--- !u!114 &-1856450182769679535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/police-dies
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/police-dies
+  Guid:
+    Data1: -2040165994
+    Data2: 1220518935
+    Data3: 1115052984
+    Data4: 2044378693
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1561845751942627816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,11 +425,38 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638735678252660099
+  lastModified: 638735733535380814
   FileSizes:
   - Name: Desktop
-    Value: 89760
+    Value: 121664
   Exists: 1
+--- !u!114 &-1268220005141763665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/Struggle_benjamin
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/Struggle_benjamin
+  Guid:
+    Data1: -953671346
+    Data2: 1214214209
+    Data3: 886072195
+    Data4: 491459114
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-833819302435978050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,33 +477,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 806
   Exists: 1
---- !u!114 &-738362715326441941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/clean-evidence-grab
-  m_EditorClassIdentifier: 
-  Path: event:/clean-evidence-grab
-  Guid:
-    Data1: -462084181
-    Data2: 1246899314
-    Data3: -83686751
-    Data4: -741650063
-  Banks:
-  - {fileID: -1311026327999303937}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-554120311192532059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,10 +492,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638735678252750272
+  lastModified: 638735733537617212
   FileSizes:
   - Name: Desktop
-    Value: 218176
+    Value: 236544
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -476,22 +530,27 @@ MonoBehaviour:
   - {fileID: -7527339498584786605}
   - {fileID: -4201298957469019921}
   - {fileID: 937508190619640907}
-  - {fileID: -3273987778407717886}
-  - {fileID: -7571382830848795659}
-  - {fileID: 7541520243026339968}
-  - {fileID: -738362715326441941}
-  - {fileID: 5169718783958353570}
   - {fileID: 161034696899736718}
-  - {fileID: 6882047884287215491}
   - {fileID: -5991615953790895544}
-  - {fileID: 1561461973654620819}
-  - {fileID: 3689892842979451048}
+  - {fileID: -1268220005141763665}
+  - {fileID: -8161396045799340645}
+  - {fileID: 5055392380071464177}
+  - {fileID: -1856450182769679535}
+  - {fileID: 8678573846365757532}
+  - {fileID: 4475438631183614638}
+  - {fileID: 9120953930529707699}
+  - {fileID: -8891920857693618447}
+  - {fileID: 4076346849123316478}
+  - {fileID: -8804253687034028116}
+  - {fileID: 4208023377639281492}
+  - {fileID: 2051949919153450256}
+  - {fileID: 2885891076623521486}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4749639541179348689}
   StringsBanks:
   - {fileID: -6686004736249880970}
-  cacheTime: 638735678252750272
+  cacheTime: 638735733537617212
   cacheVersion: 131622
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -575,7 +634,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &1561461973654620819
+--- !u!114 &2051949919153450256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -585,17 +644,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/police-leave
+  m_Name: event:/UI/Siren
   m_EditorClassIdentifier: 
-  Path: event:/police-leave
+  Path: event:/UI/Siren
   Guid:
-    Data1: -941589572
-    Data2: 1322140072
-    Data3: 1573510550
-    Data4: 455529203
+    Data1: 1113867507
+    Data2: 1272855872
+    Data3: 1796412590
+    Data4: -2098639303
   Banks:
   - {fileID: -554120311192532059}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
@@ -629,7 +688,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
---- !u!114 &3689892842979451048
+--- !u!114 &2885891076623521486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -639,14 +698,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Killer-leave
+  m_Name: event:/UI/Police-win
   m_EditorClassIdentifier: 
-  Path: event:/Killer-leave
+  Path: event:/UI/Police-win
   Guid:
-    Data1: 2060791230
-    Data2: 1259307428
-    Data3: -723314010
-    Data4: -217725318
+    Data1: 937567228
+    Data2: 1199937677
+    Data3: 381425817
+    Data4: -39130170
   Banks:
   - {fileID: -554120311192532059}
   IsStream: 0
@@ -671,10 +730,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638735678252639794
+  lastModified: 638735733534435274
   FileSizes:
   - Name: Desktop
-    Value: 2449376
+    Value: 2506944
   Exists: 1
 --- !u!114 &4053181931461454489
 MonoBehaviour:
@@ -696,6 +755,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 13088
   Exists: 1
+--- !u!114 &4076346849123316478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/Benjamin-intro
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/Benjamin-intro
+  Guid:
+    Data1: -29863845
+    Data2: 1157048154
+    Data3: -676398189
+    Data4: -632788857
+  Banks:
+  - {fileID: -554120311192532059}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4208023377639281492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/killer-win
+  m_EditorClassIdentifier: 
+  Path: event:/UI/killer-win
+  Guid:
+    Data1: -1002610577
+    Data2: 1320465761
+    Data3: -926094168
+    Data4: 234754070
+  Banks:
+  - {fileID: -554120311192532059}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4432219378429615930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,7 +833,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &5169718783958353570
+--- !u!114 &4475438631183614638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -730,18 +843,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Pause
+  m_Name: event:/Rattles
   m_EditorClassIdentifier: 
-  Path: event:/UI/Pause
+  Path: event:/Rattles
   Guid:
-    Data1: 1885322384
-    Data2: 1252245266
-    Data3: 402609797
-    Data4: -95857621
+    Data1: 574375823
+    Data2: 1270136501
+    Data3: 1747083392
+    Data4: 49256369
   Banks:
-  - {fileID: -554120311192532059}
+  - {fileID: -2330712530386476867}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
+--- !u!114 &5055392380071464177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/clear_evidence_1
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/clear_evidence_1
+  Guid:
+    Data1: -301764205
+    Data2: 1196279679
+    Data3: 1433150878
+    Data4: 1953865654
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -774,33 +914,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 250
---- !u!114 &6882047884287215491
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/get-ready
-  m_EditorClassIdentifier: 
-  Path: event:/UI/get-ready
-  Guid:
-    Data1: 1260391091
-    Data2: 1162552097
-    Data3: 405855123
-    Data4: -1969263979
-  Banks:
-  - {fileID: -554120311192532059}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6926895302614514160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -845,33 +958,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &7541520243026339968
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/joe-stabbed
-  m_EditorClassIdentifier: 
-  Path: event:/joe-stabbed
-  Guid:
-    Data1: -1749515437
-    Data2: 1226111254
-    Data3: -1714068826
-    Data4: -1735247380
-  Banks:
-  - {fileID: -1311026327999303937}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7748625829630345537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -950,7 +1036,34 @@ MonoBehaviour:
   - {fileID: 8751727661249269240}
   MinDistance: 1
   MaxDistance: 20
-  Length: 60000
+  Length: 61000
+--- !u!114 &8678573846365757532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/player actions/Struggle_joe
+  m_EditorClassIdentifier: 
+  Path: event:/player actions/Struggle_joe
+  Guid:
+    Data1: -821860181
+    Data2: 1193863684
+    Data3: -2088685928
+    Data4: 1691141430
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &8751727661249269240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,3 +1116,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &9120953930529707699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Electricity_cracks
+  m_EditorClassIdentifier: 
+  Path: event:/Electricity_cracks
+  Guid:
+    Data1: 1219205008
+    Data2: 1256250770
+    Data3: -1595515001
+    Data4: -1112548773
+  Banks:
+  - {fileID: -2330712530386476867}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
