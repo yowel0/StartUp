@@ -54,10 +54,13 @@ public class CameraMovement : MonoBehaviour
     {
         if (!check && this.GetComponent<PoliceBehaviour>() != null)
         {
+            print("check1");
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
-            if (thief != null)
+            if (thief != null && !thief.GetComponent<NetworkObject>().IsOwner){
+                print("check2");
                 thief.GetComponentInChildren<Light>(true).enabled = false;
                 check = true;
+            }
         }
         camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
 
