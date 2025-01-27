@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Networking scene with voice.unity
     guid: 2bc03415411cc284faf8a7d028e616ff
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Boxout audio.unity
     guid: 5e36872beace198469fd4aded93e185d
   - enabled: 1

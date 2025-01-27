@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class upDownRot : MonoBehaviour
+public class upDownRot : NetworkBehaviour
 {
-    [SerializeField] Camera cam;
+    Camera cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,10 +15,14 @@ public class upDownRot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!IsOwner){
+            enabled = false;
+            return;
+        }
         if (cam != null)
         {
-            
-            
+            transform.position = cam.transform.position;
+            transform.rotation = cam.transform.rotation;
         }
     }
 }
