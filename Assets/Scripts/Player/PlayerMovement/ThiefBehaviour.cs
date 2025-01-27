@@ -54,10 +54,12 @@ public class ThiefBehaviour : MoveBehaviour
         slider = cam.GetComponentInChildren<Slider>(true);
         sliderParts = slider.GetComponentsInChildren<Image>(true);
         foreach (Image part in sliderParts)
+        {
             part.enabled = false;
-        base.Start();
+        }
         audio = GetComponent<AudioSource>();
         oldSpeed = speed;
+        base.Start();
     }
     public override void StateHandler()
     {
@@ -91,6 +93,7 @@ public class ThiefBehaviour : MoveBehaviour
                         part.enabled = true;
                     Debug.Log("check");
                     cleaning = true;
+                    mAnimator.SetBool("Removing ev", true);
                 }
                 else if (obj.gameObject.CompareTag("Knife"))
                 {
@@ -121,11 +124,16 @@ public class ThiefBehaviour : MoveBehaviour
         {
             KnifePickUp(false, true);
         }
+        Slash();
         StopCleaning();
         HideAnim();
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+    void Slash()
+    {
+        if(mAnimator) mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
     }
 
     void KnifePickUp(bool grabbing, bool holding)
@@ -168,6 +176,7 @@ public class ThiefBehaviour : MoveBehaviour
             {
                 if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
                 {
+                    mAnimator.SetBool("Removing ev", false);
                     Debug.Log("check2");
                     cleaning = false;
                     cleanTimer = 0;
@@ -177,6 +186,7 @@ public class ThiefBehaviour : MoveBehaviour
                 }
                 if (cleanTimer > minCleanTime)
                 {
+                    mAnimator.SetBool("Removing ev", false);
                     slider.enabled = false;
                     Destroy(looking.transform.gameObject);
                     //Evidence Destroyed + 1;
@@ -189,7 +199,7 @@ public class ThiefBehaviour : MoveBehaviour
             }
             slider.value = cleanTimer / minCleanTime;
         }
-    }
+    } 
 
     void Hiding()
     {
@@ -264,9 +274,7 @@ public class ThiefBehaviour : MoveBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (other.GetComponent<PoliceBehaviour>())
+            if (other.CompareTag("Police"))
             {
                 policeClose = true;
                 copsInRadius.Add(other.transform);
@@ -276,14 +284,11 @@ public class ThiefBehaviour : MoveBehaviour
                     isPLaying = true;
                 }
             }
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            if (other.GetComponent<PoliceBehaviour>() != null)
+            if (other.CompareTag("Police"))
             {
                 if (other.transform == closestCop)
                     closestCop = null;
@@ -296,7 +301,6 @@ public class ThiefBehaviour : MoveBehaviour
                     policeClose = false;
                 }
             }
-        }
     }
 
     private void Crouching()

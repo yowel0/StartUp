@@ -24,6 +24,11 @@ public class EvidenceCheck : MonoBehaviour
     [SerializeField]
     private GameObject phone;
 
+    [SerializeField]
+    private EventReference grabJournal;
+    [SerializeField]
+    private EventReference takePicture;
+
     private bool phoneIsOut;
     private bool JournalActive;
     bool once = true;
@@ -74,16 +79,21 @@ public class EvidenceCheck : MonoBehaviour
             {
                 Journal.SetActive(false);
                 JournalActive = false;
+
+                RuntimeManager.PlayOneShot(grabJournal, transform.position);
             }
             else if (phoneIsOut && !JournalActive)
             {
                 phone.SetActive(false);
                 Journal.SetActive(true);
-                phoneIsOut= false;
+                RuntimeManager.PlayOneShot(grabJournal, transform.position);
+                phoneIsOut = false;
                 JournalActive = true;
             }
             else
             {
+
+                RuntimeManager.PlayOneShot(grabJournal, transform.position);
                 Journal.SetActive(true);
                 JournalActive= true;
             }
@@ -108,6 +118,7 @@ public class EvidenceCheck : MonoBehaviour
                     {
                         Cam.cullingMask = ~(1 << 1);
                         StartCoroutine(CapturePhoto(task));
+                        RuntimeManager.PlayOneShot(takePicture, transform.position);
                         //task.Find();
                         //CheckClientTaskServerRpc();
                     }

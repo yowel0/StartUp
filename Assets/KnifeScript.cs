@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnifeScript : MonoBehaviour
 {
-    public bool grabbed = false;
+    public bool grabbed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +20,9 @@ public class KnifeScript : MonoBehaviour
         if (other.gameObject.CompareTag("Police") && grabbed)
         {
             print("b");
-            other.gameObject.GetComponent<PoliceBehaviour>().enabled = false;
+            if (other.gameObject.GetComponent<PoliceBehaviour>() != null)
+                other.gameObject.GetComponent<PoliceBehaviour>().enabled = false;
+            else other.gameObject.GetComponent<PoliceAi>().enabled = false;
             other.transform.rotation = Quaternion.Euler(-90, 0, 0);
             other.transform.GetComponent<Rigidbody>().isKinematic = false;
         }

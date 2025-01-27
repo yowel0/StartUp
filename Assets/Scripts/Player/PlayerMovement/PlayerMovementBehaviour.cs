@@ -17,12 +17,13 @@ using FMOD.Studio;
 /// </summary>
 /// 
 
-[RequireComponent(typeof(Animator))]
+
 public abstract class MoveBehaviour : MonoBehaviour
 {
     public float speed;
     [SerializeField] float sprintMult;
     [SerializeField] LayerMask whatIsGround;
+    [SerializeField] int playerSize = 1;
 
     [SerializeField] float maxSlopeAngle;
 
@@ -41,11 +42,11 @@ public abstract class MoveBehaviour : MonoBehaviour
     protected bool checkForGround = true;
     protected float drag;
     protected float speedMult;
-    Transform playerOr;
+    [SerializeField] Transform playerOr;
     Vector3 directionMoving;
     float horInput;
     float verInput;
-    protected Rigidbody rb;
+    [SerializeField] protected Rigidbody rb;
     //Sub-classes can use this to check if target is reached.
 
     public States state;
@@ -61,26 +62,26 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerOr = transform;
-        mAnimator = GetComponent<Animator>();
-        PlayIdleAnimation();
-
-        
-
+        mAnimator = GetComponentInChildren<Animator>();
+        if(mAnimator) mAnimator.speed = speed;
     }
 
     public void Update()
     {
         if (checkForGround)
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down, transform.localScale.y + 0.2f, whatIsGround);
+            grounded = Physics.Raycast(transform.position, Vector3.down,  playerSize, whatIsGround);
         }
+        directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
+        //directionMoving = new Vector3(1, 0, 0).normalized;
+        if(mAnimator) mAnimator.SetFloat("Speed", directionMoving.magnitude);
         PlayFootstepSound();
         SpeedControl();
         Inputs();
         StateHandler();
         if (!grounded && !OnSlope())
         {
-            rb.AddForce(Vector3.down, ForceMode.Impulse);
+           /* rb.AddForce(Vector3.down, ForceMode.Impulse);*/
         }
     }
     public void FixedUpdate()
@@ -88,10 +89,6 @@ public abstract class MoveBehaviour : MonoBehaviour
         PlayerMovement();
     }
 
-    public virtual void SetTargetPosition(Vector3 position)
-    {
-        PlayMovingAnimation();
-    }
     private void Inputs()
     {
         horInput = Input.GetAxisRaw("Horizontal");
@@ -99,18 +96,14 @@ public abstract class MoveBehaviour : MonoBehaviour
     }
     private void PlayerMovement()
     {
-        directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         rb.AddForce(directionMoving * speed * speedMult * 10f, ForceMode.Force);
         if (directionMoving.magnitude == 0 && grounded)
         {
             rb.isKinematic = true;
-           
-           
         }
         else
         {
-            rb.isKinematic = false;
-
+            rb.isKinematic = false; 
         }
         if (OnSlope())
         {
@@ -178,29 +171,7 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     #region "animation related fields"
     [SerializeField]
-    private Animator mAnimator;
+    protected Animator mAnimator;
     //If idling animation is already playing, don't play it again.
-    private bool idleAnimationPlaying = false;
-    //If moving animation is already playing, don't play it again.
-    private bool moveAnimationPlaying = false;
-    //Sub-classes can use the following functions to play animations accordingly
-    protected void PlayMovingAnimation()
-    {
-        idleAnimationPlaying = false;
-        if (!moveAnimationPlaying)
-        {
-            mAnimator.Play("Move");
-            moveAnimationPlaying = true;
-        }
-    }
-    protected void PlayIdleAnimation()
-    {
-        moveAnimationPlaying = false;
-        if (!idleAnimationPlaying)
-        {
-            mAnimator.Play("Idle");
-            idleAnimationPlaying = true;
-        }
-    }
     #endregion
 }
