@@ -4,8 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - BloodPrint
+  - BrokenPainting
+  - DeadBody
   - Murderer
   - Closet
+  - Evidence
+  - Checkmark
+  - Knife
+  - Police
   layers:
   - Default
   - TransparentFX
@@ -13,14 +20,14 @@ TagManager:
   - A
   - Water
   - UI
-  - Player
+  - PlayerMask
   - Holding
   - MurdererLight
   - whatIsGround
-  - 
-  - 
-  - 
-  - 
+  - Evidence
+  - FlashLight
+  - AI
+  - Doors
   - 
   - 
   - 

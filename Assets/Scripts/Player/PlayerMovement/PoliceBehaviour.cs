@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
+using Unity.Networking.Transport;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PoliceBehaviour : MoveBehaviour
 {
@@ -12,18 +16,37 @@ public class PoliceBehaviour : MoveBehaviour
     [SerializeField] SphereCollider sphere;
     [SerializeField] int minShakes;
     [SerializeField] int maxShakes;
+    [SerializeField] float minPickUpTime;
     public bool grabbed = false;
+    EvidenceCheck evidence;
+    float pickUpTime = 0;
     ThiefBehaviour script;
     GameObject obj = null;
+    bool pickingUp = false;
     bool canGrab = true;
     [SerializeField] int copsInProx = 0;
     float thiefSpeed;
 
+
     public void Start()
     {
+        
         base.Start();
+        cam = Camera.main;
     }
     public void Update()
+    {
+        RayCastChecks();
+        if (grabbed)
+        {
+            Hold();
+            EscapeCheck();
+        }
+        PickUp();
+        base.Update();
+
+    }
+    void RayCastChecks()
     {
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
@@ -35,22 +58,61 @@ public class PoliceBehaviour : MoveBehaviour
             {
                 LetGo();
             }
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 50) && canGrab && !grabbed)
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5) && canGrab && !grabbed)
             {
                 Debug.Log("check2");
                 obj = hit.transform.gameObject;
-                Grabbing();
+                if (hit.transform.CompareTag("Murderer"))
+                {
+                    Grabbing();
+                }
+                else if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
+                {
+                    pickingUp = true;
+                }
             }
             canGrab = true;
         }
-        if (grabbed)
-        {
-            Hold();
-            EscapeCheck();
-        }
-        base.Update();
-
     }
+
+    void PickUp()
+    {
+        if (pickingUp && TaskManager.instance.CheckEvidence(obj)) //&& evidenceList.Contains(obj) )  
+        {
+            RaycastHit looking;
+            pickUpTime += Time.deltaTime;
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
+            {
+                if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                {
+                    Debug.Log("check2");
+                    pickingUp = false;
+                    pickUpTime = 0;
+                    obj = null;
+                }
+                if (pickUpTime > minPickUpTime)
+                {
+                    Destroy(looking.transform.gameObject);
+                    /*DeleteObject(looking.transform.gameObject);*/
+                    //Evidence Destroyed + 1;
+                    obj = null;
+                    pickingUp = false;
+                    pickUpTime = 0;
+                }
+            }
+        }
+    }
+
+/*    [Rpc(SendTo.Server)]
+    void DeleteObject(GameObject evidence)
+    {
+        if (GameManager.Instance != null)
+        {
+            print("checkie");
+            evidence.name = evidence.GetInstanceID().ToString();
+            //GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
+        }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -93,8 +155,6 @@ public class PoliceBehaviour : MoveBehaviour
     }
     private void Grabbing()
     {
-        if (obj.tag == "Murderer")
-        {
             if (!grabbed)
             {
                 script = obj.GetComponent<ThiefBehaviour>();
@@ -119,7 +179,6 @@ public class PoliceBehaviour : MoveBehaviour
 
                 grabbed = true;
             }
-        }
     }
     private void LetGo()
     {
@@ -127,6 +186,7 @@ public class PoliceBehaviour : MoveBehaviour
         caps2.enabled = false;
         sphere.enabled = false;
         script.speed = thiefSpeed;
+        script.grabbed = false;
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();

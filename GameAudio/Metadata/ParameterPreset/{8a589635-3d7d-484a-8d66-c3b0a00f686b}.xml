@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{8a589635-3d7d-484a-8d66-c3b0a00f686b}">
+		<property name="name">
+			<value>BathroomParameter</value>
+		</property>
+		<relationship name="folder">
+			<destination>{58a64050-7590-4707-967d-b40ccaf7717f}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{9afa13fd-1c5f-41d0-bee4-84bc889d9dd7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{9afa13fd-1c5f-41d0-bee4-84bc889d9dd7}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.3999999761581421</value>
+		</property>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{67b987a5-af66-48cb-9a0a-496074e1eaa9}">
+		<property name="assetPath">
+			<value>j_struggle_1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.4367346938775509</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{ee076bfe-a101-4b09-b7b2-14d5af450c91}</destination>
+		</relationship>
+	</object>
+</objects>
