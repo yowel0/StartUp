@@ -132,7 +132,7 @@ public class ThiefBehaviour : MoveBehaviour
     }
     void Slash()
     {
-        mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
+        if(mAnimator) mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
     }
 
     void KnifePickUp(bool grabbing, bool holding)

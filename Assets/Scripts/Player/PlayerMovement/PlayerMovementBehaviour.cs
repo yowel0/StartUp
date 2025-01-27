@@ -63,7 +63,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerOr = transform;
         mAnimator = GetComponentInChildren<Animator>();
-        mAnimator.speed = speed;
+        if(mAnimator) mAnimator.speed = speed;
     }
 
     public void Update()
@@ -74,7 +74,7 @@ public abstract class MoveBehaviour : MonoBehaviour
         }
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         //directionMoving = new Vector3(1, 0, 0).normalized;
-        mAnimator.SetFloat("Speed", directionMoving.magnitude);
+        if(mAnimator) mAnimator.SetFloat("Speed", directionMoving.magnitude);
         PlayFootstepSound();
         SpeedControl();
         Inputs();
