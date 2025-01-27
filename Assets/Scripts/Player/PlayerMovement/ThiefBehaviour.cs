@@ -54,10 +54,12 @@ public class ThiefBehaviour : MoveBehaviour
         slider = cam.GetComponentInChildren<Slider>(true);
         sliderParts = slider.GetComponentsInChildren<Image>(true);
         foreach (Image part in sliderParts)
+        {
             part.enabled = false;
-        base.Start();
+        }
         audio = GetComponent<AudioSource>();
         oldSpeed = speed;
+        base.Start();
     }
     public override void StateHandler()
     {
@@ -121,11 +123,16 @@ public class ThiefBehaviour : MoveBehaviour
         {
             KnifePickUp(false, true);
         }
+        Slash();
         StopCleaning();
         HideAnim();
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+    void Slash()
+    {
+        if(mAnimator) mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
     }
 
     void KnifePickUp(bool grabbing, bool holding)

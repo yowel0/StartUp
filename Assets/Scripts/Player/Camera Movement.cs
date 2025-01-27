@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
-public class CameraMovement : NetworkBehaviour
+public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
     private float sensX = 100;
@@ -23,7 +23,7 @@ public class CameraMovement : NetworkBehaviour
 
     Camera camera;
 
-    public override void OnNetworkSpawn()
+    /*public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
         if (!IsOwner)
@@ -31,21 +31,23 @@ public class CameraMovement : NetworkBehaviour
 
             this.enabled = false;
         }
-        if(!this.GetComponent<ThiefBehaviour>())
-        {
-            AudioSource audioSource = GetComponent<AudioSource>();
-            if(audioSource){
-                audioSource.enabled = false;
-            }
-        }
-    }
+        
+    }*/
 
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         camera = Camera.main;
-            
+        if (!this.GetComponent<ThiefBehaviour>())
+        {
+            AudioSource audioSource = GetComponent<AudioSource>();
+            if (audioSource)
+            {
+                audioSource.enabled = false;
+            }
+        }
+
     }
 
     private void Update()
@@ -53,8 +55,9 @@ public class CameraMovement : NetworkBehaviour
         if (!check && this.GetComponent<PoliceBehaviour>() != null)
         {
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
-            thief.GetComponentInChildren<Light>(true).enabled = false;
-            check = true;
+            if (thief != null)
+                thief.GetComponentInChildren<Light>(true).enabled = false;
+                check = true;
         }
         camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
 
@@ -68,7 +71,8 @@ public class CameraMovement : NetworkBehaviour
         xRotation -= mouseY;
 
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
+        print(xRotation + " " + yRotation);
+ 
         camera.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
     }
