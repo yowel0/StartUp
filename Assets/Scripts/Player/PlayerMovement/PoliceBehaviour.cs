@@ -103,7 +103,7 @@ public class PoliceBehaviour : MoveBehaviour
         }
     }
 
-    [Rpc(SendTo.Server)]
+/*    [Rpc(SendTo.Server)]
     void DeleteObject(GameObject evidence)
     {
         if (GameManager.Instance != null)
@@ -112,7 +112,7 @@ public class PoliceBehaviour : MoveBehaviour
             evidence.name = evidence.GetInstanceID().ToString();
             GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
         }
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {

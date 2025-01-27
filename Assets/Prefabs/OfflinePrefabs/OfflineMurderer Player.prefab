@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 554220257
+  GlobalObjectIdHash: 2176538568
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -218,12 +218,21 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  playerSize: 1
   maxSlopeAngle: 0
+  footstepEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   grounded: 0
   onSlope: 0
   state: 0
   mAnimator: {fileID: 0}
   crouchSpeed: 0
+  holdPos: {fileID: 0}
   cam: {fileID: 0}
   grabbed: 0
   shakes: 1

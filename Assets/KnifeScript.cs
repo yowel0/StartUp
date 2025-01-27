@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnifeScript : MonoBehaviour
 {
-    public bool grabbed = false;
+    public bool grabbed;
     // Start is called before the first frame update
     void Start()
     {

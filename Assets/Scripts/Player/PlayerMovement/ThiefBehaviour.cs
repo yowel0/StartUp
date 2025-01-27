@@ -121,11 +121,16 @@ public class ThiefBehaviour : MoveBehaviour
         {
             KnifePickUp(false, true);
         }
+        Slash();
         StopCleaning();
         HideAnim();
         HeartBeat();
         EscapeGrab();
         base.Update();
+    }
+    void Slash()
+    {
+        mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
     }
 
     void KnifePickUp(bool grabbing, bool holding)
