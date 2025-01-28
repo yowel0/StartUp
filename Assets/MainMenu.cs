@@ -43,14 +43,8 @@ public class MainMenu : MonoBehaviour
         if (nextScreen && curScreen != transform.childCount - 1)
         {
             curScreen += 1;
-            for (int i = 0; i < transform.childCount; i++)
-            {
-                if (i != curScreen)
-                {
-                    screens[i].gameObject.SetActive(false);
-                }
-                else screens[i].gameObject.SetActive(true);
-            }
+            screens[curScreen - 1].gameObject.SetActive(false);
+            screens[curScreen].gameObject.SetActive(true);
             nextScreen = false;
         }
     }
