@@ -151,7 +151,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638736592757986391
+  lastModified: 638736700078667696
   FileSizes:
   - Name: Desktop
     Value: 2592
@@ -253,7 +253,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638732306510253200
+  lastModified: 638736700078657689
   FileSizes:
   - Name: Desktop
     Value: 5700
@@ -378,7 +378,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Static Ambience.bank
   Name: Static Ambience
   StudioPath: bank:/Static Ambience
-  lastModified: 638735840269477613
+  lastModified: 638736700078739335
   FileSizes:
   - Name: Desktop
     Value: 1354976
@@ -452,7 +452,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638736592758103118
+  lastModified: 638736700078687692
   FileSizes:
   - Name: Desktop
     Value: 155456
@@ -499,7 +499,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638735840269561110
+  lastModified: 638736700078759333
   FileSizes:
   - Name: Desktop
     Value: 236544
@@ -552,13 +552,13 @@ MonoBehaviour:
   - {fileID: 4208023377639281492}
   - {fileID: 2051949919153450256}
   - {fileID: 2885891076623521486}
-  - {fileID: -5175256951520839568}
+  - {fileID: 6669288067089975252}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4749639541179348689}
   StringsBanks:
   - {fileID: -6686004736249880970}
-  cacheTime: 638736592758103118
+  cacheTime: 638736700078759333
   cacheVersion: 131622
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -738,7 +738,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638735840267275755
+  lastModified: 638736700078647685
   FileSizes:
   - Name: Desktop
     Value: 2506944
@@ -902,6 +902,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 250
+--- !u!114 &6669288067089975252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/door-open
+  m_EditorClassIdentifier: 
+  Path: event:/door-open
+  Guid:
+    Data1: 794840795
+    Data2: 1236411929
+    Data3: 253518001
+    Data4: 194214825
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6926895302614514160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638729714381202181
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
 --- !u!114 &7072849644387370193
 MonoBehaviour:
   m_ObjectHideFlags: 0
