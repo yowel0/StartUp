@@ -77,6 +77,7 @@ public class PoliceAi : MonoBehaviour
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
+        agent.transform.LookAt(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -86,7 +87,7 @@ public class PoliceAi : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!staggered && other.CompareTag("Murderer") && other.isTrigger == false && !stabbed)
+        if (!staggered && other.CompareTag("Murderer") && other.isTrigger == false && !stabbed && !other.GetComponent<ThiefBehaviour>().hiding)
         {
             obj = other.gameObject;
             Grabbing();

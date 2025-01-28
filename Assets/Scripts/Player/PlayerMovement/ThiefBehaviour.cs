@@ -29,7 +29,7 @@ public class ThiefBehaviour : MoveBehaviour
     bool isPLaying = false;
     float oldSpeed;
 
-    bool hiding = false;
+    public bool hiding = false;
     bool canExit = false;
     float elapsedTime;
     [SerializeField] float check;

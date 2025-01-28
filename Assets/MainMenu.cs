@@ -30,19 +30,20 @@ public class MainMenu : MonoBehaviour
     {
         ScreenSwitch();
     }
-    public void NextScreen()
+    public void NextScreen(int screen)
     {
         nextScreen = true;
+        curScreen = screen - 1;
     }
     void ScreenSwitch()
     {
         if ((Input.anyKeyDown) && curScreen == 0)
         {
             nextScreen = true;
+            curScreen = 1;
         }
         if (nextScreen && curScreen != transform.childCount - 1)
         {
-            curScreen += 1;
             screens[curScreen - 1].gameObject.SetActive(false);
             screens[curScreen].gameObject.SetActive(true);
             nextScreen = false;
