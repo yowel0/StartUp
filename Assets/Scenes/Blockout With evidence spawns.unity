@@ -705,7 +705,8 @@ MonoBehaviour:
     - {fileID: 371211274}
     - {fileID: 1778276823}
     - {fileID: 415456606}
-  Windows: []
+  windows: []
+  brokenWindow: {fileID: 0}
 --- !u!4 &408947111
 Transform:
   m_ObjectHideFlags: 0
