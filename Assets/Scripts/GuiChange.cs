@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class GuiChange : MonoBehaviour
 {
+
     int curScreen = 0;
     List<GameObject> screens = new List<GameObject>();
     bool nextScreen = false;
@@ -29,7 +29,9 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         ScreenSwitch();
+       
     }
+
     public void NextScreen(int screen)
     {
         nextScreen = true;
@@ -37,11 +39,7 @@ public class MainMenu : MonoBehaviour
     }
     void ScreenSwitch()
     {
-        if ((Input.anyKeyDown) && curScreen == 0)
-        {
-            nextScreen = true;
-            curScreen = 1;
-        }
+
         if (nextScreen && curScreen < transform.childCount)
         {
             screens[curScreen - 1].gameObject.SetActive(false);
@@ -49,16 +47,5 @@ public class MainMenu : MonoBehaviour
             nextScreen = false;
         }
     }
-
-    public void OpenPopUp(GameObject popUp)
-    {
-        popUp.SetActive(true);
-    }
-    public void ClosePopUp(GameObject popUp)
-    {
-        popUp.SetActive(false);
-    }
-
-    
+   
 }
-
