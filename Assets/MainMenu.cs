@@ -40,7 +40,7 @@ public class MainMenu : MonoBehaviour
         {
             nextScreen = true;
         }
-        if (nextScreen)
+        if (nextScreen && curScreen != transform.childCount - 1)
         {
             curScreen += 1;
             for (int i = 0; i < transform.childCount; i++)
