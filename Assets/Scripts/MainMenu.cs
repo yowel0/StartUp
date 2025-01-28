@@ -49,4 +49,14 @@ public class MainMenu : MonoBehaviour
             nextScreen = false;
         }
     }
+
+    public void OpenPopUp(GameObject popUp)
+    {
+        popUp.SetActive(true);
+    }
+    public void ClosePopUp(GameObject popUp)
+    {
+        popUp.SetActive(false);
+    }
+}
 }
