@@ -129,7 +129,12 @@ public class ThiefBehaviour : MoveBehaviour
         HideAnim();
         HeartBeat();
         EscapeGrab();
+       
         base.Update();
+        if (grabbed)
+        {
+            rb.isKinematic = false;
+        }
     }
     void Slash()
     {

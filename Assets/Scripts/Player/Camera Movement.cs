@@ -62,7 +62,7 @@ public class CameraMovement : MonoBehaviour
                 check = true;
             }
         }
-        camera.transform.position = transform.position + new Vector3(0, cameraHeight, 0);
+        camera.transform.position = transform.position + new Vector3(0, cameraHeight, -0.2f);
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
