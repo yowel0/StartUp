@@ -39,7 +39,7 @@ public abstract class MoveBehaviour : MonoBehaviour
 
     public bool grounded;
     [SerializeField] bool onSlope;
-    protected bool checkForGround = true;
+    public bool checkForGround = true;
     protected float drag;
     protected float speedMult;
     [SerializeField] Transform playerOr;
