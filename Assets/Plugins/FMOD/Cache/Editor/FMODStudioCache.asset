@@ -151,10 +151,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638735840269132267
+  lastModified: 638736592757986391
   FileSizes:
   - Name: Desktop
-    Value: 2552
+    Value: 2592
   Exists: 1
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
@@ -206,6 +206,33 @@ MonoBehaviour:
   - {fileID: -554120311192532059}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5175256951520839568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/door-open
+  m_EditorClassIdentifier: 
+  Path: event:/door-open
+  Guid:
+    Data1: 794840795
+    Data2: 1236411929
+    Data3: 253518001
+    Data4: 194214825
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -425,10 +452,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638735840269244321
+  lastModified: 638736592758103118
   FileSizes:
   - Name: Desktop
-    Value: 121664
+    Value: 155456
   Exists: 1
 --- !u!114 &-1268220005141763665
 MonoBehaviour:
@@ -457,26 +484,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &-833819302435978050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638729714381218011
-  FileSizes:
-  - Name: Desktop
-    Value: 806
-  Exists: 1
 --- !u!114 &-554120311192532059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,12 +552,13 @@ MonoBehaviour:
   - {fileID: 4208023377639281492}
   - {fileID: 2051949919153450256}
   - {fileID: 2885891076623521486}
+  - {fileID: -5175256951520839568}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4749639541179348689}
   StringsBanks:
   - {fileID: -6686004736249880970}
-  cacheTime: 638735840269561110
+  cacheTime: 638736592758103118
   cacheVersion: 131622
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -735,26 +743,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2506944
   Exists: 1
---- !u!114 &4053181931461454489
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638729714382125779
-  FileSizes:
-  - Name: Desktop
-    Value: 13088
-  Exists: 1
 --- !u!114 &4076346849123316478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,26 +902,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 250
---- !u!114 &6926895302614514160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../../../OneDrive - Saxion/year 2/Project startup/Audio/StartUp_Fmod/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638729714381202181
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
 --- !u!114 &7072849644387370193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,33 +950,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &8090524441160053840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PhotoTaken
-  m_EditorClassIdentifier: 
-  Path: event:/PhotoTaken
-  Guid:
-    Data1: -669418948
-    Data2: 1130180738
-    Data3: -271717449
-    Data4: -729553062
-  Banks:
-  - {fileID: 4053181931461454489}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &8432915372097369641
 MonoBehaviour:
   m_ObjectHideFlags: 0
