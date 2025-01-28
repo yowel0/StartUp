@@ -151,7 +151,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< HEAD
   lastModified: 638736592757986391
+=======
+  lastModified: 638736720565747723
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 2592
@@ -253,7 +257,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< HEAD
   lastModified: 638732306510253200
+=======
+  lastModified: 638736720508641791
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 5700
@@ -378,7 +386,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Static Ambience.bank
   Name: Static Ambience
   StudioPath: bank:/Static Ambience
+<<<<<<< HEAD
   lastModified: 638735840269477613
+=======
+  lastModified: 638736720508782861
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 1354976
@@ -452,7 +464,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
+<<<<<<< HEAD
   lastModified: 638736592758103118
+=======
+  lastModified: 638736720565863275
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 155456
@@ -499,7 +515,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
+<<<<<<< HEAD
   lastModified: 638735840269561110
+=======
+  lastModified: 638736720508803601
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 236544
@@ -558,7 +578,11 @@ MonoBehaviour:
   - {fileID: -4749639541179348689}
   StringsBanks:
   - {fileID: -6686004736249880970}
+<<<<<<< HEAD
   cacheTime: 638736592758103118
+=======
+  cacheTime: 638736720565863275
+>>>>>>> origin/main
   cacheVersion: 131622
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -738,7 +762,11 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
+<<<<<<< HEAD
   lastModified: 638735840267275755
+=======
+  lastModified: 638736720508626412
+>>>>>>> origin/main
   FileSizes:
   - Name: Desktop
     Value: 2506944
