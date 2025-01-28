@@ -21,6 +21,7 @@ public class PoliceBehaviour : MoveBehaviour
     EvidenceCheck evidence;
     float pickUpTime = 0;
     ThiefBehaviour script;
+    InteractionsMurderer script2;
     GameObject obj = null;
     bool pickingUp = false;
     bool canGrab = true;
@@ -30,7 +31,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     public void Start()
     {
-        
+
         base.Start();
         cam = Camera.main;
     }
@@ -103,20 +104,20 @@ public class PoliceBehaviour : MoveBehaviour
         }
     }
 
-/*    [Rpc(SendTo.Server)]
-    void DeleteObject(GameObject evidence)
-    {
-        if (GameManager.Instance != null)
+    /*    [Rpc(SendTo.Server)]
+        void DeleteObject(GameObject evidence)
         {
-            print("checkie");
-            evidence.name = evidence.GetInstanceID().ToString();
-            //GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
-        }
-    }*/
+            if (GameManager.Instance != null)
+            {
+                print("checkie");
+                evidence.name = evidence.GetInstanceID().ToString();
+                //GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
+            }
+        }*/
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<PoliceBehaviour>() != null)
+        if (other.GetComponent<PoliceBehaviour>() != null)
         {
             copsInProx++;
         }
@@ -131,7 +132,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     private void EscapeCheck()
     {
-        if (script.shakes <= 0)
+        if (script2.shakes <= 0)
         {
             int esc = UnityEngine.Random.Range(1, 11);
             if (copsInProx == 0 && esc >= 1 && esc <= 7)
@@ -144,7 +145,7 @@ public class PoliceBehaviour : MoveBehaviour
             }
             else
             {
-                script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+                script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
             }
         }
     }
@@ -155,30 +156,31 @@ public class PoliceBehaviour : MoveBehaviour
     }
     private void Grabbing()
     {
-            if (!grabbed)
-            {
-                script = obj.GetComponent<ThiefBehaviour>();
-                thiefSpeed = script.speed;
-                script.speed = 0;
-                script.grabbed = true;
-                script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
-                caps1.enabled = false;
-                caps2.enabled = true;
-                sphere.enabled = true;
-                
-                obj.transform.position = holdPos.position;
+        if (!grabbed)
+        {
+            script = obj.GetComponent<ThiefBehaviour>();
+            script2 = obj.GetComponent<InteractionsMurderer>();
+            thiefSpeed = script.speed;
+            script.speed = 0;
+            script.grabbed = true;
+            script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+            caps1.enabled = false;
+            caps2.enabled = true;
+            sphere.enabled = true;
 
-                Rigidbody rig = obj.GetComponent<Rigidbody>();
-                rig.useGravity = false;
+            obj.transform.position = holdPos.position;
 
-                CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
-                caps.enabled = false;
+            Rigidbody rig = obj.GetComponent<Rigidbody>();
+            rig.useGravity = false;
+
+            CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
+            caps.enabled = false;
 
 
 
 
-                grabbed = true;
-            }
+            grabbed = true;
+        }
     }
     private void LetGo()
     {

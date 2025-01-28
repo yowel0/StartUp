@@ -16,6 +16,7 @@ public class PoliceAi : MonoBehaviour
 
     public bool grabbed = false;
     ThiefBehaviour script;
+    InteractionsMurderer script2;
     [SerializeField] GameObject obj = null;
     bool canGrab = true;
     float thiefSpeed;
@@ -77,7 +78,6 @@ public class PoliceAi : MonoBehaviour
 
         if (walkPointSet)
             agent.SetDestination(walkPoint);
-        agent.transform.LookAt(walkPoint);
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
@@ -87,7 +87,7 @@ public class PoliceAi : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (!staggered && other.CompareTag("Murderer") && other.isTrigger == false && !stabbed && !other.GetComponent<ThiefBehaviour>().hiding)
+        if (!staggered && other.CompareTag("Murderer") && other.isTrigger == false && !stabbed && !other.GetComponent<InteractionsMurderer>().hiding)
         {
             obj = other.gameObject;
             Grabbing();
@@ -112,10 +112,12 @@ public class PoliceAi : MonoBehaviour
         if (!grabbed)
         {
             script = obj.GetComponent<ThiefBehaviour>();
+            script2 = obj.GetComponent<InteractionsMurderer>();
             thiefSpeed = script.speed;
             script.speed = 0;
+            script2.grabbed = true;
             script.grabbed = true;
-            script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+            script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
 
 
             Rigidbody rig = obj.GetComponent<Rigidbody>();
@@ -134,6 +136,7 @@ public class PoliceAi : MonoBehaviour
     {
         script.speed = thiefSpeed;
         script.grabbed = false;
+        script2.grabbed = false;
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
@@ -147,7 +150,7 @@ public class PoliceAi : MonoBehaviour
     }
     private void EscapeCheck()
     {
-        if (script.shakes <= 0)
+        if (script2.shakes <= 0)
         {
             int esc = UnityEngine.Random.Range(1, 11);
             if (esc >= 1 && esc <= 7)
@@ -156,7 +159,7 @@ public class PoliceAi : MonoBehaviour
             }
             else
             {
-                script.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+                script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
             }
         }
     }
