@@ -59,4 +59,4 @@ public class MainMenu : MonoBehaviour
         popUp.SetActive(false);
     }
 }
-}
+
