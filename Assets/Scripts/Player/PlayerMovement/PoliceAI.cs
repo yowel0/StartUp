@@ -37,6 +37,7 @@ public class PoliceAi : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Murderer");
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
     }
 
 
