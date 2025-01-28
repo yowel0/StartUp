@@ -242,7 +242,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.5477038, g: 0.627909, b: 0.6415094, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -301,16 +301,79 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449021618}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: 0.6536151, y: -0.3027574, z: 0.00970499, w: 0.69356406}
+  m_LocalPosition: {x: -2.122, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 65.857, y: -95.295, z: -69.179}
+--- !u!1001 &1129435962
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 247863733601136972, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9516335
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.291985
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.521825
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785159130319580202, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6267869479190033740, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+      propertyPath: m_Name
+      value: Kiomi Mansion
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 823408739755279801, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 280935214}
   - {fileID: 449021620}
+  - {fileID: 1129435962}
