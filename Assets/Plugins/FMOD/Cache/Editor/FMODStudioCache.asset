@@ -151,10 +151,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638735865588210760
+  lastModified: 638735871226482365
   FileSizes:
   - Name: Desktop
-    Value: 2552
+    Value: 2592
   Exists: 1
 --- !u!114 &-6305534569749143111
 MonoBehaviour:
@@ -226,7 +226,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638731372676639063
+  lastModified: 638735871226457058
   FileSizes:
   - Name: Desktop
     Value: 5700
@@ -351,7 +351,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Static Ambience.bank
   Name: Static Ambience
   StudioPath: bank:/Static Ambience
-  lastModified: 638735865588322620
+  lastModified: 638735733535770098
   FileSizes:
   - Name: Desktop
     Value: 1354976
@@ -425,10 +425,10 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638735865588220814
+  lastModified: 638735871228632090
   FileSizes:
   - Name: Desktop
-    Value: 121664
+    Value: 155456
   Exists: 1
 --- !u!114 &-1268220005141763665
 MonoBehaviour:
@@ -492,7 +492,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/UI.bank
   Name: UI
   StudioPath: bank:/UI
-  lastModified: 638735865588354011
+  lastModified: 638735733537617212
   FileSizes:
   - Name: Desktop
     Value: 236544
@@ -545,12 +545,13 @@ MonoBehaviour:
   - {fileID: 4208023377639281492}
   - {fileID: 2051949919153450256}
   - {fileID: 2885891076623521486}
+  - {fileID: 4249622991371718456}
   EditorParameters: []
   MasterBanks:
   - {fileID: -4749639541179348689}
   StringsBanks:
   - {fileID: -6686004736249880970}
-  cacheTime: 638735865588354011
+  cacheTime: 638735871228632090
   cacheVersion: 131622
 --- !u!114 &151721286593865004
 MonoBehaviour:
@@ -730,7 +731,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638735865588192907
+  lastModified: 638735733534435274
   FileSizes:
   - Name: Desktop
     Value: 2506944
@@ -804,6 +805,33 @@ MonoBehaviour:
   - {fileID: -554120311192532059}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &4249622991371718456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/door-open
+  m_EditorClassIdentifier: 
+  Path: event:/door-open
+  Guid:
+    Data1: 794840795
+    Data2: 1236411929
+    Data3: 253518001
+    Data4: 194214825
+  Banks:
+  - {fileID: -1311026327999303937}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
