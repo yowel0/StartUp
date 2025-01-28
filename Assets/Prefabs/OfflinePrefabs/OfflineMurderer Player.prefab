@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3228763966
+  GlobalObjectIdHash: 2176538568
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -181,21 +181,14 @@ MonoBehaviour:
     Path: event:/Footsteps
   grounded: 0
   onSlope: 0
+  checkForGround: 1
   playerOr: {fileID: 0}
   rb: {fileID: 0}
   state: 0
   mAnimator: {fileID: 8356554415808749944}
   crouchSpeed: 1
-  holdPos: {fileID: 468585079881597099}
-  cam: {fileID: 0}
-  grabbed: 0
-  shakes: 1
-  distClosestCop: 100
-  check: 0
-  desiredDur: 2
-  minCleanTime: 2
-  cleanTimer: 0
   CrouchMultiplier: 0.5
+  grabbed: 0
 --- !u!135 &4574930888627051788
 SphereCollider:
   m_ObjectHideFlags: 0
