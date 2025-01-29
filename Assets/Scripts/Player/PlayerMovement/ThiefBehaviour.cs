@@ -7,10 +7,14 @@ using UnityEngine;
 
 public class ThiefBehaviour : MoveBehaviour
 {
-
+    [SerializeField] Animator anim;
     [SerializeField] float crouchSpeed;
     [SerializeField]
     float CrouchMultiplier = 0.5f;
+
+    Camera cam;
+    [SerializeField] CapsuleCollider caps1;
+    [SerializeField]CapsuleCollider caps2;
 
     public bool grabbed = false;
 
@@ -20,7 +24,7 @@ public class ThiefBehaviour : MoveBehaviour
 
     public void Start()
     {
-        
+        cam = Camera.main;
         oldSpeed = speed;
         base.Start();
     }
@@ -46,9 +50,9 @@ public class ThiefBehaviour : MoveBehaviour
 
     void Animations()
     {
-        if (mAnimator)
+        if (anim)
         {
-            mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
+            anim.SetBool("Slash", Input.GetMouseButtonDown(0));
         }
     }
     private void Crouching()
@@ -58,18 +62,23 @@ public class ThiefBehaviour : MoveBehaviour
             if (!crouching)
             {
                 crouching = true;
-                transform.localScale = new Vector3(1, transform.localScale.y * CrouchMultiplier, 1);
-                transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
+                if (mAnimator) mAnimator.SetBool("Crouch", crouching);
+                caps1.enabled = false;
+                caps2.enabled = true;
+                cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y - 0.6f, cam.transform.position.z);
                 speed = crouchSpeed;
             }
         }
         else if (crouching)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-            transform.localScale = new Vector3(1, transform.localScale.y / CrouchMultiplier, 1);
+            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.6f, cam.transform.position.z);
+            //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y / CrouchMultiplier, transform.localScale.z);
             crouching = false;
+            caps1.enabled = true;
+            caps2.enabled = false;
+            if (mAnimator) mAnimator.SetBool("Crouch", crouching);
             speed = oldSpeed;
         }
     }
-    
+
 }
