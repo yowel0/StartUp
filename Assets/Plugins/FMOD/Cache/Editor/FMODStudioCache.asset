@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638737634754527693
+  lastModified: 638737635760872177
   FileSizes:
   - Name: Desktop
     Value: 2506944
@@ -170,8 +170,7 @@ MonoBehaviour:
     Data2: 1199937677
     Data3: 381425817
     Data4: -39130170
-  Banks:
-  - {fileID: -8489076811555965375}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -219,7 +218,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638737620553461180
+  lastModified: 638737593664941442
   FileSizes:
   - Name: Desktop
     Value: 2624
@@ -318,7 +317,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 5544
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3376455286331373691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,7 +397,7 @@ MonoBehaviour:
   - {fileID: 6863805178657700640}
   - {fileID: 8796765535985782140}
   - {fileID: 5206446477048135044}
-  - {fileID: 7144620893557158804}
+  - {fileID: 0}
   - {fileID: 8366090543736723101}
   - {fileID: 6106034119177719945}
   - {fileID: 6986924434836501650}
@@ -427,7 +426,7 @@ MonoBehaviour:
   - {fileID: -3800458728956079498}
   StringsBanks:
   - {fileID: -5572686331371067131}
-  cacheTime: 638737634754527693
+  cacheTime: 638737635760872177
   cacheVersion: 131622
 --- !u!114 &140723753030224241
 MonoBehaviour:
@@ -619,6 +618,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60081
+--- !u!114 &2882705665372651314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Button_click
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Button_click
+  Guid:
+    Data1: -863107397
+    Data2: 1097298732
+    Data3: 121840317
+    Data4: -1674144507
+  Banks:
+  - {fileID: -3800458728956079498}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3421077761856117754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,7 +691,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 1354976
-  Exists: 1
+  Exists: 0
 --- !u!114 &3976839110086710458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,7 +873,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 156480
-  Exists: 1
+  Exists: 0
 --- !u!114 &6863805178657700640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,8 +892,7 @@ MonoBehaviour:
     Data2: 1149547070
     Data3: -108266100
     Data4: -1234831565
-  Banks:
-  - {fileID: -8489076811555965375}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -894,8 +919,7 @@ MonoBehaviour:
     Data2: 1177004520
     Data3: -422030150
     Data4: -1401007104
-  Banks:
-  - {fileID: -8489076811555965375}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -951,33 +975,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 155456
   Exists: 1
---- !u!114 &2882705665372651314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Button_click
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Button_click
-  Guid:
-    Data1: -863107397
-    Data2: 1097298732
-    Data3: 121840317
-    Data4: -1674144507
-  Banks:
-  - {fileID: -3800458728956079498}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7847218825276109940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1024,7 +1021,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 236544
-  Exists: 1
+  Exists: 0
 --- !u!114 &8091601099736503778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,8 +1091,7 @@ MonoBehaviour:
     Data2: 1104890616
     Data3: -932172097
     Data4: -754373678
-  Banks:
-  - {fileID: -8489076811555965375}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0

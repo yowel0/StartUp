@@ -306,7 +306,6 @@ GameObject:
   - component: {fileID: 2609091076839144952}
   - component: {fileID: 8617626292854747577}
   - component: {fileID: 6782296501654247088}
-  - component: {fileID: 3287031108375454110}
   - component: {fileID: 8886012975399451813}
   - component: {fileID: 2566951617250542024}
   - component: {fileID: 7938389529853700795}
@@ -314,6 +313,7 @@ GameObject:
   - component: {fileID: 3079340277191381256}
   - component: {fileID: 1850673551637182423}
   - component: {fileID: 6032871007488371057}
+  - component: {fileID: 3287031108375454110}
   m_Layer: 6
   m_Name: OfflinePolice Player
   m_TagString: Player
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3859508384
+  GlobalObjectIdHash: 242697633
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -447,49 +447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveBehaviour: {fileID: 3287031108375454110}
---- !u!114 &3287031108375454110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6664438864534977112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f4ace039736f54abef8b14e676d0e4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  sprintMult: 1.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  playerSize: 1
-  maxSlopeAngle: 90
-  footstepEvent:
-    Guid:
-      Data1: -532567414
-      Data2: 1210653788
-      Data3: -113941321
-      Data4: 1782845265
-    Path: event:/Footsteps
-  grounded: 0
-  onSlope: 0
-  checkForGround: 1
-  playerOr: {fileID: 0}
-  rb: {fileID: 0}
-  state: 0
-  mAnimator: {fileID: 6656720072585199816}
-  cam: {fileID: 0}
-  holdPos: {fileID: 701208468760092949}
-  caps1: {fileID: 2609091076839144952}
-  caps2: {fileID: 8886012975399451813}
-  sphere: {fileID: 2566951617250542024}
-  minShakes: 25
-  maxShakes: 35
-  minPickUpTime: 0
-  grabbed: 0
-  copsInProx: 0
 --- !u!136 &8886012975399451813
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -588,7 +545,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6664438864534977112}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5984e6cbbcbafc43835c9444ddb9cb3, type: 3}
   m_Name: 
@@ -655,6 +612,49 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8192
   rot: 0
+--- !u!114 &3287031108375454110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6664438864534977112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60f4ace039736f54abef8b14e676d0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  sprintMult: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  playerSize: 1
+  maxSlopeAngle: 90
+  footstepEvent:
+    Guid:
+      Data1: -532567414
+      Data2: 1210653788
+      Data3: -113941321
+      Data4: 1782845265
+    Path: event:/Footsteps
+  grounded: 0
+  onSlope: 0
+  checkForGround: 1
+  playerOr: {fileID: 0}
+  rb: {fileID: 0}
+  state: 0
+  mAnimator: {fileID: 6656720072585199816}
+  cam: {fileID: 0}
+  holdPos: {fileID: 701208468760092949}
+  caps1: {fileID: 2609091076839144952}
+  caps2: {fileID: 8886012975399451813}
+  sphere: {fileID: 2566951617250542024}
+  minShakes: 25
+  maxShakes: 35
+  minPickUpTime: 0
+  grabbed: 0
+  copsInProx: 0
 --- !u!1001 &4386957578870455075
 PrefabInstance:
   m_ObjectHideFlags: 0

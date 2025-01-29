@@ -6566,6 +6566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OfflineMurderer Player
       objectReference: {fileID: 0}
+    - target: {fileID: 62175566350041724, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_TagString
+      value: Knife
+      objectReference: {fileID: 0}
     - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.05
@@ -7106,6 +7110,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AgathaAI
       objectReference: {fileID: 0}
+    - target: {fileID: 5745560145772937220, guid: dc48a867b973acc45b50758400eb9596, type: 3}
+      propertyPath: m_TagString
+      value: Police
+      objectReference: {fileID: 0}
     - target: {fileID: 6024781756954988224, guid: dc48a867b973acc45b50758400eb9596, type: 3}
       propertyPath: agent
       value: 
@@ -7250,6 +7258,10 @@ PrefabInstance:
     - target: {fileID: 4324353369341132574, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
       propertyPath: m_Name
       value: HermanoAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324353369341132574, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
+      propertyPath: m_TagString
+      value: Police
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
