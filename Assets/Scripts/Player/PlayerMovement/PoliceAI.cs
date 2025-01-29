@@ -129,6 +129,7 @@ public class PoliceAi : MonoBehaviour
             caps.enabled = false;
 
             obj.transform.SetParent(holdPos, false);
+            obj.transform.localScale = obj.transform.localScale / 2;
             print("Rahhh");
 
             grabbed = true;
