@@ -46,8 +46,8 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 20
+  m_SpotAngle: 40
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
@@ -107,7 +107,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f893b04cd9afd7c41a3ed6b87044c016, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 0}
 --- !u!1 &347751038640282661
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1335496435
+  GlobalObjectIdHash: 2286588408
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -352,6 +351,7 @@ MonoBehaviour:
     Path: event:/Footsteps
   grounded: 0
   onSlope: 0
+  checkForGround: 1
   playerOr: {fileID: 0}
   rb: {fileID: 0}
   state: 0
@@ -473,6 +473,20 @@ MonoBehaviour:
   distanceToEvidence: 3
   Journal: {fileID: 0}
   phone: {fileID: 0}
+  grabJournal:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  takePicture:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   photoSprite: {fileID: 0}
 --- !u!54 &1850673551637182423
 Rigidbody:
