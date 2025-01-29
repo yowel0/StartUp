@@ -45,5 +45,6 @@ public class OpenGui : MonoBehaviour
         guiPopUp.SetActive(false);
         Debug.Log("GUI closed");
     }
+
   
 }
