@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OpenGui : MonoBehaviour
 {
     [SerializeField] GameObject guiPopUp;
+  
 
    
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class OpenGui : MonoBehaviour
         {
             closeGui();
         }
+        
     }
 
     public void openGui()
@@ -43,4 +45,5 @@ public class OpenGui : MonoBehaviour
         guiPopUp.SetActive(false);
         Debug.Log("GUI closed");
     }
+  
 }
