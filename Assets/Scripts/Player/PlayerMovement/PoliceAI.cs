@@ -118,11 +118,13 @@ public class PoliceAi : MonoBehaviour
         if (!grabbed)
         {
             script = obj.GetComponent<ThiefBehaviour>();
-            script2 = obj.GetComponent<InteractionsMurderer>();
+            script2 = obj.GetComponent<InteractionsMurderer>(); 
+
             thiefSpeed = script.speed;
             script.speed = 0;
-            script2.grabbed = true;
             script.grabbed = true;
+
+            script2.grabbed = true;
             script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
 
 
@@ -134,7 +136,6 @@ public class PoliceAi : MonoBehaviour
 
             obj.transform.SetParent(holdPos, false);
             obj.transform.localScale = obj.transform.localScale / 2;
-            print("Rahhh");
 
             grabbed = true;
             
@@ -145,11 +146,15 @@ public class PoliceAi : MonoBehaviour
     {
         script.speed = thiefSpeed;
         script.grabbed = false;
+
         script2.grabbed = false;
+
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
+
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
         caps.enabled = true;
+
         script = null;
         obj = null;
         canGrab = false;
