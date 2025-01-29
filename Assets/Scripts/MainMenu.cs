@@ -37,7 +37,7 @@ public class MainMenu : MonoBehaviour
     }
     void ScreenSwitch()
     {
-        if ((Input.anyKeyDown) && curScreen == 0 || (Input.anyKeyDown) && curScreen == 3)
+        if ((Input.anyKeyDown) && curScreen == 0)
         {
             nextScreen = true;
             curScreen = 1;
@@ -58,5 +58,7 @@ public class MainMenu : MonoBehaviour
     {
         popUp.SetActive(false);
     }
+
+    
 }
 
