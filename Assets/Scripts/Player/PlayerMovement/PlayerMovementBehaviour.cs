@@ -70,7 +70,7 @@ public abstract class MoveBehaviour : MonoBehaviour
     {
         if (checkForGround)
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down,  playerSize, whatIsGround);
+            grounded = Physics.Raycast(transform.position, Vector3.down,  transform.localScale.y + 0.2f, whatIsGround);
         }
         directionMoving = (playerOr.forward * verInput + playerOr.right * horInput).normalized;
         //directionMoving = new Vector3(1, 0, 0).normalized;
