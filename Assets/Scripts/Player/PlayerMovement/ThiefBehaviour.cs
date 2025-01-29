@@ -7,7 +7,6 @@ using UnityEngine;
 
 public class ThiefBehaviour : MoveBehaviour
 {
-    [SerializeField] Animator anim;
     [SerializeField] float crouchSpeed;
     [SerializeField]
     float CrouchMultiplier = 0.5f;
@@ -50,9 +49,9 @@ public class ThiefBehaviour : MoveBehaviour
 
     void Animations()
     {
-        if (anim)
+        if (mAnimator)
         {
-            anim.SetBool("Slash", Input.GetMouseButtonDown(0));
+            mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
         }
     }
     private void Crouching()
