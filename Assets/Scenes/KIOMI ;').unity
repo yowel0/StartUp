@@ -4369,7 +4369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2979657816156685185, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: m_Intensity
-      value: 2802.5015
+      value: 1019.21954
       objectReference: {fileID: 0}
     - target: {fileID: 2979657816156685185, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: m_UseColorTemperature
@@ -4857,6 +4857,10 @@ PrefabInstance:
       value: Polaroid Camera (1)
       objectReference: {fileID: 0}
     - target: {fileID: 3870248076904255682, guid: 351c962c165a78d4ebf131d75f52aa09, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3870248076904255682, guid: 351c962c165a78d4ebf131d75f52aa09, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -4951,6 +4955,10 @@ PrefabInstance:
     - target: {fileID: 8342501951847686018, guid: 351c962c165a78d4ebf131d75f52aa09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169914571596379675, guid: 351c962c165a78d4ebf131d75f52aa09, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5569,7 +5577,7 @@ GameObject:
   - component: {fileID: 1956280116}
   - component: {fileID: 1956280119}
   - component: {fileID: 1956280118}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
