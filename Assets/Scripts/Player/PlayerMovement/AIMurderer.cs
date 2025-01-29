@@ -6,7 +6,6 @@ using UnityEngine.AI;
 public class AIMurderer : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public GameObject player;
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
@@ -14,7 +13,7 @@ public class AIMurderer : MonoBehaviour
     int walkToInt = 0;
     public LayerMask whatIsGround;
 
-    bool grabbed;
+    public bool grabbed;
 
 
     Rigidbody rb;
@@ -33,8 +32,12 @@ public class AIMurderer : MonoBehaviour
     void Update()
     {
         animator.SetFloat("Speed", 1);
-        
-        if (grabbed) agent.isStopped = true;
+
+        if (grabbed)
+        {
+            agent.isStopped = true;
+            animator.SetFloat("Speed", 0);
+        }
         else Patroling();
 
     }

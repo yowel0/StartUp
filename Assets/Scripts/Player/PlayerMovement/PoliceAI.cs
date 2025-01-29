@@ -13,6 +13,7 @@ public class PoliceAi : MonoBehaviour
     [SerializeField] List<GameObject> walkTo = new List<GameObject>();
     int walkToInt = 0;
     public LayerMask whatIsGround;
+    Camera cam;
 
     public bool grabbed = false;
     ThiefBehaviour script;
@@ -35,6 +36,7 @@ public class PoliceAi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Murderer");
         rb = GetComponent<Rigidbody>();
@@ -70,6 +72,10 @@ public class PoliceAi : MonoBehaviour
             transform.rotation = Quaternion.Euler(-90, 0, 0);
             agent.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+        }
+        if (Input.GetKey(KeyCode.K))
+        {
+            agent.isStopped = true;
         }
     }
     private void Patroling()
@@ -112,11 +118,13 @@ public class PoliceAi : MonoBehaviour
         if (!grabbed)
         {
             script = obj.GetComponent<ThiefBehaviour>();
-            script2 = obj.GetComponent<InteractionsMurderer>();
+            script2 = obj.GetComponent<InteractionsMurderer>(); 
+
             thiefSpeed = script.speed;
             script.speed = 0;
-            script2.grabbed = true;
             script.grabbed = true;
+
+            script2.grabbed = true;
             script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
 
 
@@ -127,20 +135,26 @@ public class PoliceAi : MonoBehaviour
             caps.enabled = false;
 
             obj.transform.SetParent(holdPos, false);
-            print("Rahhh");
+            obj.transform.localScale = obj.transform.localScale / 2;
 
             grabbed = true;
+            
+            cam.transform.position = new Vector3(cam.transform.position.x,holdPos.position.y + 0.4f, cam.transform.position.z);
         }
     }
     private void LetGo()
     {
         script.speed = thiefSpeed;
         script.grabbed = false;
+
         script2.grabbed = false;
+
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
+
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
         caps.enabled = true;
+
         script = null;
         obj = null;
         canGrab = false;
@@ -168,6 +182,7 @@ public class PoliceAi : MonoBehaviour
     {
         obj.transform.position = holdPos.position;
         obj.transform.rotation = holdPos.rotation;
+        cam.transform.position = new Vector3(cam.transform.position.x, holdPos.position.y + 0.8f, cam.transform.position.z);
     }
 
 }
