@@ -7,10 +7,228 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000176A61D1A58 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000017627405998 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001754E1F45B8, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001754E1F45B8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001754E1F45B8
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 141376
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15104
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000288F1AF188
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC2F035B90
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC2F035B50
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC2F035C70
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC2F035D30
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017551A95F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footstep-run-2', format=5, channels=2, frequency=48000, lengthbytes=5120, lengthpcm=27585, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.075836.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 141376
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15104
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000288F1AF188
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC2F035B90
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC2F035B50
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC2F035C70
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC2F035D30
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017551A95F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footstep-1', format=5, channels=2, frequency=48000, lengthbytes=4416, lengthpcm=26331, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.101257.
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 141376
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15104
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000288F1AF188
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFC2F035B90
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFC2F035B50
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFC2F035C70
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFC2F035D30
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000017551A95F68
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='footstep-2', format=5, channels=2, frequency=48000, lengthbytes=4320, lengthpcm=25077, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.095612.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB40508, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB40508
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB40508
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB3FC98, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB3FC98
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB3FC98
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB3FAE8, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB3FAE8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB3FAE8
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001754E1F4C78, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001754E1F4C78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001754E1F4C78
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB3F938, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB3F938
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB3F938
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001755EDD5028, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001755EDD5028
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001755EDD5028
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] SoundI::release                          : water (00000176BC3985D8)
+[LOG] SoundI::release                          :     water (00000176BFE48A28)
+[LOG] SoundI::release                          :     water (000001755EDD4CC8)
+[LOG] SoundI::release                          : water (00000176BC398E48)
+[LOG] SoundI::release                          :     water (00000176BFE47EC8)
+[LOG] SoundI::release                          :     water (000001755EDD5028)
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[WRN] FMOD_CHECKATTRIBUTES                     : Position vector { 1e+18, 1e+18, 1e+18 } is out of range.
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB40508, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB40508
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB40508
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB3FC98, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB3FC98
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000001752CB40508, queue head = 000001752C3E9DD8, queue count = 0
+[LOG] AsyncThread::add                         :     add sound to async queue : soundi = 000001754E1F4C78, queue head = 000001752C3E9DD8, queue count = 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB3FC98
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001752CB40508
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001752CB40508
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000001754E1F4C78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000001754E1F4C78
+[LOG] SoundI::release                          : roomtone-bathroom (00000176A5C4D6A8)
+[LOG] SoundI::release                          :     roomtone-bathroom (00000176A622FAC8)
+[LOG] SoundI::release                          :     roomtone-bathroom (000001754E1F4258)
+[LOG] SoundI::release                          : roomtone-bathroom (00000176BC398278)
+[LOG] SoundI::release                          :     roomtone-bathroom (00000176BFE48548)
+[LOG] SoundI::release                          :     roomtone-bathroom (000001752CB3FAE8)
+[LOG] SoundI::release                          : roomtone-kitchen (00000176BC398938)
+[LOG] SoundI::release                          :     roomtone-kitchen (000001755A79B8E8)
+[LOG] SoundI::release                          :     roomtone-kitchen (000001752CB3FC98)
+[LOG] SoundI::release                          : wind (00000176AF4177E8)
+[LOG] SoundI::release                          :     wind (00000176BFE48888)
+[LOG] SoundI::release                          :     wind (000001755EDD51D8)
+[LOG] SoundI::release                          : wind (00000176AF417998)
+[LOG] SoundI::release                          :     wind (00000175500DAE58)
+[LOG] SoundI::release                          :     wind (000001755EDD4E78)
+[LOG] SoundI::release                          : roomtone_normal (000001752C5FD008)
+[LOG] SoundI::release                          :     roomtone_normal (000001755C11E3B8)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB3FFF8)
+[LOG] SoundI::release                          : roomtone_normal (00000176BCEF1108)
+[LOG] SoundI::release                          :     roomtone_normal (000001755C11E6F8)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB406B8)
+[LOG] SoundI::release                          : roomtone_normal (00000176A5C4D4F8)
+[LOG] SoundI::release                          :     roomtone_normal (00000176A622F928)
+[LOG] SoundI::release                          :     roomtone_normal (000001754E1F4FD8)
+[LOG] SoundI::release                          : roomtone_normal (00000176BCEF12B8)
+[LOG] SoundI::release                          :     roomtone_normal (000001755A79B0C8)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB40358)
+[LOG] SoundI::release                          : roomtone_normal (000001752C5FDBD8)
+[LOG] SoundI::release                          :     roomtone_normal (00000176A622F788)
+[LOG] SoundI::release                          :     roomtone_normal (000001754E1F4E28)
+[LOG] SoundI::release                          : roomtone_normal (00000176BCEF0DA8)
+[LOG] SoundI::release                          :     roomtone_normal (000001755A79B268)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB3FE48)
+[LOG] SoundI::release                          : roomtone_normal (000001752C5FD6C8)
+[LOG] SoundI::release                          :     roomtone_normal (000001755C11EBD8)
+[LOG] SoundI::release                          :     roomtone_normal (000001754E1F4C78)
+[LOG] SoundI::release                          : roomtone_normal (00000176BCEF1978)
+[LOG] SoundI::release                          :     roomtone_normal (000001755A79ABE8)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB40508)
+[LOG] SoundI::release                          : roomtone_normal (000001752C5FD518)
+[LOG] SoundI::release                          :     roomtone_normal (000001755C11E218)
+[LOG] SoundI::release                          :     roomtone_normal (000001752CB401A8)
+[LOG] SoundI::release                          : roomtone-halls (00000176A5C4DA08)
+[LOG] SoundI::release                          :     roomtone-halls (00000176A622F448)
+[LOG] SoundI::release                          :     roomtone-halls (000001754E1F45B8)
+[LOG] SoundI::release                          : roomtone-halls (00000176BCEF17C8)
+[LOG] SoundI::release                          :     roomtone-halls (000001755A79B5A8)
+[LOG] SoundI::release                          :     roomtone-halls (000001752CB3F938)
+[LOG] SoundI::release                          : roomtone-halls (00000176A5C4D198)
+[LOG] SoundI::release                          :     roomtone-halls (00000176A622FC68)
+[LOG] SoundI::release                          :     roomtone-halls (000001754E1F4408)
+[LOG] SoundI::release                          :  (00000176A970F4E8)
+[LOG] SoundI::release                          :     footstep-1 (0000017523C88048)
+[LOG] SoundI::release                          :  (00000176A970EDB8)
+[LOG] SoundI::release                          :     footstep-2 (0000017523C87688)
+[LOG] SoundI::release                          :  (00000176A970E688)
+[LOG] SoundI::release                          :     footstep-run-2 (0000017523C87008)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
