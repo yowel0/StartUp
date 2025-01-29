@@ -20,7 +20,7 @@ public class EvidenceSpawner : MonoBehaviour
     public void SpawnWindow()
     {
         int spawnIndex = UnityEngine.Random.Range(0, windows.Length);
-        brokenWindow = Instantiate(brokenWindow, windows[spawnIndex].transform);
+        brokenWindow = Instantiate(brokenWindow, windows[spawnIndex].transform.position, windows[spawnIndex].transform.rotation);
         windows[spawnIndex].gameObject.SetActive(false);
     }
 

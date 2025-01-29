@@ -10,7 +10,7 @@ public class TaskManager : MonoBehaviour
 {
     public static TaskManager instance {  get; private set; }
     public List<Task> taskList = new List<Task>();
-
+    private bool everythingFound;
     private void Awake()
     {
         if (instance == null)
@@ -22,12 +22,12 @@ public class TaskManager : MonoBehaviour
             Destroy(instance);
         }
     }
-
+    
     public bool CheckEvidence(GameObject _evidence)
     {
         foreach(Task task in taskList)
         {
-            if (task.evidenceObject == _evidence)
+            if (task.evidenceObject.CompareTag(_evidence.tag))
             {
                 return true;
             }
@@ -36,48 +36,27 @@ public class TaskManager : MonoBehaviour
     }
 
 
-
     [Serializable]
     public class Task
     {
         public bool found;
-        public string taskName;
+        public string taskName = "skibidy";
         public Image displayArea;
         public GameObject evidenceObject;
         public GameObject checkMark;
+        public GameObject GetObjectInGame()
+        {
+            return GameObject.FindGameObjectWithTag(evidenceObject.tag);
+        }
         public void Find(Sprite _sprite)
         {
             if (!found)
             {
+                print(" finded");
                 found = true;
                 displayArea.sprite = _sprite;
                 checkMark.SetActive(true);
             }
         }
     }
-
-    //void Update()
-    //{
-        //if (evidenceCheck == null)
-        //{
-        //    evidenceCheck = FindObjectOfType<EvidenceCheck>();
-        //}
-        //else
-        //{
-        //    if (oldFoundEvidence != evidenceCheck.foundEvidence)
-        //    {
-        //        print("isigma");
-        //        check();
-        //        oldFoundEvidence = evidenceCheck.foundEvidence;
-        //    }
-        //}
-    //}
-
-    //void check()
-    //{
-        //if (evidenceCheck != null) { evidenceCheck.ShowPhoto(); }
-        //photoDisplayArea[index].GetComponent<Image>().sprite = evidenceCheck.takenPhotos[evidenceCheck.takenPhotos.Count - 1];
-        //checkMarksArray[index].SetActive(true);
-        //index++;
-    //}
 }

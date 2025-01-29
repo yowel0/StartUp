@@ -4,15 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BloodPrint
-  - BrokenPainting
-  - DeadBody
   - Murderer
   - Closet
   - Evidence
   - Checkmark
   - Knife
   - Police
+  - Bloodpool
+  - Dirtysteps
+  - Heel
+  - EatenDonuts
+  - BrokenWindow
+  - MessedupDrawer
+  - BrokenJewelry
+  - DeadEdith
+  - Handprint
+  - BrokenPainting
   layers:
   - Default
   - TransparentFX
@@ -29,7 +36,6 @@ TagManager:
   - AI
   - Doors
   - Murderer
-  - 
   - 
   - 
   - 

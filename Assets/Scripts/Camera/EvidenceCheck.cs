@@ -107,12 +107,13 @@ public class EvidenceCheck : MonoBehaviour
 
     void TakePicture()
     {
+
         foreach (TaskManager.Task task in TaskManager.instance.taskList) //fixxx dit na bumbo clatttt xDDDD
         {
             if (!task.found)
             {
-                float distance = Vector3.Distance(transform.position, task.evidenceObject.transform.position);
-                if (IsVisible(Cam, task.evidenceObject))
+                float distance = Vector3.Distance(transform.position, task.GetObjectInGame().transform.position);
+                if (IsVisible(Cam, task.GetObjectInGame()))
                 {
                     if (distance <= distanceToEvidence)
                     {
@@ -154,6 +155,7 @@ public class EvidenceCheck : MonoBehaviour
 
     public IEnumerator CapturePhoto(TaskManager.Task _task)
     {
+        print(" take picc");
         yield return new WaitForEndOfFrame();
 
         Rect regionToRead = new Rect(0, 0, Screen.width, Screen.height);

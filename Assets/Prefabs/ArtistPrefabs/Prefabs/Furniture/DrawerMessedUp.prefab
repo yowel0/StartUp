@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8493473611646561514}
   - component: {fileID: 3789139241694903564}
   - component: {fileID: 856354751951003702}
-  m_Layer: 0
+  - component: {fileID: 8010444853731952404}
+  m_Layer: 10
   m_Name: DrawerMessedUp
-  m_TagString: Untagged
+  m_TagString: MessedupDrawer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 278554668549742096}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: -0, y: 1.2250332, z: 0}
-  m_LocalScale: {x: 300, y: 150, z: 200}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 213.1, y: 115.7, z: 206.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8010444853731952404
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278554668549742096}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.014266708, y: 0.022814998, z: 0.017774336}
+  m_Center: {x: 0, y: -0.004274145, z: -0.0032810492}
