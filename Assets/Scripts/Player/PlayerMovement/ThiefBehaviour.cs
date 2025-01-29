@@ -40,13 +40,16 @@ public class ThiefBehaviour : MoveBehaviour
     }
     private void Update()
     {
-        Slash();
+        Animations();
         base.Update();
     }
 
-    void Slash()
+    void Animations()
     {
-        if (mAnimator) mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
+        if (mAnimator)
+        {
+            mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
+        }
     }
     private void Crouching()
     {

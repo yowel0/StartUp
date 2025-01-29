@@ -46,7 +46,7 @@ public class InteractionsMurderer : MonoBehaviour
         {
             part.enabled = false;
         }
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         moveBehaviour = GetComponent<MoveBehaviour>();
     }
@@ -238,12 +238,15 @@ public class InteractionsMurderer : MonoBehaviour
             {
                 shakes -= 1;
                 shakeLeft = false;
+                animator.SetBool("Captured", true);
             }
             else if (Input.GetKeyDown(KeyCode.L) && !shakeLeft)
             {
                 shakes -= 1;
                 shakeLeft = true;
+                animator.SetBool("Captured", true);
             }
+            animator.SetBool("Captured", false);
         }
     }
 }

@@ -13,6 +13,7 @@ public class PoliceAi : MonoBehaviour
     [SerializeField] List<GameObject> walkTo = new List<GameObject>();
     int walkToInt = 0;
     public LayerMask whatIsGround;
+    Camera cam;
 
     public bool grabbed = false;
     ThiefBehaviour script;
@@ -35,6 +36,7 @@ public class PoliceAi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Murderer");
         rb = GetComponent<Rigidbody>();
@@ -130,6 +132,8 @@ public class PoliceAi : MonoBehaviour
             print("Rahhh");
 
             grabbed = true;
+            
+            cam.transform.position = new Vector3(cam.transform.position.x,holdPos.position.y + 0.4f, cam.transform.position.z);
         }
     }
     private void LetGo()
@@ -168,6 +172,7 @@ public class PoliceAi : MonoBehaviour
     {
         obj.transform.position = holdPos.position;
         obj.transform.rotation = holdPos.rotation;
+        cam.transform.position = new Vector3(cam.transform.position.x, holdPos.position.y + 0.8f, cam.transform.position.z);
     }
 
 }
