@@ -22,6 +22,7 @@ public class PoliceBehaviour : MoveBehaviour
     float pickUpTime = 0;
     ThiefBehaviour script;
     InteractionsMurderer script2;
+    AIMurderer aiScript;
     GameObject obj = null;
     bool pickingUp = false;
     bool canGrab = true;
@@ -41,6 +42,7 @@ public class PoliceBehaviour : MoveBehaviour
         if (grabbed)
         {
             Hold();
+            if(script2)
             EscapeCheck();
         }
         PickUp();
@@ -78,7 +80,7 @@ public class PoliceBehaviour : MoveBehaviour
 
     void PickUp()
     {
-        if (pickingUp && TaskManager.instance.CheckEvidence(obj)) //&& evidenceList.Contains(obj) )  
+        if (pickingUp /*&& TaskManager.instance.CheckEvidence(obj)*/) //&& evidenceList.Contains(obj) )  
         {
             RaycastHit looking;
             pickUpTime += Time.deltaTime;
@@ -103,17 +105,6 @@ public class PoliceBehaviour : MoveBehaviour
             }
         }
     }
-
-    /*    [Rpc(SendTo.Server)]
-        void DeleteObject(GameObject evidence)
-        {
-            if (GameManager.Instance != null)
-            {
-                print("checkie");
-                evidence.name = evidence.GetInstanceID().ToString();
-                //GameManager.Instance.DeleteEvidenceRpc(this.evidence.GetInstanceID());
-            }
-        }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -158,12 +149,20 @@ public class PoliceBehaviour : MoveBehaviour
     {
         if (!grabbed)
         {
-            script = obj.GetComponent<ThiefBehaviour>();
-            script2 = obj.GetComponent<InteractionsMurderer>();
-            thiefSpeed = script.speed;
-            script.speed = 0;
-            script.grabbed = true;
-            script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+            if (obj.GetComponent<ThiefBehaviour>() && obj.GetComponent<InteractionsMurderer>())
+            {
+                script = obj.GetComponent<ThiefBehaviour>();
+                script2 = obj.GetComponent<InteractionsMurderer>();
+                script2.shakes = UnityEngine.Random.Range(minShakes, maxShakes);
+                thiefSpeed = script.speed;
+                script.speed = 0;
+                script.grabbed = true;
+            }
+            else
+            {
+                aiScript = obj.GetComponent<AIMurderer>();
+                aiScript.grabbed = false;
+            }
             caps1.enabled = false;
             caps2.enabled = true;
             sphere.enabled = true;
@@ -176,8 +175,7 @@ public class PoliceBehaviour : MoveBehaviour
             CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
             caps.enabled = false;
 
-
-
+            obj.transform.SetParent(holdPos);
 
             grabbed = true;
         }
@@ -187,13 +185,21 @@ public class PoliceBehaviour : MoveBehaviour
         caps1.enabled = true;
         caps2.enabled = false;
         sphere.enabled = false;
-        script.speed = thiefSpeed;
-        script.grabbed = false;
+        if (script)
+        {
+            script.speed = thiefSpeed;
+            script.grabbed = false;
+            script = null;
+        }
+        else
+        {
+            aiScript.grabbed = false;
+            aiScript = null;
+        }
         Rigidbody rig = obj.GetComponent<Rigidbody>();
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
         caps.enabled = true;
-        script = null;
         obj = null;
         canGrab = false;
         grabbed = false;

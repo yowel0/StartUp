@@ -58,7 +58,7 @@ public class ThiefBehaviour : MoveBehaviour
             if (!crouching)
             {
                 crouching = true;
-                transform.localScale = new Vector3(1, CrouchMultiplier, 1);
+                transform.localScale = new Vector3(1, transform.localScale.y * CrouchMultiplier, 1);
                 transform.position = new Vector3(transform.position.x, transform.position.y - 0.3f, transform.position.z);
                 speed = crouchSpeed;
             }
@@ -66,7 +66,7 @@ public class ThiefBehaviour : MoveBehaviour
         else if (crouching)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(1, transform.localScale.y / CrouchMultiplier, 1);
             crouching = false;
             speed = oldSpeed;
         }

@@ -54,15 +54,13 @@ public class CameraMovement : MonoBehaviour
     {
         if (!check && this.GetComponent<PoliceBehaviour>() != null)
         {
-            print("check1");
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
             if (thief != null && !thief.GetComponent<NetworkObject>().IsOwner){
-                print("check2");
                 thief.GetComponentInChildren<Light>(true).enabled = false;
                 check = true;
             }
         }
-        camera.transform.position = transform.position + new Vector3(0, cameraHeight, -0.2f);
+        camera.transform.position = transform.position + new Vector3(0, cameraHeight);
 
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
         float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
