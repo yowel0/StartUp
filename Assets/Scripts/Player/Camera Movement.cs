@@ -52,10 +52,10 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!check && this.GetComponent<PoliceBehaviour>() != null)
+        if (!check)
         {
             ThiefBehaviour thief = FindFirstObjectByType<ThiefBehaviour>();
-            if (thief != null && !thief.GetComponent<NetworkObject>().IsOwner){
+            if (thief != null && GetComponent<PoliceBehaviour>()){
                 thief.GetComponentInChildren<Light>(true).enabled = false;
                 check = true;
             }

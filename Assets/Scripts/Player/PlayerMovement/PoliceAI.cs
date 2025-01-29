@@ -73,6 +73,10 @@ public class PoliceAi : MonoBehaviour
             agent.enabled = false;
             rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
         }
+        if (Input.GetKey(KeyCode.K))
+        {
+            agent.isStopped = true;
+        }
     }
     private void Patroling()
     {
