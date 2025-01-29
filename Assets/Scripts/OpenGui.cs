@@ -38,11 +38,13 @@ public class OpenGui : MonoBehaviour
     public void openGui()
     {
         guiPopUp.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
         Debug.Log("GUI open");
     }
     public void closeGui()
     {
         guiPopUp.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         Debug.Log("GUI closed");
     }
 

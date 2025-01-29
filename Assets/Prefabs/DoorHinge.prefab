@@ -46,6 +46,8 @@ GameObject:
   - component: {fileID: 4926772375733090660}
   - component: {fileID: 6121553123377741569}
   - component: {fileID: 6896814076218009943}
+  - component: {fileID: 6871159330559970458}
+  - component: {fileID: 3065339468627451279}
   m_Layer: 13
   m_Name: Door
   m_TagString: Untagged
@@ -206,6 +208,68 @@ HingeJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &6871159330559970458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533148051568595317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1059139564
+      Data2: 1262956076
+      Data3: -1212837958
+      Data4: 492916735
+    Path: event:/DoorOpen
+  Event: 
+  EventPlayTrigger: 15
+  EventStopTrigger: 16
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &3065339468627451279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533148051568595317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1059139564
+      Data2: 1262956076
+      Data3: -1212837958
+      Data4: 492916735
+    Path: event:/DoorOpen
+  Event: 
+  EventPlayTrigger: 7
+  EventStopTrigger: 8
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &489673646186678592
 PrefabInstance:
   m_ObjectHideFlags: 0
