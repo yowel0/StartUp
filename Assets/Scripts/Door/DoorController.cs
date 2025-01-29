@@ -41,7 +41,7 @@ public class DoorPivot : MonoBehaviour
             }
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            dragPointGameObj.transform.position = ray.GetPoint(Vector3.Distance(selectedDoor.position, transform.position));
+            //dragPointGameObj.transform.position = ray.GetPoint(Vector3.Distance(selectedDoor.position, transform.position));
             dragPointGameObj.transform.rotation = selectedDoor.rotation;
 
 
@@ -57,7 +57,7 @@ public class DoorPivot : MonoBehaviour
             }
           
             float speedMultiplier = 60000;
-            if (Mathf.Abs(selectedDoor.parent.forward.z) > 0.5f)
+            if (Mathf.Abs(selectedDoor.forward.z) > 0.5f)
             {
                 if (dragPointGameObj.transform.position.x > selectedDoor.position.x)
                 {
@@ -85,7 +85,7 @@ public class DoorPivot : MonoBehaviour
             {
                 selectedDoor = null;
                 motor.targetVelocity = 0;
-                Destroy(dragPointGameObj); 
+                //Destroy(dragPointGameObj); 
             }
         }
     }
