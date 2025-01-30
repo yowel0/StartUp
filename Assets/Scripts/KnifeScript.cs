@@ -42,13 +42,13 @@ public class KnifeScript : MonoBehaviour
             print("stab");
             if (other.gameObject.GetComponent<PoliceBehaviour>() != null)
                 other.gameObject.GetComponent<PoliceBehaviour>().enabled = false;
-            else if (!other.gameObject.GetComponent<PoliceAi>().staggered)
+            else if (other.gameObject.GetComponent<PoliceAi>())
             {
                 other.gameObject.GetComponent<PoliceAi>().stabbed = true;
             }
             Rigidbody rb = other.transform.GetComponent<Rigidbody>();
             CapsuleCollider caps = other.transform.GetComponent<CapsuleCollider>();
-            caps.direction = 1;
+            caps.direction = 3;
             rb.isKinematic = false;
             
             other.transform.rotation = Quaternion.Euler(-90, 0, 0);
