@@ -1495,7 +1495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &195104295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12806,6 +12806,10 @@ PrefabInstance:
     - target: {fileID: 3079340277191381256, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: distanceToEvidence
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079340277191381256, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: fotoLayerMask.m_Bits
+      value: 32701
       objectReference: {fileID: 0}
     - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: slider

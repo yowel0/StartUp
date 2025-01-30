@@ -33,6 +33,8 @@ public class EvidenceCheck : MonoBehaviour
     private bool JournalActive;
     bool once = true;
 
+    [SerializeField]
+    LayerMask fotoLayerMask;
     LayerMask backupLayerMask;
 
 
@@ -100,7 +102,7 @@ public class EvidenceCheck : MonoBehaviour
                 JournalActive= true;
             }
         }
-        if (phoneIsOut && Input.GetMouseButtonDown(0))
+        if (phoneIsOut && Input.GetMouseButtonDown(1))
         {
             TakePicture();
         }
@@ -120,7 +122,7 @@ public class EvidenceCheck : MonoBehaviour
                     if (distance <= distanceToEvidence)
                     {
                         backupLayerMask = Cam.cullingMask;
-                        Cam.cullingMask = ~(1 << 1);
+                        Cam.cullingMask = fotoLayerMask;
                         StartCoroutine(CapturePhoto(task));
                         RuntimeManager.PlayOneShot(takePicture, transform.position);
                         //task.Find();

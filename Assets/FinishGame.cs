@@ -15,4 +15,18 @@ public class FinishGame : MonoBehaviour
     {
         
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+
+    bool CheckFinish()
+    {
+        if (TaskManager.instance.FoundTasksAmount() >= 5)
+        {
+            return true;
+        }
+        return false;
+    }
 }
