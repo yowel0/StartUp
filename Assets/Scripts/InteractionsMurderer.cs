@@ -234,13 +234,13 @@ public class InteractionsMurderer : MonoBehaviour
         if (grabbed)
         {
 
-            if (Input.GetKeyDown(KeyCode.J) && shakeLeft)
+            if (Input.GetKeyDown(KeyCode.A) && shakeLeft)
             {
                 shakes -= 1;
                 shakeLeft = false;
                 animator.SetBool("Captured", true);
             }
-            else if (Input.GetKeyDown(KeyCode.L) && !shakeLeft)
+            else if (Input.GetKeyDown(KeyCode.D) && !shakeLeft)
             {
                 shakes -= 1;
                 shakeLeft = true;
