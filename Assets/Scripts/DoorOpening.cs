@@ -7,6 +7,7 @@ public class DoorOpening : MonoBehaviour
     [SerializeField] LayerMask doorLayer;
     Camera cam;
     Transform hinge;
+    Transform door;
     float maxRot = 90;
     [SerializeField] float rot = 0;
     bool gotDoor = false;
@@ -24,6 +25,7 @@ public class DoorOpening : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                door = hit.transform;
                 hinge = hit.transform.parent.transform;
                 rot = hinge.transform.localRotation.y * 120;
                 print(rot);
@@ -33,6 +35,7 @@ public class DoorOpening : MonoBehaviour
         }
         if (gotDoor)
         {
+            door.GetComponent<BoxCollider>().enabled = false;
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * 400;
             rot -= mouseX;
             rot = Mathf.Clamp(rot, 0, 90f);
@@ -45,7 +48,9 @@ public class DoorOpening : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0) && hinge)
         {
+            door.GetComponent<BoxCollider>().enabled = true;
             hinge = null;
+            door = null;
             gotDoor = false;
             rot = 0;
         }
