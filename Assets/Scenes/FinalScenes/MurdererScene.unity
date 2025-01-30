@@ -9496,7 +9496,9 @@ PrefabInstance:
       propertyPath: doorLayer.m_Bits
       value: 8192
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2927653407613800956, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+    - {fileID: -3076979309734143821, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
