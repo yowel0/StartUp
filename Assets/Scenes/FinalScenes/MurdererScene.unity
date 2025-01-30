@@ -5376,6 +5376,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2315988572305930967, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 278.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315988572305930967, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 402.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499161439390625139, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e287712dff9eb94f8c8d046abadef4b, type: 3}
     - target: {fileID: 2713968307521766210, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
       propertyPath: m_RenderMode
       value: 1
@@ -5500,6 +5512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4135035767608223074, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4593887443726351227, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5528,6 +5544,14 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5307590317562445308, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -257.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307590317562445308, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 312.31
+      objectReference: {fileID: 0}
     - target: {fileID: 5339010905706329041, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
       propertyPath: m_ScaleFactor
       value: 0.5
@@ -5544,6 +5568,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6887928408455360423, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887928408455360423, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 7278873559622407649, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
       propertyPath: m_Name
       value: Canvas GameMenu
@@ -5558,6 +5590,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7715033521870122430, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8464817165522315816, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8820217360729334258, guid: 8ce7f2e7b5481b742b3ce4710d7e2197, type: 3}
