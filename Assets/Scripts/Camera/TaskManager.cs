@@ -46,7 +46,20 @@ public class TaskManager : MonoBehaviour
         }
         return _amount;
     }
-    
+
+    public int CleanedUpTasksAmount()
+    {
+        int _amount = 0;
+        foreach (Task task in taskList)
+        {
+            if (!task.GetObjectInGame())
+            {
+                _amount++;
+            }
+        }
+        return _amount;
+    }
+
     public bool CheckEvidence(GameObject _evidence)
     {
         foreach(Task task in taskList)
