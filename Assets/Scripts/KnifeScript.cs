@@ -48,7 +48,7 @@ public class KnifeScript : MonoBehaviour
             }
             Rigidbody rb = other.transform.GetComponent<Rigidbody>();
             CapsuleCollider caps = other.transform.GetComponent<CapsuleCollider>();
-            caps.direction = 3;
+            caps.direction = 1;
             rb.isKinematic = false;
             
             other.transform.rotation = Quaternion.Euler(-90, 0, 0);
