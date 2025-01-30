@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5667005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.9691111
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.2021922
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
       propertyPath: m_LocalRotation.w
@@ -70,8 +70,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7738879540749064029}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8250289950266520417, guid: dd7d0266823a3744696383186948f058, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2858131850218820501}
   m_SourcePrefab: {fileID: 100100000, guid: dd7d0266823a3744696383186948f058, type: 3}
+--- !u!1 &2453310255330359305 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8250289950266520417, guid: dd7d0266823a3744696383186948f058, type: 3}
+  m_PrefabInstance: {fileID: 5797542649327356776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2858131850218820501
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2453310255330359305}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.052784003, y: 0.061844688, z: 0.0038933014}
+  m_Center: {x: -0.0005810679, y: -0.00038566627, z: -0.00024649102}
 --- !u!4 &2972437332327244467 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8733951184423627227, guid: dd7d0266823a3744696383186948f058, type: 3}
