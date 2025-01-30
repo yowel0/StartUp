@@ -200,6 +200,10 @@ PrefabInstance:
       propertyPath: Journal
       value: 
       objectReference: {fileID: 813032807}
+    - target: {fileID: 3079340277191381256, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
+      propertyPath: distanceToEvidence
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3287031108375454110, guid: 3ece5edd7aa53994f83ce3efd0a400fd, type: 3}
       propertyPath: slider
       value: 
@@ -2675,6 +2679,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 593145206594808822, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
+    - {fileID: 2682012118541920598, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3021940867280375702, guid: 6e4580a84f185ba47908ad9285ecfae9, type: 3}
       insertIndex: -1
@@ -5690,6 +5695,14 @@ MonoBehaviour:
     displayArea: {fileID: 1572161377}
     evidenceObject: {fileID: 40459901250922710, guid: ae419a53def219f49a0f68adbd08bcc6, type: 3}
     checkMark: {fileID: 1242515219}
+  EvidenceCards:
+  - {fileID: 408873624, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  - {fileID: 1462062064, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  - {fileID: -2127501114, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  - {fileID: -974684772, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  - {fileID: -13064007, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  - {fileID: -860688203, guid: d5992133fffd27b4abd6ffe51c5c798b, type: 3}
+  EvidenceCardsImage: {fileID: 1045956301}
 --- !u!4 &729969380
 Transform:
   m_ObjectHideFlags: 0
