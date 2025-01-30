@@ -60,7 +60,7 @@ public class ThiefBehaviour : MoveBehaviour
         {
             if (!crouching)
             {
-                GetComponent<CameraMovement>().cameraHeight = 0.8f;
+                GetComponent<CameraMovement>().cameraHeight = 0.6f;
                 crouching = true;
                 if (mAnimator) mAnimator.SetBool("Crouch", crouching);
                 caps1.enabled = false;

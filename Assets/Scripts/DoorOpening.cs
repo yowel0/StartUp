@@ -35,13 +35,13 @@ public class DoorOpening : MonoBehaviour
         {
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * 400;
             rot -= mouseX;
-            if (hinge.GetComponentInChildren<DoorController>().firstTime)
-            {
-                rot = 1;
-                hinge.GetComponentInChildren<DoorController>().firstTime = false;
-            }
             rot = Mathf.Clamp(rot, 0, 90f);
             hinge.rotation = Quaternion.Euler(0, hinge.rotation.y + rot, 0);
+            if (hinge.GetComponentInChildren<DoorController>().firstTime)
+            {
+                hinge.rotation = Quaternion.Euler(0, hinge.rotation.y + 90, 0);
+                hinge.GetComponentInChildren<DoorController>().firstTime = false;
+            }
         }
         if (Input.GetMouseButtonUp(0) && hinge)
         {

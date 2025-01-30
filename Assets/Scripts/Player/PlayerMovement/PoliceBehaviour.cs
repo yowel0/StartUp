@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 using Unity.Netcode;
 using Unity.Networking.Transport;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Experimental.GlobalIllumination;
 
 public class PoliceBehaviour : MoveBehaviour
@@ -17,22 +20,30 @@ public class PoliceBehaviour : MoveBehaviour
     [SerializeField] int minShakes;
     [SerializeField] int maxShakes;
     [SerializeField] float minPickUpTime;
+    TaskManager taskMan;
     public bool grabbed = false;
-    EvidenceCheck evidence;
     float pickUpTime = 0;
     ThiefBehaviour script;
     InteractionsMurderer script2;
     AIMurderer aiScript;
     GameObject obj = null;
+    [SerializeField] Slider slider;
+    Image[] sliderParts;
     bool pickingUp = false;
     bool canGrab = true;
     [SerializeField] int copsInProx = 0;
     float thiefSpeed;
+    bool cleaningUp;
 
-
+    public static EvidenceCheck instance { get; private set; }
     public void Start()
     {
-
+        sliderParts = slider.GetComponentsInChildren<Image>(true);
+        foreach (Image part in sliderParts)
+        {
+            part.enabled = false;
+        }
+        taskMan = FindObjectOfType<TaskManager>();
         base.Start();
         cam = Camera.main;
     }
@@ -72,12 +83,16 @@ public class PoliceBehaviour : MoveBehaviour
             }
             canGrab = true;
         }
-        else if (Input.GetKeyDown(KeyCode.E)){
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5) && canGrab && !grabbed)
             {
                 obj = hit.transform.gameObject;
                 if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
                 {
+                    print("Ev");
+                    foreach (Image part in sliderParts)
+                        part.enabled = true;
                     pickingUp = true;
                 }
             }
@@ -86,27 +101,47 @@ public class PoliceBehaviour : MoveBehaviour
 
     void PickUp()
     {
-        if (pickingUp /*&& TaskManager.instance.CheckEvidence(obj)*/) //&& evidenceList.Contains(obj) )  
+        if (pickingUp) //&& evidenceList.Contains(obj) )  
         {
             RaycastHit looking;
             pickUpTime += Time.deltaTime;
             if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
             {
-                if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                if (looking.transform.gameObject.layer == LayerMask.NameToLayer("Evidence"))
                 {
-                    Debug.Log("check2");
-                    pickingUp = false;
-                    pickUpTime = 0;
-                    obj = null;
+                    print("seeing Evidence");
                 }
-                if (pickUpTime > minPickUpTime)
+                foreach (TaskManager.Task task in TaskManager.instance.taskList)
                 {
-                    Destroy(looking.transform.gameObject);
-                    /*DeleteObject(looking.transform.gameObject);*/
-                    //Evidence Destroyed + 1;
-                    obj = null;
-                    pickingUp = false;
-                    pickUpTime = 0;
+                    print("Ev2");
+                    if (task.found /*&& task.evidenceObject == looking.transform.gameObject*/)
+                    {
+                        cleaningUp = true;
+
+                    }
+                }
+
+                if (cleaningUp)
+                {
+                    if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
+                    {
+                        Debug.Log("check2");
+                        pickingUp = false;
+                        pickUpTime = 0;
+                        obj = null;
+                        cleaningUp = false;
+                    }
+                    if (pickUpTime > minPickUpTime)
+                    {
+                        Destroy(looking.transform.gameObject);
+                        /*DeleteObject(looking.transform.gameObject);*/
+                        //Evidence Destroyed + 1;
+                        obj = null;
+                        pickingUp = false;
+                        pickUpTime = 0;
+                        cleaningUp = false;
+                    }
+                    slider.value = pickUpTime / minPickUpTime;
                 }
             }
         }
