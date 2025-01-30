@@ -55,6 +55,7 @@ public class TaskManager : MonoBehaviour
                 print(" finded");
                 found = true;
                 displayArea.sprite = _sprite;
+                displayArea.rectTransform.localScale = new Vector3(3, 1, 1);
                 checkMark.SetActive(true);
             }
         }
