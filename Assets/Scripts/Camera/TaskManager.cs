@@ -31,7 +31,14 @@ public class TaskManager : MonoBehaviour
 
     public void SetEvidenceCardsImage()
     {
-        EvidenceCardsImage.sprite = EvidenceCards[FoundTasksAmount()];
+        if(FoundTasksAmount() >= EvidenceCards.Count)
+        {
+            EvidenceCardsImage.sprite = EvidenceCards[EvidenceCards.Count-1];
+        }
+        else
+        {
+            EvidenceCardsImage.sprite = EvidenceCards[FoundTasksAmount()];
+        }
     }
 
     public int FoundTasksAmount()
