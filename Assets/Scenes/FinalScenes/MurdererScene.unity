@@ -1223,6 +1223,14 @@ PrefabInstance:
       propertyPath: m_ExcludeLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4422574620946778149, guid: 1515eecb8eeb79d46a35d1ea118c79a3, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4422574620946778149, guid: 1515eecb8eeb79d46a35d1ea118c79a3, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 6664438864534977112, guid: 1515eecb8eeb79d46a35d1ea118c79a3, type: 3}
       propertyPath: m_Name
       value: OfflineAIPolice
@@ -9428,6 +9436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OfflineMurderer Player
       objectReference: {fileID: 0}
+    - target: {fileID: 62175566350041724, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1299685896526259452, guid: f8c057a0fbdf24c48b9b06e9beb70594, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.05
@@ -10732,7 +10744,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 638082602088122505, guid: dc48a867b973acc45b50758400eb9596, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 638082602088122505, guid: dc48a867b973acc45b50758400eb9596, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 638082602088122505, guid: dc48a867b973acc45b50758400eb9596, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 995580620725546713, guid: dc48a867b973acc45b50758400eb9596, type: 3}
       propertyPath: m_Layer
@@ -11350,6 +11370,18 @@ PrefabInstance:
     - target: {fileID: 5200184175189088179, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
       propertyPath: m_Layer
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248417391486865489, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248417391486865489, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5248417391486865489, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5269422339789745858, guid: 1bcaf9364528f634a8c216519714ddb8, type: 3}
       propertyPath: m_Layer
