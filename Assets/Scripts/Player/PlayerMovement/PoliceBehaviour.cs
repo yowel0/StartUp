@@ -38,6 +38,7 @@ public class PoliceBehaviour : MoveBehaviour
     public static EvidenceCheck instance { get; private set; }
     public void Start()
     {
+        taskMan = TaskManager.instance;
         sliderParts = slider.GetComponentsInChildren<Image>(true);
         foreach (Image part in sliderParts)
         {
@@ -56,7 +57,6 @@ public class PoliceBehaviour : MoveBehaviour
             if (script2)
                 EscapeCheck();
         }
-        PickUp();
         base.Update();
 
     }
@@ -85,15 +85,13 @@ public class PoliceBehaviour : MoveBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5) && canGrab && !grabbed)
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5))
             {
                 obj = hit.transform.gameObject;
-                if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
+                if (hit.transform.gameObject.layer == LayerMask.NameToLayer("Evidence"))
                 {
                     print("Ev");
-                    foreach (Image part in sliderParts)
-                        part.enabled = true;
-                    pickingUp = true;
+                    PickUp();
                 }
             }
         }
@@ -101,38 +99,19 @@ public class PoliceBehaviour : MoveBehaviour
 
     void PickUp()
     {
-        if (pickingUp) //&& evidenceList.Contains(obj) )  
+        RaycastHit looking;
+        pickUpTime += Time.deltaTime;
+        if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
         {
-            RaycastHit looking;
-            pickUpTime += Time.deltaTime;
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out looking, 50) && !grabbed)
+            if (looking.transform.gameObject.layer == LayerMask.NameToLayer("Evidence"))
             {
-                if (looking.transform.gameObject.layer == LayerMask.NameToLayer("Evidence"))
-                {
-                    print("seeing Evidence");
-                }
-                foreach (TaskManager.Task task in TaskManager.instance.taskList)
+                print("seeing Evidence");
+                foreach (TaskManager.Task task in taskMan.taskList)
                 {
                     print("Ev2");
-                    if (task.found /*&& task.evidenceObject == looking.transform.gameObject*/)
+                    if (task.GetObjectInGame() == looking.transform.gameObject)
                     {
-                        cleaningUp = true;
-
-                    }
-                }
-
-                if (cleaningUp)
-                {
-                    if (looking.transform.gameObject.layer != LayerMask.NameToLayer("Evidence") || !Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), 50))
-                    {
-                        Debug.Log("check2");
-                        pickingUp = false;
-                        pickUpTime = 0;
-                        obj = null;
-                        cleaningUp = false;
-                    }
-                    if (pickUpTime > minPickUpTime)
-                    {
+                        print("rehatiorehwio");
                         Destroy(looking.transform.gameObject);
                         /*DeleteObject(looking.transform.gameObject);*/
                         //Evidence Destroyed + 1;
@@ -140,8 +119,8 @@ public class PoliceBehaviour : MoveBehaviour
                         pickingUp = false;
                         pickUpTime = 0;
                         cleaningUp = false;
+                        break;
                     }
-                    slider.value = pickUpTime / minPickUpTime;
                 }
             }
         }
