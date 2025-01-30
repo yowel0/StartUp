@@ -9,7 +9,8 @@ public class FinishGame : MonoBehaviour
     int foundEvidenceAmount;
     [SerializeField]
     string sceneToLoad;
-
+    [SerializeField]
+    InteractionsMurderer murderer;
     public enum ExitCheckType
     {
         FoundTasks,
@@ -25,7 +26,10 @@ public class FinishGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (murderer.CleanupAmount >= foundEvidenceAmount)
+        {
+            print("sigma");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,7 +52,7 @@ public class FinishGame : MonoBehaviour
                 }
                 break;
             case ExitCheckType.CleanedUpTasks:
-                if (GameManager.FindAnyObjectByType<InteractionsMurderer>().CleanupAmount >= foundEvidenceAmount)
+                if (murderer.CleanupAmount >= foundEvidenceAmount)
                 {
                     return true;
                 }

@@ -39,7 +39,7 @@ public class InteractionsMurderer : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     MoveBehaviour moveBehaviour;
-    public float CleanupAmount;
+    public int CleanupAmount;
 
     private void Start()
     {
