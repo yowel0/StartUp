@@ -109,7 +109,7 @@ public class PoliceBehaviour : MoveBehaviour
                 foreach (TaskManager.Task task in taskMan.taskList)
                 {
                     print("Ev2");
-                    if (task.GetObjectInGame() == looking.transform.gameObject)
+                    if (task.GetObjectInGame() == looking.transform.gameObject && task.found)
                     {
                         print("rehatiorehwio");
                         Destroy(looking.transform.gameObject);
