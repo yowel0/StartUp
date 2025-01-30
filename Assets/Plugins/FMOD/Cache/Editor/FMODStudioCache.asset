@@ -39,7 +39,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Ambience.bank
   Name: Ambience
   StudioPath: bank:/Ambience
-  lastModified: 638737635760872177
+  lastModified: 638737649599757613
   FileSizes:
   - Name: Desktop
     Value: 2506944
@@ -218,7 +218,7 @@ MonoBehaviour:
   Path: GameAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638737593664941442
+  lastModified: 638737649599767604
   FileSizes:
   - Name: Desktop
     Value: 2624
@@ -426,7 +426,7 @@ MonoBehaviour:
   - {fileID: -3800458728956079498}
   StringsBanks:
   - {fileID: -5572686331371067131}
-  cacheTime: 638737635760872177
+  cacheTime: 638737649599897599
   cacheVersion: 131622
 --- !u!114 &140723753030224241
 MonoBehaviour:

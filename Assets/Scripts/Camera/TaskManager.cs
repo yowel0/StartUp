@@ -52,7 +52,7 @@ public class TaskManager : MonoBehaviour
         int _amount = 0;
         foreach (Task task in taskList)
         {
-            if (task.GetObjectInGame() == null)
+            if (!task.GetObjectInGame())
             {
                 _amount++;
             }

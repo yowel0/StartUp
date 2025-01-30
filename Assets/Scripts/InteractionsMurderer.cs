@@ -18,6 +18,8 @@ public class InteractionsMurderer : MonoBehaviour
 
     bool shakeLeft = true;
 
+    [SerializeField]
+    float range = 5;
 
     public bool hiding = false;
     bool canExit = false;
@@ -37,6 +39,8 @@ public class InteractionsMurderer : MonoBehaviour
     Animator animator;
     Rigidbody rb;
     MoveBehaviour moveBehaviour;
+    public float CleanupAmount;
+
     private void Start()
     {
         cam = Camera.main;
@@ -55,7 +59,7 @@ public class InteractionsMurderer : MonoBehaviour
         RaycastHit hit;
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 3) && !hiding && !grabbed)
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, range) && !hiding && !grabbed)
             {
                 obj = hit.transform;
                 if (obj.CompareTag("Closet"))
@@ -169,7 +173,11 @@ public class InteractionsMurderer : MonoBehaviour
                     cleaning = false;
                     cleanTimer = 0;
                     foreach (Image part in sliderParts)
+                    {
                         part.enabled = false;
+                    }
+                    CleanupAmount++;
+
                 }
             }
             slider.value = cleanTimer / minCleanTime;

@@ -9,6 +9,13 @@ public class FinishGame : MonoBehaviour
     int foundEvidenceAmount;
     [SerializeField]
     string sceneToLoad;
+
+    public enum ExitCheckType
+    {
+        FoundTasks,
+        CleanedUpTasks
+    }
+    public ExitCheckType exitCheckType;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +39,21 @@ public class FinishGame : MonoBehaviour
 
     bool CheckFinish()
     {
-        if (TaskManager.instance.FoundTasksAmount() >= foundEvidenceAmount)
+        switch (exitCheckType)
         {
-            return true;
+            case ExitCheckType.FoundTasks:
+                if (TaskManager.instance.FoundTasksAmount() >= foundEvidenceAmount)
+                {
+                    return true;
+                }
+                break;
+            case ExitCheckType.CleanedUpTasks:
+                if (GameManager.FindAnyObjectByType<InteractionsMurderer>().CleanupAmount >= foundEvidenceAmount)
+                {
+                    return true;
+                }
+                break;
+
         }
         return false;
     }
