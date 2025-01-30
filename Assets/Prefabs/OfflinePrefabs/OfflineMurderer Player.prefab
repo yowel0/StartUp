@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 616911946078397641}
   - component: {fileID: -2927653407613800956}
   - component: {fileID: 1433497090345859551}
-  - component: {fileID: 3008844231711093215}
   - component: {fileID: 4574930888627051788}
   - component: {fileID: 3847528194896150871}
   - component: {fileID: 5209443199181904376}
@@ -23,6 +22,8 @@ GameObject:
   - component: {fileID: 6403685368447392853}
   - component: {fileID: 894215021970594773}
   - component: {fileID: 4417209081272759750}
+  - component: {fileID: 3008844231711093215}
+  - component: {fileID: 8738992230319248125}
   m_Layer: 6
   m_Name: OfflineMurderer Player
   m_TagString: Murderer
@@ -134,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1065095537
+  GlobalObjectIdHash: 2415116761
   InScenePlacedSourceGlobalObjectIdHash: 2176538568
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 0
@@ -156,44 +157,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveBehaviour: {fileID: 3008844231711093215}
---- !u!114 &3008844231711093215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 56253209113119664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2939a6c44dd371c46b9470957d8dcd2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2
-  sprintMult: 1.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 512
-  playerSize: 1
-  maxSlopeAngle: 90
-  footstepEvent:
-    Guid:
-      Data1: -532567414
-      Data2: 1210653788
-      Data3: -113941321
-      Data4: 1782845265
-    Path: event:/Footsteps
-  grounded: 0
-  onSlope: 0
-  checkForGround: 1
-  playerOr: {fileID: 0}
-  rb: {fileID: 0}
-  state: 0
-  mAnimator: {fileID: 4636852819025357951}
-  crouchSpeed: 1
-  CrouchMultiplier: 0.5
-  caps1: {fileID: 616911946078397641}
-  caps2: {fileID: 3847528194896150871}
-  grabbed: 0
 --- !u!135 &4574930888627051788
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -441,6 +404,60 @@ MonoBehaviour:
   desiredDur: 2
   minCleanTime: 20
   cleanTimer: 0
+--- !u!114 &3008844231711093215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56253209113119664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2939a6c44dd371c46b9470957d8dcd2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
+  sprintMult: 1.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+  playerSize: 1
+  maxSlopeAngle: 90
+  footstepEvent:
+    Guid:
+      Data1: -532567414
+      Data2: 1210653788
+      Data3: -113941321
+      Data4: 1782845265
+    Path: event:/Footsteps
+  grounded: 0
+  onSlope: 0
+  checkForGround: 1
+  playerOr: {fileID: 0}
+  rb: {fileID: 0}
+  state: 0
+  mAnimator: {fileID: 4636852819025357951}
+  crouchSpeed: 1
+  CrouchMultiplier: 0.5
+  caps1: {fileID: 616911946078397641}
+  caps2: {fileID: 3847528194896150871}
+  grabbed: 0
+--- !u!114 &8738992230319248125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56253209113119664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8682d7a828141de49af6cab6a3ff2ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  rot: 0
 --- !u!1 &399895927794698392
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +799,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 12df1a9d4475a2c4e95fdbf8a3032b8c, type: 3}
       propertyPath: m_Name
+      value: Knife
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12df1a9d4475a2c4e95fdbf8a3032b8c, type: 3}
+      propertyPath: m_TagString
       value: Knife
       objectReference: {fileID: 0}
     m_RemovedComponents: []

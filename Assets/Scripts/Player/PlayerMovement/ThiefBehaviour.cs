@@ -51,7 +51,7 @@ public class ThiefBehaviour : MoveBehaviour
     {
         if (mAnimator)
         {
-            mAnimator.SetBool("Slash", Input.GetMouseButtonDown(0));
+            mAnimator.SetBool("Slash", Input.GetKeyDown(KeyCode.Q));
         }
     }
     private void Crouching()
@@ -60,17 +60,19 @@ public class ThiefBehaviour : MoveBehaviour
         {
             if (!crouching)
             {
+                GetComponent<CameraMovement>().cameraHeight = 0.8f;
                 crouching = true;
                 if (mAnimator) mAnimator.SetBool("Crouch", crouching);
                 caps1.enabled = false;
                 caps2.enabled = true;
-                cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y - 0.6f, cam.transform.position.z);
+                
                 speed = crouchSpeed;
             }
         }
         else if (crouching)
         {
-            cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y + 0.6f, cam.transform.position.z);
+            GetComponent<CameraMovement>().cameraHeight = 1.6f;
+            
             //transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y / CrouchMultiplier, transform.localScale.z);
             crouching = false;
             caps1.enabled = true;

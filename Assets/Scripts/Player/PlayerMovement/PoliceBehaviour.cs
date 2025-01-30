@@ -42,8 +42,8 @@ public class PoliceBehaviour : MoveBehaviour
         if (grabbed)
         {
             Hold();
-            if(script2)
-            EscapeCheck();
+            if (script2)
+                EscapeCheck();
         }
         PickUp();
         base.Update();
@@ -54,7 +54,7 @@ public class PoliceBehaviour : MoveBehaviour
         RaycastHit hit;
         // Does the ray intersect any objects excluding the player layer
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Debug.Log("check1");
             if (grabbed && obj != null)
@@ -69,12 +69,18 @@ public class PoliceBehaviour : MoveBehaviour
                 {
                     Grabbing();
                 }
-                else if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
+            }
+            canGrab = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.E)){
+            if (Physics.Raycast(cam.transform.position, cam.transform.TransformDirection(Vector3.forward), out hit, 5) && canGrab && !grabbed)
+            {
+                obj = hit.transform.gameObject;
+                if (hit.transform.gameObject.layer != LayerMask.NameToLayer("Evidence"))
                 {
                     pickingUp = true;
                 }
             }
-            canGrab = true;
         }
     }
 
@@ -200,6 +206,7 @@ public class PoliceBehaviour : MoveBehaviour
         rig.useGravity = true;
         CapsuleCollider caps = obj.GetComponent<CapsuleCollider>();
         caps.enabled = true;
+        obj.transform.SetParent(null);
         obj = null;
         canGrab = false;
         grabbed = false;

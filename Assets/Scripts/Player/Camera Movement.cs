@@ -13,8 +13,7 @@ public class CameraMovement : MonoBehaviour
     private float sensY = 100;
     bool check = false;
 
-    [SerializeField]
-    float cameraHeight = 1.5f;
+    public float cameraHeight = 1.5f;
 
     SpotLight light;
 
