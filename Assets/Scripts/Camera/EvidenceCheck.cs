@@ -33,6 +33,8 @@ public class EvidenceCheck : MonoBehaviour
     private bool JournalActive;
     bool once = true;
 
+    LayerMask backupLayerMask;
+
 
 
     [SerializeField, HideInInspector]
@@ -117,6 +119,7 @@ public class EvidenceCheck : MonoBehaviour
                 {
                     if (distance <= distanceToEvidence)
                     {
+                        backupLayerMask = Cam.cullingMask;
                         Cam.cullingMask = ~(1 << 1);
                         StartCoroutine(CapturePhoto(task));
                         RuntimeManager.PlayOneShot(takePicture, transform.position);
@@ -164,8 +167,9 @@ public class EvidenceCheck : MonoBehaviour
         screenCapture = new Texture2D(Screen.width, Screen.height, TextureFormat.ARGB32, false);
         screenCapture.ReadPixels(regionToRead, 0, 0, false);
         screenCapture.Apply();
-        Cam.cullingMask |= (1 << 1);
         Sprite newPhotoSprite = Sprite.Create(screenCapture, new Rect(0, 0, screenCapture.width, screenCapture.height), new Vector2(0.5f, 0.5f), 100.0f);
+        //Cam.cullingMask |= (1 << 1);
+        Cam.cullingMask = backupLayerMask;
         _task.Find(newPhotoSprite);
     }
 
